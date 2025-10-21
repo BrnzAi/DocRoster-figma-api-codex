@@ -27,7 +27,7 @@ export const MOCK_CLINICS: Clinic[] = [
       latitude: 37.79248,
       longitude: -122.4012
     },
-    heroImage: 'assets/images/aurora-clinic.jpg',
+    heroImage: 'assets/images/clinics/aurora-clinic.svg',
     openingHours: 'Mon–Fri · 7:00–19:00',
     isVerified: true
   },
@@ -51,7 +51,7 @@ export const MOCK_CLINICS: Clinic[] = [
       latitude: 47.6101,
       longitude: -122.3321
     },
-    heroImage: 'assets/images/riverbend.jpg',
+    heroImage: 'assets/images/clinics/riverbend.svg',
     openingHours: 'Mon–Sat · 8:00–20:00',
     isVerified: true
   },
@@ -75,7 +75,7 @@ export const MOCK_CLINICS: Clinic[] = [
       latitude: 41.8938,
       longitude: -87.6347
     },
-    heroImage: 'assets/images/lakeside.jpg',
+    heroImage: 'assets/images/clinics/lakeside.svg',
     openingHours: 'Mon–Fri · 8:30–17:30',
     isVerified: false
   }
@@ -92,7 +92,7 @@ export const MOCK_DOCTORS: Doctor[] = [
     experienceYears: 14,
     rating: 4.9,
     reviewCount: 142,
-    avatarUrl: 'assets/images/doctors/mariah-lopez.png',
+    avatarUrl: 'assets/images/doctors/mariah-lopez.svg',
     highlights: [
       { label: 'Programs designed', value: '58' },
       { label: 'Community rating', value: '4.9/5' },
@@ -117,7 +117,7 @@ export const MOCK_DOCTORS: Doctor[] = [
     experienceYears: 11,
     rating: 4.8,
     reviewCount: 97,
-    avatarUrl: 'assets/images/doctors/kenji-fujiwara.png',
+    avatarUrl: 'assets/images/doctors/kenji-fujiwara.svg',
     highlights: [
       { label: 'Patient panel', value: '420 families' },
       { label: 'After-hours chat', value: 'Under 15 min' }
@@ -140,7 +140,7 @@ export const MOCK_DOCTORS: Doctor[] = [
     experienceYears: 16,
     rating: 4.9,
     reviewCount: 188,
-    avatarUrl: 'assets/images/doctors/amara-okafor.png',
+    avatarUrl: 'assets/images/doctors/amara-okafor.svg',
     highlights: [
       { label: 'Deliveries', value: '1,240+' },
       { label: 'Cesarean rate', value: '12%' }
@@ -164,7 +164,7 @@ export const MOCK_DOCTORS: Doctor[] = [
     experienceYears: 9,
     rating: 4.7,
     reviewCount: 63,
-    avatarUrl: 'assets/images/doctors/leo-fernandez.png',
+    avatarUrl: 'assets/images/doctors/leo-fernandez.svg',
     highlights: [
       { label: 'Return-to-play', value: '92%' },
       { label: 'Avg recovery', value: '4.5 weeks' }
@@ -185,7 +185,7 @@ export const MOCK_ORGANIZATIONS: Organization[] = [
     name: 'Northstar Health Alliance',
     location: 'Denver, CO',
     accreditationLevel: 'Level 3 Coordinated Care',
-    logoUrl: 'assets/images/organizations/northstar.png',
+    logoUrl: 'assets/images/organizations/northstar.svg',
     focusAreas: ['Population health', 'Telehealth expansion', 'Behavioral health integration']
   }
 ];
@@ -298,7 +298,7 @@ export const MOCK_PROFILE: UserProfile = {
   name: 'Morgan Ellis',
   email: 'morgan.ellis@docroster.com',
   role: 'coordinator',
-  avatarUrl: 'assets/images/avatars/morgan-ellis.png',
+  avatarUrl: 'assets/images/avatars/morgan-ellis.svg',
   organization: 'DocRoster Pilot Network',
   bio: 'Care operations coordinator aligning teams, analytics and community insights for seamless patient journeys.',
   skills: ['Care coordination', 'Data storytelling', 'Quality improvement'],

@@ -6,7 +6,7 @@ This repository contains the DocRoster Angular application and the supporting Fi
 
 - `src/` – standalone Angular 17 application source organised into feature/data-access/shared folders.
 - `figma-tools/` – Node scripts for working with the Figma API (`figma-fetch.js`, mocks and `.env` secrets). This folder keeps those dependencies separate from the Angular workspace.
-- `.github/workflows/deploy.yml` – GitHub Actions workflow that builds the app and publishes it to GitHub Pages.
+- `docs/` – built Angular artefacts ready to serve from GitHub Pages (main branch → docs folder).
 
 ## Prerequisites
 
@@ -22,22 +22,22 @@ npm ci
 ## Local development
 
 - `npm start` – run the dev server on http://localhost:4200
-- `npm run build` – production build to `dist/doc-roster`
+- `npm run build` – production build to `docs/`
 - `npm test` – execute Karma tests (headless Chrome is required locally)
 
 ## GitHub Pages deployment
 
-The workflow in `.github/workflows/deploy.yml` builds the app with a base href that matches the repository name and publishes the `dist/doc-roster` output using the official GitHub Pages actions.
+The Angular CLI is configured to emit production assets into `docs/` with a relative `<base href="./">`. Commit the `docs/` folder and configure GitHub Pages to serve from the `docs` directory on the `main` branch:
 
-1. Enable GitHub Pages for the repository and select the *GitHub Actions* deployment source.
-2. Push to `main` (or run the workflow manually) to trigger a deployment.
-3. If the site is published at `https://<user>.github.io/<repo>/`, the workflow already sets the correct `--base-href`. For user/organisation sites (`<user>.github.io`) adjust the build step to use `/` as the base href.
+1. Run `npm run build` to refresh the assets inside `docs/`.
+2. Commit and push both the application source and the generated `docs/` output.
+3. In the repository settings, choose **Pages → Build and deployment → Source: Deploy from a branch** and select `main` / `docs`.
 
-To preview locally with the same configuration:
+To preview the static build locally:
 
 ```bash
-npm run build -- --configuration production --base-href=/REPO_NAME/
-npx http-server dist/doc-roster
+npm run build
+npx http-server docs
 ```
 
 ## Figma tooling

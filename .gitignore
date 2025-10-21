@@ -12,3 +12,5 @@ figma-tools/.env
 # IDE
 /.vscode
 /.idea
+
+.github/*

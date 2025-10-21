@@ -1,0 +1,17 @@
+<svg width="640" height="400" viewBox="0 0 640 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="lakeside-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563EB"/>
+      <stop offset="100%" stop-color="#60A5FA"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="400" rx="32" fill="url(#lakeside-gradient)"/>
+  <g fill="#FFFFFF" opacity="0.3">
+    <ellipse cx="200" cy="260" rx="140" ry="40"/>
+    <ellipse cx="360" cy="290" rx="160" ry="45"/>
+    <ellipse cx="520" cy="250" rx="120" ry="35"/>
+  </g>
+  <text x="50%" y="46%" dominant-baseline="middle" text-anchor="middle"
+        font-family="Inter, Arial, sans-serif" font-weight="700" font-size="48"
+        fill="#FFFFFF" opacity="0.9">Lakeside Digital Care</text>
+</svg>
