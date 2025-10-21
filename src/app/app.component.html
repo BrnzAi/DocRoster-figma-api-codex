@@ -1,7 +1,7 @@
 <div class="app-shell">
-  <dr-navigation-header />
+  <dr-navigation-header *ngIf="showChrome()" />
   <main>
     <router-outlet />
   </main>
-  <dr-app-footer />
+  <dr-app-footer *ngIf="showChrome()" />
 </div>

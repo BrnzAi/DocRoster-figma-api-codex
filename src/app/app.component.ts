@@ -1,6 +1,8 @@
 import { NgIf } from '@angular/common';
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, computed, inject } from '@angular/core';
+import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { filter, map, startWith } from 'rxjs/operators';
 
 import { NavigationHeaderComponent } from './shared/ui/navigation-header/navigation-header.component';
 import { AppFooterComponent } from './shared/ui/app-footer/app-footer.component';
@@ -12,4 +14,17 @@ import { AppFooterComponent } from './shared/ui/app-footer/app-footer.component'
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {}
+export class AppComponent {
+  private readonly router = inject(Router);
+
+  private readonly currentUrl = toSignal(
+    this.router.events.pipe(
+      filter((event): event is NavigationEnd => event instanceof NavigationEnd),
+      map((event) => event.urlAfterRedirects),
+      startWith(this.router.url)
+    ),
+    { initialValue: this.router.url }
+  );
+
+  readonly showChrome = computed(() => !this.currentUrl().startsWith('/auth'));
+}

@@ -1,45 +1,34 @@
-import { AsyncPipe, NgClass, NgFor, NgIf } from '@angular/common';
-import { Component, computed, inject, signal } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { AsyncPipe, NgIf } from '@angular/common';
+import { Component, computed, inject } from '@angular/core';
+import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { Router, RouterLink } from '@angular/router';
 
 import { AuthFacade } from '../../../feature/auth/data-access/auth.facade';
-
-interface NavLink {
-  label: string;
-  path: string;
-}
 
 @Component({
   selector: 'dr-navigation-header',
   standalone: true,
-  imports: [RouterLink, RouterLinkActive, NgIf, NgFor, NgClass, AsyncPipe],
+  imports: [RouterLink, ReactiveFormsModule, NgIf, AsyncPipe],
   templateUrl: './navigation-header.component.html',
   styleUrls: ['./navigation-header.component.scss']
 })
 export class NavigationHeaderComponent {
   private readonly auth = inject(AuthFacade);
-
-  readonly menuOpen = signal(false);
-  readonly links: NavLink[] = [
-    { label: 'Map', path: '/' },
-    { label: 'Search', path: '/search' },
-    { label: 'Filters', path: '/filters' },
-    { label: 'Assessments', path: '/organizations/org-northstar/assessments' },
-    { label: 'Upload', path: '/upload' }
-  ];
+  private readonly router = inject(Router);
+  private readonly fb = inject(FormBuilder);
 
   readonly isAuthenticated = computed(() => Boolean(this.auth.session()));
+  readonly profileLink = computed(() => (this.isAuthenticated() ? '/profile' : '/auth/login'));
+  readonly profileLabel = computed(() => (this.isAuthenticated() ? 'Profile' : 'Sign in'));
 
-  toggleMenu(): void {
-    this.menuOpen.update((open) => !open);
-  }
+  readonly searchForm = this.fb.group({
+    query: ['']
+  });
 
-  closeMenu(): void {
-    this.menuOpen.set(false);
-  }
-
-  signOut(): void {
-    this.auth.signOut();
-    this.closeMenu();
+  submitSearch(): void {
+    const value = (this.searchForm.get('query')?.value ?? '').trim();
+    this.router.navigate(['/search'], {
+      queryParams: value ? { q: value } : {}
+    });
   }
 }

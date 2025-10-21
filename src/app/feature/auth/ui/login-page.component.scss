@@ -1,69 +1,255 @@
 @use 'styles/variables' as *;
 
-.auth {
-  background: $color-surface-alt;
+$figma-primary: rgba(10, 23, 72, 1);
+$figma-primary-soft: rgba(10, 23, 72, 0.05);
+$figma-divider: rgba(10, 23, 72, 1);
 
-  &__container {
-    max-width: 520px;
-    margin: 0 auto;
-    display: grid;
-    gap: $spacing-lg;
-    text-align: center;
+.auth--login {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  background: #f1f1f1;
+  font-family: 'SF Pro Text', 'SF Pro Display', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  overflow: auto;
+}
+
+.auth__frame {
+  position: relative;
+  width: 1048px;
+  height: 752px;
+  border-radius: 13px;
+  overflow: hidden;
+  background: #f1f1f1;
+}
+
+.auth__frame-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.auth__card {
+  position: absolute;
+  left: 328px;
+  top: 84px;
+  width: 393px;
+  height: 585px;
+  border-radius: 32px;
+  background: rgba(255, 255, 255, 0.24);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  backdrop-filter: blur(24px);
+}
+
+.auth__card-map {
+  position: absolute;
+  left: 68px;
+  top: 44px;
+  width: 258px;
+  height: 160px;
+  background-image: url('../../../../assets/figma/login/background-card.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.auth__provider {
+  position: absolute;
+  width: 168.5px;
+  height: 46px;
+  border-radius: 24px;
+  border: none;
+  background: rgba(0, 0, 0, 1);
+  cursor: pointer;
+  padding: 0;
+
+  &--google {
+    left: 24px;
+    top: 248px;
   }
 
-  &__lead {
-    color: $color-text-muted;
+  &--apple {
+    left: 200.5px;
+    top: 248px;
+  }
+}
+
+.auth__provider-icon {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  left: 44.75px;
+  top: 11px;
+}
+
+.auth__provider-label {
+  position: absolute;
+  left: 78.75px;
+  top: 12px;
+  width: 45px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: -0.408px;
+  line-height: 22.4px;
+  color: #ffffff;
+}
+
+.auth__divider-line {
+  position: absolute;
+  height: 1px;
+  background-color: $figma-divider;
+
+  &--left {
+    left: 24px;
+    top: 328.5px;
+    width: 146.5px;
   }
 
-  &__form {
-    display: grid;
-    gap: $spacing-md;
-    text-align: left;
+  &--right {
+    left: 222.5px;
+    top: 328.5px;
+    width: 146.5px;
+  }
+}
 
-    label {
-      display: grid;
-      gap: 0.35rem;
-      font-weight: 600;
+.auth__divider-label {
+  position: absolute;
+  left: 186.5px;
+  top: 318px;
+  width: 20px;
+  height: 22px;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: -0.408px;
+  line-height: 22.4px;
+  color: $figma-divider;
+  text-align: center;
+}
 
-      input[type='email'],
-      input[type='password'],
-      input[type='text'] {
-        padding: 0.85rem 1rem;
-        border-radius: $radius-md;
-        border: 1px solid rgba($color-border, 0.9);
-        font-size: 1rem;
-      }
+.auth__form {
+  position: absolute;
+  inset: 0;
+}
+
+.auth__field {
+  position: absolute;
+  width: 345px;
+  height: 48px;
+  border-radius: 12px;
+  background: $figma-primary-soft;
+  border: none;
+
+  input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 13px 16px;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    line-height: 21.6px;
+    color: $figma-primary;
+
+    &::placeholder {
+      color: $figma-primary;
+      opacity: 1;
     }
   }
 
-  &__remember {
-    display: inline-flex !important;
-    align-items: center;
-    gap: 0.5rem;
-    font-weight: 500;
-
-    input {
-      width: 16px;
-      height: 16px;
-    }
+  &--email {
+    left: 24px;
+    top: 364px;
   }
 
-  &__links {
-    display: flex;
-    justify-content: center;
-    gap: $spacing-md;
+  &--password {
+    left: 24px;
+    top: 420px;
+  }
+}
 
-    a {
-      color: $color-primary;
-      font-weight: 600;
-    }
+.auth__field-icon {
+  position: absolute;
+  right: 16px;
+  top: 12px;
+  width: 24px;
+  height: 24px;
+}
+
+.auth__submit {
+  position: absolute;
+  left: 24px;
+  top: 476px;
+  width: 345px;
+  height: 46px;
+  border-radius: 24px;
+  border: none;
+  background: rgba(10, 23, 72, 0.8);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: -0.408px;
+  line-height: 22.4px;
+  cursor: pointer;
+
+  span {
+    position: absolute;
+    left: 130px;
+    top: 12px;
   }
 
-  &__error {
-    color: $color-danger;
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
   }
+}
 
-  &__success {
-    color: $color-success;
+.auth__error,
+.auth__success {
+  position: absolute;
+  left: 24px;
+  top: 532px;
+  width: 345px;
+  margin: 0;
+  font-size: 14px;
+  letter-spacing: -0.408px;
+  line-height: 18px;
+}
+
+.auth__error {
+  color: $color-danger;
+  font-weight: 600;
+}
+
+.auth__success {
+  color: $color-success;
+  font-weight: 600;
+}
+
+.auth__footnote {
+  position: absolute;
+  left: 69.5px;
+  top: 546px;
+  width: 254px;
+  height: 15px;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -0.408px;
+  line-height: 15.4px;
+  color: $figma-primary;
+
+  a {
+    color: inherit;
+    text-decoration: underline;
+    opacity: 0.8;
   }
 }

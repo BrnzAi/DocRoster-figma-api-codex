@@ -1,32 +1,24 @@
-<header class="navigation" [class.navigation--open]="menuOpen()">
+<header class="navigation">
   <div class="navigation__inner container">
-    <a class="navigation__brand" routerLink="/" (click)="closeMenu()">
-      <span class="navigation__logo">DocRoster</span>
-      <span class="navigation__beta">Pilot</span>
+    <a class="navigation__brand" routerLink="/">
+      <img src="assets/images/logos/docroster-mark.svg" alt="DocRoster" />
+      <span>DocRoster</span>
     </a>
 
-    <nav class="navigation__links" [class.navigation__links--visible]="menuOpen()">
-      <a
-        *ngFor="let link of links"
-        routerLink="link.path"
-        routerLinkActive="navigation__link--active"
-        class="navigation__link"
-        (click)="closeMenu()"
-        >{{ link.label }}</a
-      >
-    </nav>
+    <form class="navigation__search" [formGroup]="searchForm" (ngSubmit)="submitSearch()">
+      <span class="material-symbols-rounded" aria-hidden="true">search</span>
+      <input type="search" formControlName="query" placeholder="Search organizations..." aria-label="Search organizations" />
+    </form>
 
     <div class="navigation__actions">
-      <a class="navigation__action navigation__action--ghost" routerLink="/review/rev-aurora-1">Community stories</a>
-      <a *ngIf="!isAuthenticated(); else accountLink" class="navigation__action" routerLink="/auth/login">Sign in</a>
-      <ng-template #accountLink>
-        <button type="button" class="navigation__action" (click)="signOut()">Sign out</button>
-      </ng-template>
-      <button class="navigation__menu" type="button" (click)="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <a class="navigation__pill" routerLink="/filters">
+        <span class="material-symbols-rounded" aria-hidden="true">filter_alt</span>
+        <span>Filters</span>
+      </a>
+      <a class="navigation__pill navigation__pill--profile" [routerLink]="profileLink()">
+        <span class="material-symbols-rounded" aria-hidden="true">account_circle</span>
+        <span>{{ profileLabel() }}</span>
+      </a>
     </div>
   </div>
 </header>
