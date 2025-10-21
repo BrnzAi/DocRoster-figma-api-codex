@@ -1,0 +1,15 @@
+<svg width="220" height="220" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="northstar-gradient" cx="50%" cy="40%" r="70%">
+      <stop offset="0%" stop-color="#FDE68A"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </radialGradient>
+  </defs>
+  <rect width="220" height="220" rx="32" fill="#0F172A"/>
+  <g transform="translate(110,110)">
+    <polygon points="0,-70 14,-10 70,0 14,10 0,70 -14,10 -70,0 -14,-10"
+             fill="url(#northstar-gradient)" opacity="0.95"/>
+  </g>
+  <text x="50%" y="83%" text-anchor="middle" font-family="Inter, Arial, sans-serif"
+        font-size="22" font-weight="600" fill="#E2E8F0">Northstar Clinics</text>
+</svg>

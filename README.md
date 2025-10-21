@@ -5,7 +5,7 @@ This repository contains the DocRoster Angular application and the supporting Fi
 ## Project layout
 
 - `src/` – standalone Angular 17 application source organised into feature/data-access/shared folders.
-- `figma-tools/` – Node scripts for working with the Figma API (`figma-fetch.js`, mocks and `.env` secrets). This folder keeps those dependencies separate from the Angular workspace.
+- `figma-tools/` – Node scripts for working with the Figma API (`figma-fetch.js`, `extract-style-summary.js`, mocks and `.env` secrets). This folder keeps those dependencies separate from the Angular workspace.
 - `docs/` – built Angular artefacts ready to serve from GitHub Pages (main branch → docs folder).
 
 ## Prerequisites
@@ -48,6 +48,8 @@ The `figma-tools` folder keeps the existing Node scripts isolated from the Angul
 cd figma-tools
 npm install
 node figma-fetch.js
+# Optional: generate a palette and typography snapshot for quick reference
+node extract-style-summary.js
 ```
 
 Make sure the `.env` file stays in `figma-tools/` (see `.gitignore`) so secrets do not leak into the Angular workspace.

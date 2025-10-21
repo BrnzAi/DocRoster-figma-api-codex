@@ -1,0 +1,87 @@
+{
+  "extractedAt": "2025-10-21T14:53:01.942Z",
+  "colors": [
+    {
+      "value": "#0A1748",
+      "count": 817
+    },
+    {
+      "value": "#000000",
+      "count": 92
+    },
+    {
+      "value": "#FFFFFF",
+      "count": 80
+    },
+    {
+      "value": "#FF3D96",
+      "count": 36
+    },
+    {
+      "value": "#3D3D3D",
+      "count": 24
+    },
+    {
+      "value": "#21B128",
+      "count": 19
+    },
+    {
+      "value": "#3D7AFF",
+      "count": 18
+    },
+    {
+      "value": "#9121B1",
+      "count": 15
+    },
+    {
+      "value": "#FF3D00",
+      "count": 15
+    },
+    {
+      "value": "#FF573D",
+      "count": 12
+    }
+  ],
+  "typography": [
+    {
+      "value": "SF Pro Text / 400 / 14",
+      "count": 153
+    },
+    {
+      "value": "SF UI Display / 700 / 18",
+      "count": 112
+    },
+    {
+      "value": "SF Pro Text / 600 / 14",
+      "count": 71
+    },
+    {
+      "value": "SF Pro Text / 700 / 18",
+      "count": 37
+    },
+    {
+      "value": "SF Pro Text / 600 / 18",
+      "count": 31
+    },
+    {
+      "value": "SF Pro Display / 700 / 32",
+      "count": 14
+    },
+    {
+      "value": "SF UI Display / 500 / 16",
+      "count": 14
+    },
+    {
+      "value": "SF Pro Display / 600 / 14",
+      "count": 9
+    },
+    {
+      "value": "SF UI Display / 400 / 18",
+      "count": 7
+    },
+    {
+      "value": "SF UI Display / 500 / 9",
+      "count": 6
+    }
+  ]
+}

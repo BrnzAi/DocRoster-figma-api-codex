@@ -35,7 +35,7 @@ body {
 body {
   margin: 0;
   font-family: $font-family-base;
-  background: $color-background;
+  background: linear-gradient(180deg, $color-background 0%, #ffffff 55%, $color-surface-alt 100%);
   color: $color-text;
   -webkit-font-smoothing: antialiased;
 }
@@ -87,6 +87,7 @@ main {
   background: $color-surface;
   border-radius: $radius-lg;
   box-shadow: $shadow-soft;
+  border: 1px solid rgba($color-border, 0.6);
 }
 
 .badge {
