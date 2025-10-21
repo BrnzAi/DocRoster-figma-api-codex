@@ -19,7 +19,6 @@
               "zone.js"
             ],
             "tsConfig": "tsconfig.app.json",
-            "baseHref": "./",
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -36,6 +35,7 @@
           },
           "configurations": {
             "production": {
+              "baseHref": "./",
               "budgets": [
                 {
                   "type": "initial",
@@ -63,14 +63,14 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "doc-roster:build"
+            "buildTarget": "doc-roster:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "doc-roster:build:production"
+              "buildTarget": "doc-roster:build:production"
             },
             "development": {
-              "browserTarget": "doc-roster:build:development"
+              "buildTarget": "doc-roster:build:development"
             }
           },
           "defaultConfiguration": "development"
