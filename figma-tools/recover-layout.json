@@ -1,0 +1,266 @@
+[
+  {
+    "id": "1850:1842",
+    "name": "recover",
+    "type": "FRAME",
+    "rect": {
+      "x": 0,
+      "y": 0,
+      "width": 393,
+      "height": 374
+    },
+    "fills": [
+      {
+        "opacity": 0.23999999463558197,
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 1
+        }
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1850:1843",
+    "name": "Frame 1000002909",
+    "type": "FRAME",
+    "rect": {
+      "x": 0,
+      "y": 248,
+      "width": 393,
+      "height": 102
+    },
+    "fills": [],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1850:1861",
+    "name": "Frame 38",
+    "type": "FRAME",
+    "rect": {
+      "x": 24,
+      "y": 248,
+      "width": 345,
+      "height": 102
+    },
+    "fills": [],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1850:1862",
+    "name": "Frame 2",
+    "type": "FRAME",
+    "rect": {
+      "x": 24,
+      "y": 248,
+      "width": 345,
+      "height": 48
+    },
+    "fills": [
+      {
+        "opacity": 0.05000000074505806,
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1850:1863",
+    "name": "Registered email",
+    "type": "TEXT",
+    "rect": {
+      "x": 40,
+      "y": 261,
+      "width": 141,
+      "height": 22
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      }
+    ],
+    "style": {
+      "fontFamily": "SF Pro Text",
+      "fontPostScriptName": "SFProText-Semibold",
+      "fontStyle": "Semibold",
+      "fontWeight": 600,
+      "paragraphSpacing": 8,
+      "textAutoResize": "WIDTH_AND_HEIGHT",
+      "fontSize": 18,
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "TOP",
+      "letterSpacing": -0.5,
+      "lineHeightPx": 21.600000381469727,
+      "lineHeightPercent": 100.55647277832031,
+      "lineHeightPercentFontSize": 120.00000762939453,
+      "lineHeightUnit": "FONT_SIZE_%"
+    },
+    "text": "Registered email"
+  },
+  {
+    "id": "1850:2215",
+    "name": "btn",
+    "type": "INSTANCE",
+    "rect": {
+      "x": 24,
+      "y": 304,
+      "width": 345,
+      "height": 46
+    },
+    "fills": [
+      {
+        "opacity": 0.800000011920929,
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "I1850:2215;1850:2202",
+    "name": "Sign up to MediMap",
+    "type": "TEXT",
+    "rect": {
+      "x": 136.5,
+      "y": 316,
+      "width": 120,
+      "height": 22
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 1
+        }
+      }
+    ],
+    "style": {
+      "fontFamily": "SF Pro Text",
+      "fontPostScriptName": "SFProText-Semibold",
+      "fontStyle": "Semibold",
+      "fontWeight": 600,
+      "textAutoResize": "WIDTH_AND_HEIGHT",
+      "fontSize": 14,
+      "textAlignHorizontal": "CENTER",
+      "textAlignVertical": "CENTER",
+      "letterSpacing": -0.40799999237060547,
+      "lineHeightPx": 22.399999618530273,
+      "lineHeightPercent": 134.07528686523438,
+      "lineHeightPercentFontSize": 160,
+      "lineHeightUnit": "FONT_SIZE_%"
+    },
+    "text": "Recover password"
+  },
+  {
+    "id": "2068:52",
+    "name": "image 4",
+    "type": "RECTANGLE",
+    "rect": {
+      "x": 68,
+      "y": 44,
+      "width": 258,
+      "height": 160
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "visible": false,
+        "type": "IMAGE",
+        "scaleMode": "FILL",
+        "imageRef": "5ec873218fc342052ff708e0c59b1dbda13ee2d0"
+      },
+      {
+        "blendMode": "NORMAL",
+        "type": "IMAGE",
+        "scaleMode": "FILL",
+        "imageRef": "34338d4282aea2a068f2d8b85d955906d9ec5a58"
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1850:2321",
+    "name": "close",
+    "type": "INSTANCE",
+    "rect": {
+      "x": 333,
+      "y": 24,
+      "width": 36,
+      "height": 36
+    },
+    "fills": [
+      {
+        "opacity": 0.47999998927116394,
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 1
+        }
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "I1850:2321;1850:2307",
+    "name": "SF Symbol / xmark",
+    "type": "VECTOR",
+    "rect": {
+      "x": 344.78,
+      "y": 35.78,
+      "width": 12.44,
+      "height": 12.44
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      }
+    ],
+    "style": null,
+    "text": null
+  }
+]

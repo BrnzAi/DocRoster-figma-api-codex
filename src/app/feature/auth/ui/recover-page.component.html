@@ -1,22 +1,37 @@
-<section class="auth section">
-  <div class="container auth__container">
-    <h1>Recover your access</h1>
-    <p class="auth__lead">Enter the email you use for DocRoster to receive recovery instructions.</p>
+<section class="auth auth--recover">
+  <div class="auth__frame">
+    <img src="assets/figma/login/background-large.png" alt="" class="auth__frame-bg" aria-hidden="true" />
 
-    <form [formGroup]="form" (ngSubmit)="submit()" class="auth__form">
-      <label>
-        Email address
-        <input type="email" formControlName="email" placeholder="you@example.com" />
-      </label>
-      <button class="button" type="submit" [disabled]="status() === 'pending'">
-        {{ status() === 'pending' ? 'Sending…' : 'Send recovery link' }}
+    <div class="auth__card">
+      <div class="auth__card-map" aria-hidden="true"></div>
+
+      <button type="button" class="auth__close" aria-label="Back to sign in" routerLink="/auth/login">
+        <img src="assets/figma/recover/1850_2321.png" alt="" />
       </button>
-      <p class="auth__success" *ngIf="status() === 'success'">{{ message() }}</p>
-      <p class="auth__error" *ngIf="status() === 'error'">{{ message() }}</p>
-    </form>
 
-    <div class="auth__links">
-      <a routerLink="/auth/login">Return to sign in</a>
+      <h1 class="auth__title">Recover access</h1>
+      <p class="auth__subtitle">Enter the email associated with your DocRoster account.</p>
+
+      <form [formGroup]="form" (ngSubmit)="submit()" class="auth__form" novalidate>
+        <p class="auth__form-error" *ngIf="submitted() && form.invalid">Please enter a valid email.</p>
+
+        <label class="auth__field" [class.auth__field--invalid]="isInvalid()">
+          <input
+            type="email"
+            formControlName="email"
+            placeholder="Registered email"
+            autocomplete="email"
+            [attr.aria-invalid]="isInvalid()"
+          />
+        </label>
+
+        <button class="auth__submit" type="submit" [disabled]="status() === 'pending'">
+          <span>{{ status() === 'pending' ? 'Sending…' : 'Recover password' }}</span>
+        </button>
+
+        <p class="auth__form-status auth__form-status--success" *ngIf="status() === 'success'">{{ message() }}</p>
+        <p class="auth__form-status auth__form-status--error" *ngIf="status() === 'error'">{{ message() }}</p>
+      </form>
     </div>
   </div>
 </section>

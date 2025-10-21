@@ -20,17 +20,21 @@ export class LoginPageComponent {
 
   readonly status = signal<'idle' | 'pending' | 'success' | 'error'>('idle');
   readonly errorMessage = computed(() => this.auth.lastError());
+  private readonly submitted = signal(false);
 
   readonly form = this.fb.nonNullable.group({
     email: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required, Validators.minLength(6)]],
-    remember: [true]
+    remember: [false]
   });
 
   submit(): void {
     if (this.form.invalid || this.status() === 'pending') {
+      this.submitted.set(true);
+      this.form.markAllAsTouched();
       return;
     }
+    this.submitted.set(true);
     this.status.set('pending');
     this.auth.login(this.form.getRawValue()).subscribe({
       next: () => {
@@ -41,5 +45,23 @@ export class LoginPageComponent {
         this.status.set('error');
       }
     });
+  }
+
+  isEmailInvalid(): boolean {
+    const control = this.form.controls.email;
+    return control.invalid && (control.dirty || control.touched || this.submitted());
+  }
+
+  isPasswordInvalid(): boolean {
+    const control = this.form.controls.password;
+    return control.invalid && (control.dirty || control.touched || this.submitted());
+  }
+
+  showValidationErrors(): boolean {
+    return this.submitted() && this.form.invalid;
+  }
+
+  openRecovery(): void {
+    this.router.navigate(['/auth/recover']);
   }
 }

@@ -3,7 +3,6 @@ import { Observable, throwError } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 
 import { DocRosterApiService } from '../../../data-access/doc-roster-api.service';
-import { MOCK_PROFILE } from '../../../shared/data-access/mocks/doc-roster.mocks';
 import { MockHttpClientService } from '../../../shared/data-access/mock-http-client.service';
 import { AuthSession, LoginRequest, RecoveryRequest, RegisterRequest, VerificationRequest } from '../../../shared/data-access/models/auth.model';
 import { UserProfile } from '../../../shared/data-access/models/user-profile.model';
@@ -21,30 +20,28 @@ export class AuthFacade {
 
   login(request: LoginRequest): Observable<AuthSession> {
     this.errorSignal.set(null);
-    return this.http.mutate(() => {
-      const isValidUser = request.email.toLowerCase() === MOCK_PROFILE.email.toLowerCase() && request.password.length >= 6;
-      if (!isValidUser) {
-        throw new Error('The email or password is incorrect.');
-      }
-      const session: AuthSession = {
-        token: crypto.randomUUID(),
-        expiresAt: new Date(Date.now() + 1000 * 60 * 60 * 8).toISOString(),
-        userId: MOCK_PROFILE.id
-      };
-      this.sessionSignal.set(session);
-      return session;
-    }).pipe(
-      catchError((error: Error) => {
-        this.errorSignal.set(error.message);
-        return throwError(() => error);
+    return this.http
+      .mutate(() => {
+        const session: AuthSession = {
+          token: crypto.randomUUID(),
+          expiresAt: new Date(Date.now() + 1000 * 60 * 60 * 8).toISOString(),
+          userId: request.email.toLowerCase()
+        };
+        this.sessionSignal.set(session);
+        return session;
       })
-    );
+      .pipe(
+        catchError((error: Error) => {
+          this.errorSignal.set(error.message);
+          return throwError(() => error);
+        })
+      );
   }
 
   register(request: RegisterRequest): Observable<AuthSession> {
     this.errorSignal.set(null);
-    if (request.password !== request.confirmPassword) {
-      return throwError(() => new Error('Passwords do not match.'));
+    if (!request.agreeToTerms) {
+      return throwError(() => new Error('You must agree to the terms to continue.'));
     }
     return this.http.mutate(() => {
       const session: AuthSession = {

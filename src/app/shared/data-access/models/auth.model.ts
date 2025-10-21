@@ -7,9 +7,8 @@ export interface LoginRequest {
 export interface RegisterRequest {
   fullName: string;
   email: string;
-  password: string;
-  confirmPassword: string;
-  organization?: string;
+  phone?: string;
+  agreeToTerms: boolean;
 }
 
 export interface RecoveryRequest {

@@ -1,57 +1,346 @@
 @use 'styles/variables' as *;
 
-.auth {
-  background: $color-surface-alt;
+$figma-primary: rgba(10, 23, 72, 1);
+$figma-primary-soft: rgba(10, 23, 72, 0.05);
 
-  &__container {
-    max-width: 520px;
-    margin: 0 auto;
-    display: grid;
-    gap: $spacing-lg;
-    text-align: center;
+.auth--register {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  background: #f1f1f1;
+  font-family: 'SF Pro Text', 'SF Pro Display', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  overflow: auto;
+}
+
+.auth__frame {
+  position: relative;
+  width: 1048px;
+  height: 752px;
+  border-radius: 13px;
+  overflow: hidden;
+  background: #f1f1f1;
+}
+
+.auth__frame-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.auth__card {
+  position: absolute;
+  left: 328px;
+  top: 84px;
+  width: 393px;
+  height: 718px;
+  border-radius: 32px;
+  background: rgba(255, 255, 255, 0.24);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  backdrop-filter: blur(24px);
+}
+
+.auth__avatar {
+  position: absolute;
+  left: 119px;
+  top: 44px;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 24px;
+}
+
+.auth__avatar-action {
+  position: absolute;
+  left: 227px;
+  top: 144px;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+
+  img {
+    width: 100%;
+    height: 100%;
   }
 
-  &__lead {
-    color: $color-text-muted;
+  &:focus-visible {
+    outline: 2px solid rgba($color-primary, 0.4);
+    border-radius: 50%;
+  }
+}
+
+.auth__close {
+  position: absolute;
+  right: 24px;
+  top: 24px;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 36px;
+    height: 36px;
   }
 
-  &__form {
-    display: grid;
-    gap: $spacing-md;
-    text-align: left;
+  &:focus-visible {
+    outline: 2px solid rgba($color-primary, 0.4);
+    border-radius: 50%;
+  }
+}
 
-    label {
-      display: grid;
-      gap: 0.35rem;
-      font-weight: 600;
+.auth__title {
+  position: absolute;
+  left: 24px;
+  top: 218px;
+  margin: 0;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 0.374px;
+  color: $figma-primary;
+}
 
-      input[type='email'],
-      input[type='password'],
-      input[type='text'] {
-        padding: 0.85rem 1rem;
-        border-radius: $radius-md;
-        border: 1px solid rgba($color-border, 0.9);
-        font-size: 1rem;
-      }
+.auth__subtitle {
+  position: absolute;
+  left: 24px;
+  top: 264px;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+  color: rgba($figma-primary, 0.8);
+}
+
+.auth__provider {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 168.5px;
+  height: 46px;
+  border-radius: 24px;
+  border: none;
+  background: rgba(0, 0, 0, 1);
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: -0.408px;
+  cursor: pointer;
+
+  &--google {
+    left: 24px;
+    top: 310px;
+  }
+
+  &--apple {
+    left: 200.5px;
+    top: 310px;
+  }
+
+  &:focus-visible {
+    outline: 2px solid rgba($color-primary, 0.4);
+    outline-offset: 3px;
+  }
+}
+
+.auth__provider-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.auth__divider-line {
+  position: absolute;
+  height: 1px;
+  background: $figma-primary;
+  opacity: 0.7;
+
+  &--left {
+    left: 24px;
+    top: 390.5px;
+    width: 146.5px;
+  }
+
+  &--right {
+    left: 222.5px;
+    top: 390.5px;
+    width: 146.5px;
+  }
+}
+
+.auth__divider-label {
+  position: absolute;
+  left: 186.5px;
+  top: 380px;
+  width: 20px;
+  height: 22px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: -0.408px;
+  color: $figma-primary;
+}
+
+.auth__form {
+  position: absolute;
+  left: 24px;
+  top: 432px;
+  width: 345px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.auth__form-error {
+  margin: -12px 0 0;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  color: $color-danger;
+}
+
+.auth__field {
+  position: relative;
+  width: 100%;
+  height: 48px;
+  border-radius: 12px;
+  background: $figma-primary-soft;
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+
+  input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 13px 16px;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    color: $figma-primary;
+
+    &::placeholder {
+      color: rgba($figma-primary, 0.6);
     }
   }
 
-  &__links {
-    display: flex;
+  &--invalid {
+    border-color: rgba($color-danger, 0.5);
+    box-shadow: 0 0 0 2px rgba($color-danger, 0.1);
+  }
+}
+
+.auth__terms {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 16px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -0.408px;
+  color: $figma-primary;
+
+  input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.auth__terms-box {
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 24px;
+    height: 24px;
+    transition: opacity 160ms ease;
+  }
+}
+
+.auth__terms-label {
+  display: inline-flex;
+  align-items: center;
+  line-height: 15.4px;
+}
+
+.auth__terms input:not(:checked) + .auth__terms-box img {
+  opacity: 0.4;
+}
+
+.auth__submit {
+  margin-top: 12px;
+  width: 100%;
+  height: 46px;
+  border-radius: 24px;
+  border: none;
+  background: rgba(10, 23, 72, 0.8);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: -0.408px;
+  cursor: pointer;
+
+  span {
+    display: inline-flex;
+    align-items: center;
     justify-content: center;
-    gap: $spacing-md;
-
-    a {
-      color: $color-primary;
-      font-weight: 600;
-    }
+    width: 100%;
   }
 
-  &__error {
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.auth__form-status {
+  margin: 4px 0 0;
+  font-size: 12px;
+  letter-spacing: -0.2px;
+  font-weight: 600;
+
+  &--error {
     color: $color-danger;
   }
 
-  &__success {
+  &--success {
     color: $color-success;
+  }
+}
+
+@media (max-width: 1160px) {
+  .auth__frame {
+    transform: scale(0.85);
+  }
+}
+
+@media (max-width: 960px) {
+  .auth__frame {
+    transform: scale(0.7);
+  }
+}
+
+@media (max-width: 720px) {
+  .auth__frame {
+    transform: scale(0.6);
   }
 }

@@ -18,6 +18,7 @@ export class RecoverPageComponent {
   private readonly auth = inject(AuthFacade);
 
   readonly status = signal<'idle' | 'pending' | 'success' | 'error'>('idle');
+  readonly submitted = signal(false);
   readonly form = this.fb.nonNullable.group({
     email: ['', [Validators.required, Validators.email]]
   });
@@ -25,6 +26,7 @@ export class RecoverPageComponent {
 
   submit(): void {
     if (this.form.invalid || this.status() === 'pending') {
+      this.submitted.set(true);
       this.form.markAllAsTouched();
       return;
     }
@@ -40,5 +42,10 @@ export class RecoverPageComponent {
         this.message.set(error.message);
       }
     });
+  }
+
+  isInvalid(): boolean {
+    const control = this.form.controls.email;
+    return control.invalid && (control.dirty || control.touched || this.submitted());
   }
 }

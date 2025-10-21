@@ -1,55 +1,206 @@
 @use 'styles/variables' as *;
 
-.auth {
-  background: $color-surface-alt;
+$figma-primary: rgba(10, 23, 72, 1);
+$figma-primary-soft: rgba(10, 23, 72, 0.05);
 
-  &__container {
-    max-width: 480px;
-    margin: 0 auto;
-    display: grid;
-    gap: $spacing-lg;
-    text-align: center;
+.auth--recover {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  background: #f1f1f1;
+  font-family: 'SF Pro Text', 'SF Pro Display', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  overflow: auto;
+}
+
+.auth__frame {
+  position: relative;
+  width: 1048px;
+  height: 752px;
+  border-radius: 13px;
+  overflow: hidden;
+  background: #f1f1f1;
+}
+
+.auth__frame-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.auth__card {
+  position: absolute;
+  left: 328px;
+  top: 84px;
+  width: 393px;
+  height: 374px;
+  border-radius: 32px;
+  background: rgba(255, 255, 255, 0.24);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  backdrop-filter: blur(24px);
+}
+
+.auth__card-map {
+  position: absolute;
+  left: 68px;
+  top: 44px;
+  width: 258px;
+  height: 160px;
+  background: url('../../../../assets/figma/login/background-card.png') center/cover no-repeat;
+}
+
+.auth__close {
+  position: absolute;
+  right: 24px;
+  top: 24px;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+
+  img {
+    width: 36px;
+    height: 36px;
   }
 
-  &__lead {
-    color: $color-text-muted;
+  &:focus-visible {
+    outline: 2px solid rgba($color-primary, 0.4);
+    border-radius: 50%;
   }
+}
 
-  &__form {
-    display: grid;
-    gap: $spacing-md;
-    text-align: left;
+.auth__title {
+  position: absolute;
+  left: 24px;
+  top: 218px;
+  margin: 0;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 0.374px;
+  color: $figma-primary;
+}
 
-    label {
-      display: grid;
-      gap: 0.35rem;
-      font-weight: 600;
+.auth__subtitle {
+  position: absolute;
+  left: 24px;
+  top: 264px;
+  width: 345px;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+  color: rgba($figma-primary, 0.8);
+}
 
-      input {
-        padding: 0.85rem 1rem;
-        border-radius: $radius-md;
-        border: 1px solid rgba($color-border, 0.9);
-        font-size: 1rem;
-      }
+.auth__form {
+  position: absolute;
+  left: 24px;
+  top: 312px;
+  width: 345px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.auth__form-error {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  color: $color-danger;
+}
+
+.auth__field {
+  position: relative;
+  width: 100%;
+  height: 48px;
+  border-radius: 12px;
+  background: $figma-primary-soft;
+  border: 1px solid transparent;
+
+  input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 13px 16px;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    color: $figma-primary;
+
+    &::placeholder {
+      color: rgba($figma-primary, 0.6);
     }
   }
 
-  &__links {
-    display: flex;
+  &--invalid {
+    border-color: rgba($color-danger, 0.5);
+    box-shadow: 0 0 0 2px rgba($color-danger, 0.12);
+  }
+}
+
+.auth__submit {
+  width: 100%;
+  height: 46px;
+  border-radius: 24px;
+  border: none;
+  background: rgba(10, 23, 72, 0.8);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: -0.408px;
+  cursor: pointer;
+
+  span {
+    display: inline-flex;
+    align-items: center;
     justify-content: center;
-    gap: $spacing-md;
-
-    a {
-      color: $color-primary;
-      font-weight: 600;
-    }
+    width: 100%;
   }
 
-  &__success {
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.auth__form-status {
+  margin: 4px 0 0;
+  font-size: 12px;
+  letter-spacing: -0.2px;
+  font-weight: 600;
+
+  &--success {
     color: $color-success;
   }
 
-  &__error {
+  &--error {
     color: $color-danger;
+  }
+}
+
+@media (max-width: 1160px) {
+  .auth__frame {
+    transform: scale(0.85);
+  }
+}
+
+@media (max-width: 960px) {
+  .auth__frame {
+    transform: scale(0.7);
+  }
+}
+
+@media (max-width: 720px) {
+  .auth__frame {
+    transform: scale(0.6);
   }
 }

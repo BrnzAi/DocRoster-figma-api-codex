@@ -1,0 +1,3211 @@
+[
+  {
+    "id": "1814:481",
+    "name": "profile",
+    "type": "FRAME",
+    "rect": {
+      "x": 0,
+      "y": 0,
+      "width": 393,
+      "height": 808
+    },
+    "fills": [
+      {
+        "opacity": 0.23999999463558197,
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 1
+        }
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:482",
+    "name": "top story",
+    "type": "GROUP",
+    "rect": {
+      "x": -36,
+      "y": 0,
+      "width": 465,
+      "height": 444
+    },
+    "fills": [],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:483",
+    "name": "image",
+    "type": "RECTANGLE",
+    "rect": {
+      "x": -36,
+      "y": 0,
+      "width": 465,
+      "height": 420
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "type": "IMAGE",
+        "scaleMode": "FILL",
+        "imageRef": "a6a614b0bf606ecd5f8475847fa9cb621db06099"
+      },
+      {
+        "blendMode": "NORMAL",
+        "type": "GRADIENT_LINEAR",
+        "gradientHandlePositions": [
+          {
+            "x": 0.5010753067033941,
+            "y": 0.50126581976983
+          },
+          {
+            "x": 0.5000000272162823,
+            "y": 0.9999999796439626
+          },
+          {
+            "x": 0.25170822676632776,
+            "y": 0.5005207394187979
+          }
+        ],
+        "gradientStops": [
+          {
+            "color": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 0
+            },
+            "position": 0
+          },
+          {
+            "color": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 1
+            },
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:484",
+    "name": "Frame 1000002833",
+    "type": "FRAME",
+    "rect": {
+      "x": 0,
+      "y": 300,
+      "width": 393,
+      "height": 144
+    },
+    "fills": [],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:485",
+    "name": "Frame 24",
+    "type": "FRAME",
+    "rect": {
+      "x": 24,
+      "y": 324,
+      "width": 345,
+      "height": 96
+    },
+    "fills": [],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:486",
+    "name": "Alexander Zhimalov",
+    "type": "TEXT",
+    "rect": {
+      "x": 24,
+      "y": 324,
+      "width": 345,
+      "height": 38
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      }
+    ],
+    "style": {
+      "fontFamily": "SF Pro Display",
+      "fontPostScriptName": "SFProDisplay-Bold",
+      "fontStyle": "Bold",
+      "fontWeight": 700,
+      "textAutoResize": "HEIGHT",
+      "fontSize": 32,
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "TOP",
+      "letterSpacing": 0.37400001287460327,
+      "lineHeightPx": 38.400001525878906,
+      "lineHeightPercent": 100.55647277832031,
+      "lineHeightPercentFontSize": 120.00000762939453,
+      "lineHeightUnit": "FONT_SIZE_%"
+    },
+    "text": "Alexander Zhimalov"
+  },
+  {
+    "id": "1814:487",
+    "name": "Frame 1000002895",
+    "type": "FRAME",
+    "rect": {
+      "x": 24,
+      "y": 374,
+      "width": 345,
+      "height": 46
+    },
+    "fills": [],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:488",
+    "name": "Open Button",
+    "type": "FRAME",
+    "rect": {
+      "x": 24,
+      "y": 374,
+      "width": 174,
+      "height": 46
+    },
+    "fills": [],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:489",
+    "name": "ic:outline-email",
+    "type": "FRAME",
+    "rect": {
+      "x": 42,
+      "y": 385,
+      "width": 24,
+      "height": 24
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "visible": false,
+        "type": "SOLID",
+        "color": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 1
+        }
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:490",
+    "name": "Vector",
+    "type": "VECTOR",
+    "rect": {
+      "x": 44,
+      "y": 389,
+      "width": 20,
+      "height": 16
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:491",
+    "name": "alex@vibos.org",
+    "type": "TEXT",
+    "rect": {
+      "x": 74,
+      "y": 386,
+      "width": 100,
+      "height": 22
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      }
+    ],
+    "style": {
+      "fontFamily": "SF Pro Text",
+      "fontPostScriptName": "SFProText-Semibold",
+      "fontStyle": "Semibold",
+      "fontWeight": 600,
+      "textAutoResize": "WIDTH_AND_HEIGHT",
+      "fontSize": 14,
+      "textAlignHorizontal": "CENTER",
+      "textAlignVertical": "CENTER",
+      "letterSpacing": -0.40799999237060547,
+      "lineHeightPx": 22.399999618530273,
+      "lineHeightPercent": 134.07528686523438,
+      "lineHeightPercentFontSize": 160,
+      "lineHeightUnit": "FONT_SIZE_%"
+    },
+    "text": "alex@vibos.org"
+  },
+  {
+    "id": "1814:492",
+    "name": "Open Button",
+    "type": "FRAME",
+    "rect": {
+      "x": 210,
+      "y": 374,
+      "width": 205,
+      "height": 46
+    },
+    "fills": [],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:493",
+    "name": "ic:outline-phone",
+    "type": "FRAME",
+    "rect": {
+      "x": 228,
+      "y": 385,
+      "width": 24,
+      "height": 24
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "visible": false,
+        "type": "SOLID",
+        "color": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 1
+        }
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:494",
+    "name": "Vector",
+    "type": "VECTOR",
+    "rect": {
+      "x": 231,
+      "y": 388,
+      "width": 18,
+      "height": 18
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:495",
+    "name": "+380 123 456 7890",
+    "type": "TEXT",
+    "rect": {
+      "x": 260,
+      "y": 386,
+      "width": 131,
+      "height": 22
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      }
+    ],
+    "style": {
+      "fontFamily": "SF Pro Text",
+      "fontPostScriptName": "SFProText-Semibold",
+      "fontStyle": "Semibold",
+      "fontWeight": 600,
+      "textAutoResize": "WIDTH_AND_HEIGHT",
+      "fontSize": 14,
+      "textAlignHorizontal": "CENTER",
+      "textAlignVertical": "CENTER",
+      "letterSpacing": -0.40799999237060547,
+      "lineHeightPx": 22.399999618530273,
+      "lineHeightPercent": 134.07528686523438,
+      "lineHeightPercentFontSize": 160,
+      "lineHeightUnit": "FONT_SIZE_%"
+    },
+    "text": "+380 123 456 7890"
+  },
+  {
+    "id": "1814:496",
+    "name": "Frame 1000002923",
+    "type": "FRAME",
+    "rect": {
+      "x": 0,
+      "y": 603,
+      "width": 393,
+      "height": 372
+    },
+    "fills": [],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:497",
+    "name": "Frame 1000002882",
+    "type": "FRAME",
+    "rect": {
+      "x": 0,
+      "y": 603,
+      "width": 393,
+      "height": 372
+    },
+    "fills": [],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:498",
+    "name": "Frame 1000002870",
+    "type": "FRAME",
+    "rect": {
+      "x": 24,
+      "y": 627,
+      "width": 345,
+      "height": 36
+    },
+    "fills": [],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:499",
+    "name": "your specialists",
+    "type": "TEXT",
+    "rect": {
+      "x": 24,
+      "y": 634,
+      "width": 172,
+      "height": 22
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      }
+    ],
+    "style": {
+      "fontFamily": "SF Pro Text",
+      "fontPostScriptName": "SFProText-Bold",
+      "fontStyle": "Bold",
+      "fontWeight": 700,
+      "textCase": "UPPER",
+      "textAutoResize": "WIDTH_AND_HEIGHT",
+      "fontSize": 18,
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "CENTER",
+      "letterSpacing": -0.40799999237060547,
+      "lineHeightPx": 22,
+      "lineHeightPercent": 102.41862487792969,
+      "lineHeightPercentFontSize": 122.22222137451172,
+      "lineHeightUnit": "PIXELS"
+    },
+    "text": "your specialists"
+  },
+  {
+    "id": "1814:500",
+    "name": "Frame 1000002839",
+    "type": "FRAME",
+    "rect": {
+      "x": 288,
+      "y": 627,
+      "width": 81,
+      "height": 36
+    },
+    "fills": [
+      {
+        "opacity": 0.07999999821186066,
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      },
+      {
+        "opacity": 0.800000011920929,
+        "blendMode": "NORMAL",
+        "visible": false,
+        "type": "GRADIENT_LINEAR",
+        "gradientHandlePositions": [
+          {
+            "x": 0.9999999706115972,
+            "y": 0.013888866123226151
+          },
+          {
+            "x": -2.9388401046048784e-08,
+            "y": 1.0138889257278727
+          },
+          {
+            "x": 0.4999999408092739,
+            "y": -0.48611113387677296
+          }
+        ],
+        "gradientStops": [
+          {
+            "color": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 1
+            },
+            "position": 0
+          },
+          {
+            "color": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 0
+            },
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:501",
+    "name": "Add",
+    "type": "TEXT",
+    "rect": {
+      "x": 300,
+      "y": 637,
+      "width": 29,
+      "height": 16
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      }
+    ],
+    "style": {
+      "fontFamily": "SF UI Display",
+      "fontPostScriptName": "SFUIDisplay-Medium",
+      "fontStyle": "Medium",
+      "fontWeight": 500,
+      "textAutoResize": "WIDTH_AND_HEIGHT",
+      "fontSize": 16,
+      "textAlignHorizontal": "CENTER",
+      "textAlignVertical": "CENTER",
+      "letterSpacing": -0.40799999237060547,
+      "lineHeightPx": 16,
+      "lineHeightPercent": 83.79705047607422,
+      "lineHeightPercentFontSize": 100,
+      "lineHeightUnit": "FONT_SIZE_%"
+    },
+    "text": "Add"
+  },
+  {
+    "id": "1814:502",
+    "name": "ic:outline-add",
+    "type": "FRAME",
+    "rect": {
+      "x": 337,
+      "y": 635,
+      "width": 20,
+      "height": 20
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "visible": false,
+        "type": "SOLID",
+        "color": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 1
+        }
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:503",
+    "name": "Vector",
+    "type": "VECTOR",
+    "rect": {
+      "x": 341.17,
+      "y": 639.17,
+      "width": 11.67,
+      "height": 11.67
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:504",
+    "name": "Frame 1000002864",
+    "type": "FRAME",
+    "rect": {
+      "x": 24,
+      "y": 679,
+      "width": 345,
+      "height": 56
+    },
+    "fills": [],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:505",
+    "name": "Group 144",
+    "type": "GROUP",
+    "rect": {
+      "x": 24,
+      "y": 679,
+      "width": 56,
+      "height": 56
+    },
+    "fills": [],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:506",
+    "name": "Ellipse 5",
+    "type": "ELLIPSE",
+    "rect": {
+      "x": 24,
+      "y": 679,
+      "width": 56,
+      "height": 56
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "type": "IMAGE",
+        "scaleMode": "FILL",
+        "imageRef": "417631f4fda0fe82b5584880b9c90ab70c0a4921"
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:507",
+    "name": "Frame 1000002874",
+    "type": "FRAME",
+    "rect": {
+      "x": 96,
+      "y": 687.5,
+      "width": 177,
+      "height": 39
+    },
+    "fills": [],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:508",
+    "name": "Dr. Emily Carter",
+    "type": "TEXT",
+    "rect": {
+      "x": 96,
+      "y": 687.5,
+      "width": 177,
+      "height": 20
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      }
+    ],
+    "style": {
+      "fontFamily": "SF UI Display",
+      "fontPostScriptName": "SFUIDisplay-Bold",
+      "fontStyle": "Bold",
+      "fontWeight": 700,
+      "textAutoResize": "HEIGHT",
+      "fontSize": 18,
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "TOP",
+      "letterSpacing": -0.5,
+      "lineHeightPx": 19.80000114440918,
+      "lineHeightPercent": 92.1767578125,
+      "lineHeightPercentFontSize": 110,
+      "lineHeightUnit": "FONT_SIZE_%"
+    },
+    "text": "Dr. Emily Carter"
+  },
+  {
+    "id": "1814:509",
+    "name": "Community Helpers Clinic",
+    "type": "TEXT",
+    "rect": {
+      "x": 96,
+      "y": 711.5,
+      "width": 177,
+      "height": 15
+    },
+    "fills": [
+      {
+        "opacity": 0.6000000238418579,
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      }
+    ],
+    "style": {
+      "fontFamily": "SF Pro Text",
+      "fontPostScriptName": "SFProText-Regular",
+      "fontStyle": "Regular",
+      "fontWeight": 400,
+      "textAutoResize": "HEIGHT",
+      "fontSize": 14,
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "CENTER",
+      "letterSpacing": -0.40799999237060547,
+      "lineHeightPx": 15.40000057220459,
+      "lineHeightPercent": 92.1767578125,
+      "lineHeightPercentFontSize": 110,
+      "lineHeightUnit": "FONT_SIZE_%"
+    },
+    "text": "Community Helpers Clinic"
+  },
+  {
+    "id": "1814:510",
+    "name": "Frame 1000002875",
+    "type": "FRAME",
+    "rect": {
+      "x": 289,
+      "y": 689,
+      "width": 80,
+      "height": 36
+    },
+    "fills": [],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:511",
+    "name": "Frame 144",
+    "type": "FRAME",
+    "rect": {
+      "x": 289,
+      "y": 689,
+      "width": 36,
+      "height": 36
+    },
+    "fills": [],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:512",
+    "name": "Ellipse 1",
+    "type": "ELLIPSE",
+    "rect": {
+      "x": 289,
+      "y": 689,
+      "width": 36,
+      "height": 36
+    },
+    "fills": [
+      {
+        "opacity": 0.07999999821186066,
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      },
+      {
+        "opacity": 0.800000011920929,
+        "blendMode": "NORMAL",
+        "visible": false,
+        "type": "GRADIENT_LINEAR",
+        "gradientHandlePositions": [
+          {
+            "x": 0.9999999706115972,
+            "y": 0.013888866123226151
+          },
+          {
+            "x": -2.9388401046048784e-08,
+            "y": 1.0138889257278727
+          },
+          {
+            "x": 0.4999999408092739,
+            "y": -0.48611113387677296
+          }
+        ],
+        "gradientStops": [
+          {
+            "color": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 1
+            },
+            "position": 0
+          },
+          {
+            "color": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 0
+            },
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:513",
+    "name": "ic:outline-mode-edit",
+    "type": "FRAME",
+    "rect": {
+      "x": 298,
+      "y": 698,
+      "width": 18,
+      "height": 18
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "visible": false,
+        "type": "SOLID",
+        "color": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 1
+        }
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:514",
+    "name": "Vector",
+    "type": "VECTOR",
+    "rect": {
+      "x": 300.25,
+      "y": 700.25,
+      "width": 13.5,
+      "height": 13.5
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:515",
+    "name": "Frame 143",
+    "type": "FRAME",
+    "rect": {
+      "x": 333,
+      "y": 689,
+      "width": 36,
+      "height": 36
+    },
+    "fills": [],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:516",
+    "name": "Ellipse 1",
+    "type": "ELLIPSE",
+    "rect": {
+      "x": 333,
+      "y": 689,
+      "width": 36,
+      "height": 36
+    },
+    "fills": [
+      {
+        "opacity": 0.07999999821186066,
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      },
+      {
+        "opacity": 0.800000011920929,
+        "blendMode": "NORMAL",
+        "visible": false,
+        "type": "GRADIENT_LINEAR",
+        "gradientHandlePositions": [
+          {
+            "x": 0.9999999706115972,
+            "y": 0.013888866123226151
+          },
+          {
+            "x": -2.9388401046048784e-08,
+            "y": 1.0138889257278727
+          },
+          {
+            "x": 0.4999999408092739,
+            "y": -0.48611113387677296
+          }
+        ],
+        "gradientStops": [
+          {
+            "color": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 1
+            },
+            "position": 0
+          },
+          {
+            "color": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 0
+            },
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:517",
+    "name": "ic:outline-delete",
+    "type": "FRAME",
+    "rect": {
+      "x": 342,
+      "y": 698,
+      "width": 18,
+      "height": 18
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "visible": false,
+        "type": "SOLID",
+        "color": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 1
+        }
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:518",
+    "name": "Vector",
+    "type": "VECTOR",
+    "rect": {
+      "x": 345.75,
+      "y": 700.25,
+      "width": 10.5,
+      "height": 13.5
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:519",
+    "name": "Frame 1000002865",
+    "type": "FRAME",
+    "rect": {
+      "x": 24,
+      "y": 751,
+      "width": 345,
+      "height": 56
+    },
+    "fills": [],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:520",
+    "name": "Group 144",
+    "type": "GROUP",
+    "rect": {
+      "x": 24,
+      "y": 751,
+      "width": 56,
+      "height": 56
+    },
+    "fills": [],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:521",
+    "name": "Ellipse 5",
+    "type": "ELLIPSE",
+    "rect": {
+      "x": 24,
+      "y": 751,
+      "width": 56,
+      "height": 56
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "type": "IMAGE",
+        "scaleMode": "FILL",
+        "imageRef": "ae7071eed928404413d0a4cb05f2a7a1e680e3e8"
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:522",
+    "name": "Frame 1000002874",
+    "type": "FRAME",
+    "rect": {
+      "x": 96,
+      "y": 759.5,
+      "width": 177,
+      "height": 39
+    },
+    "fills": [],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:523",
+    "name": "Dr. Michael Smith",
+    "type": "TEXT",
+    "rect": {
+      "x": 96,
+      "y": 759.5,
+      "width": 177,
+      "height": 20
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      }
+    ],
+    "style": {
+      "fontFamily": "SF UI Display",
+      "fontPostScriptName": "SFUIDisplay-Bold",
+      "fontStyle": "Bold",
+      "fontWeight": 700,
+      "textAutoResize": "HEIGHT",
+      "fontSize": 18,
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "TOP",
+      "letterSpacing": -0.5,
+      "lineHeightPx": 19.80000114440918,
+      "lineHeightPercent": 92.1767578125,
+      "lineHeightPercentFontSize": 110,
+      "lineHeightUnit": "FONT_SIZE_%"
+    },
+    "text": "Dr. Michael Smith"
+  },
+  {
+    "id": "1814:524",
+    "name": "Community Helpers Clinic",
+    "type": "TEXT",
+    "rect": {
+      "x": 96,
+      "y": 783.5,
+      "width": 177,
+      "height": 15
+    },
+    "fills": [
+      {
+        "opacity": 0.6000000238418579,
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      }
+    ],
+    "style": {
+      "fontFamily": "SF Pro Text",
+      "fontPostScriptName": "SFProText-Regular",
+      "fontStyle": "Regular",
+      "fontWeight": 400,
+      "textAutoResize": "HEIGHT",
+      "fontSize": 14,
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "CENTER",
+      "letterSpacing": -0.40799999237060547,
+      "lineHeightPx": 15.40000057220459,
+      "lineHeightPercent": 92.1767578125,
+      "lineHeightPercentFontSize": 110,
+      "lineHeightUnit": "FONT_SIZE_%"
+    },
+    "text": "Community Helpers Clinic"
+  },
+  {
+    "id": "1814:525",
+    "name": "Frame 1000002875",
+    "type": "FRAME",
+    "rect": {
+      "x": 289,
+      "y": 761,
+      "width": 80,
+      "height": 36
+    },
+    "fills": [],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:526",
+    "name": "Frame 144",
+    "type": "FRAME",
+    "rect": {
+      "x": 289,
+      "y": 761,
+      "width": 36,
+      "height": 36
+    },
+    "fills": [],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:527",
+    "name": "Ellipse 1",
+    "type": "ELLIPSE",
+    "rect": {
+      "x": 289,
+      "y": 761,
+      "width": 36,
+      "height": 36
+    },
+    "fills": [
+      {
+        "opacity": 0.07999999821186066,
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      },
+      {
+        "opacity": 0.800000011920929,
+        "blendMode": "NORMAL",
+        "visible": false,
+        "type": "GRADIENT_LINEAR",
+        "gradientHandlePositions": [
+          {
+            "x": 0.9999999706115972,
+            "y": 0.013888866123226151
+          },
+          {
+            "x": -2.9388401046048784e-08,
+            "y": 1.0138889257278727
+          },
+          {
+            "x": 0.4999999408092739,
+            "y": -0.48611113387677296
+          }
+        ],
+        "gradientStops": [
+          {
+            "color": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 1
+            },
+            "position": 0
+          },
+          {
+            "color": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 0
+            },
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:528",
+    "name": "ic:outline-mode-edit",
+    "type": "FRAME",
+    "rect": {
+      "x": 298,
+      "y": 770,
+      "width": 18,
+      "height": 18
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "visible": false,
+        "type": "SOLID",
+        "color": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 1
+        }
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:529",
+    "name": "Vector",
+    "type": "VECTOR",
+    "rect": {
+      "x": 300.25,
+      "y": 772.25,
+      "width": 13.5,
+      "height": 13.5
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:530",
+    "name": "Frame 143",
+    "type": "FRAME",
+    "rect": {
+      "x": 333,
+      "y": 761,
+      "width": 36,
+      "height": 36
+    },
+    "fills": [],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:531",
+    "name": "Ellipse 1",
+    "type": "ELLIPSE",
+    "rect": {
+      "x": 333,
+      "y": 761,
+      "width": 36,
+      "height": 36
+    },
+    "fills": [
+      {
+        "opacity": 0.07999999821186066,
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      },
+      {
+        "opacity": 0.800000011920929,
+        "blendMode": "NORMAL",
+        "visible": false,
+        "type": "GRADIENT_LINEAR",
+        "gradientHandlePositions": [
+          {
+            "x": 0.9999999706115972,
+            "y": 0.013888866123226151
+          },
+          {
+            "x": -2.9388401046048784e-08,
+            "y": 1.0138889257278727
+          },
+          {
+            "x": 0.4999999408092739,
+            "y": -0.48611113387677296
+          }
+        ],
+        "gradientStops": [
+          {
+            "color": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 1
+            },
+            "position": 0
+          },
+          {
+            "color": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 0
+            },
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:532",
+    "name": "ic:outline-delete",
+    "type": "FRAME",
+    "rect": {
+      "x": 342,
+      "y": 770,
+      "width": 18,
+      "height": 18
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "visible": false,
+        "type": "SOLID",
+        "color": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 1
+        }
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:533",
+    "name": "Vector",
+    "type": "VECTOR",
+    "rect": {
+      "x": 345.75,
+      "y": 772.25,
+      "width": 10.5,
+      "height": 13.5
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:534",
+    "name": "Frame 1000002866",
+    "type": "FRAME",
+    "rect": {
+      "x": 24,
+      "y": 823,
+      "width": 345,
+      "height": 56
+    },
+    "fills": [],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:535",
+    "name": "Group 144",
+    "type": "GROUP",
+    "rect": {
+      "x": 24,
+      "y": 823,
+      "width": 56,
+      "height": 56
+    },
+    "fills": [],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:536",
+    "name": "Ellipse 5",
+    "type": "ELLIPSE",
+    "rect": {
+      "x": 24,
+      "y": 823,
+      "width": 56,
+      "height": 56
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "type": "IMAGE",
+        "scaleMode": "FILL",
+        "imageRef": "b4d48ef24c37c0b4905798d594f59b5cfeb60caa"
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:537",
+    "name": "Frame 1000002874",
+    "type": "FRAME",
+    "rect": {
+      "x": 96,
+      "y": 831.5,
+      "width": 177,
+      "height": 39
+    },
+    "fills": [],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:538",
+    "name": "Dr. Sarah Johnson",
+    "type": "TEXT",
+    "rect": {
+      "x": 96,
+      "y": 831.5,
+      "width": 177,
+      "height": 20
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      }
+    ],
+    "style": {
+      "fontFamily": "SF UI Display",
+      "fontPostScriptName": "SFUIDisplay-Bold",
+      "fontStyle": "Bold",
+      "fontWeight": 700,
+      "textAutoResize": "HEIGHT",
+      "fontSize": 18,
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "TOP",
+      "letterSpacing": -0.5,
+      "lineHeightPx": 19.80000114440918,
+      "lineHeightPercent": 92.1767578125,
+      "lineHeightPercentFontSize": 110,
+      "lineHeightUnit": "FONT_SIZE_%"
+    },
+    "text": "Dr. Sarah Johnson"
+  },
+  {
+    "id": "1814:539",
+    "name": "Community Helpers Clinic",
+    "type": "TEXT",
+    "rect": {
+      "x": 96,
+      "y": 855.5,
+      "width": 177,
+      "height": 15
+    },
+    "fills": [
+      {
+        "opacity": 0.6000000238418579,
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      }
+    ],
+    "style": {
+      "fontFamily": "SF Pro Text",
+      "fontPostScriptName": "SFProText-Regular",
+      "fontStyle": "Regular",
+      "fontWeight": 400,
+      "textAutoResize": "HEIGHT",
+      "fontSize": 14,
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "CENTER",
+      "letterSpacing": -0.40799999237060547,
+      "lineHeightPx": 15.40000057220459,
+      "lineHeightPercent": 92.1767578125,
+      "lineHeightPercentFontSize": 110,
+      "lineHeightUnit": "FONT_SIZE_%"
+    },
+    "text": "Community Helpers Clinic"
+  },
+  {
+    "id": "1814:540",
+    "name": "Frame 1000002875",
+    "type": "FRAME",
+    "rect": {
+      "x": 289,
+      "y": 833,
+      "width": 80,
+      "height": 36
+    },
+    "fills": [],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:541",
+    "name": "Frame 144",
+    "type": "FRAME",
+    "rect": {
+      "x": 289,
+      "y": 833,
+      "width": 36,
+      "height": 36
+    },
+    "fills": [],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:542",
+    "name": "Ellipse 1",
+    "type": "ELLIPSE",
+    "rect": {
+      "x": 289,
+      "y": 833,
+      "width": 36,
+      "height": 36
+    },
+    "fills": [
+      {
+        "opacity": 0.07999999821186066,
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      },
+      {
+        "opacity": 0.800000011920929,
+        "blendMode": "NORMAL",
+        "visible": false,
+        "type": "GRADIENT_LINEAR",
+        "gradientHandlePositions": [
+          {
+            "x": 0.9999999706115972,
+            "y": 0.013888866123226151
+          },
+          {
+            "x": -2.9388401046048784e-08,
+            "y": 1.0138889257278727
+          },
+          {
+            "x": 0.4999999408092739,
+            "y": -0.48611113387677296
+          }
+        ],
+        "gradientStops": [
+          {
+            "color": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 1
+            },
+            "position": 0
+          },
+          {
+            "color": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 0
+            },
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:543",
+    "name": "ic:outline-mode-edit",
+    "type": "FRAME",
+    "rect": {
+      "x": 298,
+      "y": 842,
+      "width": 18,
+      "height": 18
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "visible": false,
+        "type": "SOLID",
+        "color": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 1
+        }
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:544",
+    "name": "Vector",
+    "type": "VECTOR",
+    "rect": {
+      "x": 300.25,
+      "y": 844.25,
+      "width": 13.5,
+      "height": 13.5
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:545",
+    "name": "Frame 143",
+    "type": "FRAME",
+    "rect": {
+      "x": 333,
+      "y": 833,
+      "width": 36,
+      "height": 36
+    },
+    "fills": [],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:546",
+    "name": "Ellipse 1",
+    "type": "ELLIPSE",
+    "rect": {
+      "x": 333,
+      "y": 833,
+      "width": 36,
+      "height": 36
+    },
+    "fills": [
+      {
+        "opacity": 0.07999999821186066,
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      },
+      {
+        "opacity": 0.800000011920929,
+        "blendMode": "NORMAL",
+        "visible": false,
+        "type": "GRADIENT_LINEAR",
+        "gradientHandlePositions": [
+          {
+            "x": 0.9999999706115972,
+            "y": 0.013888866123226151
+          },
+          {
+            "x": -2.9388401046048784e-08,
+            "y": 1.0138889257278727
+          },
+          {
+            "x": 0.4999999408092739,
+            "y": -0.48611113387677296
+          }
+        ],
+        "gradientStops": [
+          {
+            "color": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 1
+            },
+            "position": 0
+          },
+          {
+            "color": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 0
+            },
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:547",
+    "name": "ic:outline-delete",
+    "type": "FRAME",
+    "rect": {
+      "x": 342,
+      "y": 842,
+      "width": 18,
+      "height": 18
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "visible": false,
+        "type": "SOLID",
+        "color": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 1
+        }
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:548",
+    "name": "Vector",
+    "type": "VECTOR",
+    "rect": {
+      "x": 345.75,
+      "y": 844.25,
+      "width": 10.5,
+      "height": 13.5
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:549",
+    "name": "Frame 1000002869",
+    "type": "FRAME",
+    "rect": {
+      "x": 24,
+      "y": 895,
+      "width": 345,
+      "height": 56
+    },
+    "fills": [],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:550",
+    "name": "Group 144",
+    "type": "GROUP",
+    "rect": {
+      "x": 24,
+      "y": 895,
+      "width": 56,
+      "height": 56
+    },
+    "fills": [],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:551",
+    "name": "Ellipse 5",
+    "type": "ELLIPSE",
+    "rect": {
+      "x": 24,
+      "y": 895,
+      "width": 56,
+      "height": 56
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "type": "IMAGE",
+        "scaleMode": "FILL",
+        "imageRef": "a133f22f84b4236c1265c9d3513bde890ff1f9b6"
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:552",
+    "name": "Frame 1000002874",
+    "type": "FRAME",
+    "rect": {
+      "x": 96,
+      "y": 903.5,
+      "width": 177,
+      "height": 39
+    },
+    "fills": [],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:553",
+    "name": "Dr. David Lee",
+    "type": "TEXT",
+    "rect": {
+      "x": 96,
+      "y": 903.5,
+      "width": 177,
+      "height": 20
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      }
+    ],
+    "style": {
+      "fontFamily": "SF UI Display",
+      "fontPostScriptName": "SFUIDisplay-Bold",
+      "fontStyle": "Bold",
+      "fontWeight": 700,
+      "textAutoResize": "HEIGHT",
+      "fontSize": 18,
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "TOP",
+      "letterSpacing": -0.5,
+      "lineHeightPx": 19.80000114440918,
+      "lineHeightPercent": 92.1767578125,
+      "lineHeightPercentFontSize": 110,
+      "lineHeightUnit": "FONT_SIZE_%"
+    },
+    "text": "Dr. David Lee"
+  },
+  {
+    "id": "1814:554",
+    "name": "Community Helpers Clinic",
+    "type": "TEXT",
+    "rect": {
+      "x": 96,
+      "y": 927.5,
+      "width": 177,
+      "height": 15
+    },
+    "fills": [
+      {
+        "opacity": 0.6000000238418579,
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      }
+    ],
+    "style": {
+      "fontFamily": "SF Pro Text",
+      "fontPostScriptName": "SFProText-Regular",
+      "fontStyle": "Regular",
+      "fontWeight": 400,
+      "textAutoResize": "HEIGHT",
+      "fontSize": 14,
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "CENTER",
+      "letterSpacing": -0.40799999237060547,
+      "lineHeightPx": 15.40000057220459,
+      "lineHeightPercent": 92.1767578125,
+      "lineHeightPercentFontSize": 110,
+      "lineHeightUnit": "FONT_SIZE_%"
+    },
+    "text": "Community Helpers Clinic"
+  },
+  {
+    "id": "1814:555",
+    "name": "Frame 1000002875",
+    "type": "FRAME",
+    "rect": {
+      "x": 289,
+      "y": 905,
+      "width": 80,
+      "height": 36
+    },
+    "fills": [],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:556",
+    "name": "Frame 144",
+    "type": "FRAME",
+    "rect": {
+      "x": 289,
+      "y": 905,
+      "width": 36,
+      "height": 36
+    },
+    "fills": [],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:557",
+    "name": "Ellipse 1",
+    "type": "ELLIPSE",
+    "rect": {
+      "x": 289,
+      "y": 905,
+      "width": 36,
+      "height": 36
+    },
+    "fills": [
+      {
+        "opacity": 0.07999999821186066,
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      },
+      {
+        "opacity": 0.800000011920929,
+        "blendMode": "NORMAL",
+        "visible": false,
+        "type": "GRADIENT_LINEAR",
+        "gradientHandlePositions": [
+          {
+            "x": 0.9999999706115972,
+            "y": 0.013888866123226151
+          },
+          {
+            "x": -2.9388401046048784e-08,
+            "y": 1.0138889257278727
+          },
+          {
+            "x": 0.4999999408092739,
+            "y": -0.48611113387677296
+          }
+        ],
+        "gradientStops": [
+          {
+            "color": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 1
+            },
+            "position": 0
+          },
+          {
+            "color": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 0
+            },
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:558",
+    "name": "ic:outline-mode-edit",
+    "type": "FRAME",
+    "rect": {
+      "x": 298,
+      "y": 914,
+      "width": 18,
+      "height": 18
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "visible": false,
+        "type": "SOLID",
+        "color": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 1
+        }
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:559",
+    "name": "Vector",
+    "type": "VECTOR",
+    "rect": {
+      "x": 300.25,
+      "y": 916.25,
+      "width": 13.5,
+      "height": 13.5
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:560",
+    "name": "Frame 143",
+    "type": "FRAME",
+    "rect": {
+      "x": 333,
+      "y": 905,
+      "width": 36,
+      "height": 36
+    },
+    "fills": [],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:561",
+    "name": "Ellipse 1",
+    "type": "ELLIPSE",
+    "rect": {
+      "x": 333,
+      "y": 905,
+      "width": 36,
+      "height": 36
+    },
+    "fills": [
+      {
+        "opacity": 0.07999999821186066,
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      },
+      {
+        "opacity": 0.800000011920929,
+        "blendMode": "NORMAL",
+        "visible": false,
+        "type": "GRADIENT_LINEAR",
+        "gradientHandlePositions": [
+          {
+            "x": 0.9999999706115972,
+            "y": 0.013888866123226151
+          },
+          {
+            "x": -2.9388401046048784e-08,
+            "y": 1.0138889257278727
+          },
+          {
+            "x": 0.4999999408092739,
+            "y": -0.48611113387677296
+          }
+        ],
+        "gradientStops": [
+          {
+            "color": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 1
+            },
+            "position": 0
+          },
+          {
+            "color": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 0
+            },
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:562",
+    "name": "ic:outline-delete",
+    "type": "FRAME",
+    "rect": {
+      "x": 342,
+      "y": 914,
+      "width": 18,
+      "height": 18
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "visible": false,
+        "type": "SOLID",
+        "color": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 1
+        }
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:563",
+    "name": "Vector",
+    "type": "VECTOR",
+    "rect": {
+      "x": 345.75,
+      "y": 916.25,
+      "width": 10.5,
+      "height": 13.5
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:564",
+    "name": "Frame 1000002924",
+    "type": "FRAME",
+    "rect": {
+      "x": 0,
+      "y": 444,
+      "width": 393,
+      "height": 159
+    },
+    "fills": [],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:565",
+    "name": "Frame 1000002882",
+    "type": "FRAME",
+    "rect": {
+      "x": 0,
+      "y": 444,
+      "width": 393,
+      "height": 159
+    },
+    "fills": [],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:566",
+    "name": "Frame 1000002856",
+    "type": "FRAME",
+    "rect": {
+      "x": 24,
+      "y": 468,
+      "width": 345,
+      "height": 36
+    },
+    "fills": [],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:567",
+    "name": "your organizations",
+    "type": "TEXT",
+    "rect": {
+      "x": 24,
+      "y": 475,
+      "width": 205,
+      "height": 22
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      }
+    ],
+    "style": {
+      "fontFamily": "SF Pro Text",
+      "fontPostScriptName": "SFProText-Bold",
+      "fontStyle": "Bold",
+      "fontWeight": 700,
+      "textCase": "UPPER",
+      "textAutoResize": "WIDTH_AND_HEIGHT",
+      "fontSize": 18,
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "CENTER",
+      "letterSpacing": -0.40799999237060547,
+      "lineHeightPx": 22,
+      "lineHeightPercent": 102.41862487792969,
+      "lineHeightPercentFontSize": 122.22222137451172,
+      "lineHeightUnit": "PIXELS"
+    },
+    "text": "your organizations"
+  },
+  {
+    "id": "1814:568",
+    "name": "Frame 1000002839",
+    "type": "FRAME",
+    "rect": {
+      "x": 288,
+      "y": 468,
+      "width": 81,
+      "height": 36
+    },
+    "fills": [
+      {
+        "opacity": 0.07999999821186066,
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      },
+      {
+        "opacity": 0.800000011920929,
+        "blendMode": "NORMAL",
+        "visible": false,
+        "type": "GRADIENT_LINEAR",
+        "gradientHandlePositions": [
+          {
+            "x": 0.9999999706115972,
+            "y": 0.013888866123226151
+          },
+          {
+            "x": -2.9388401046048784e-08,
+            "y": 1.0138889257278727
+          },
+          {
+            "x": 0.4999999408092739,
+            "y": -0.48611113387677296
+          }
+        ],
+        "gradientStops": [
+          {
+            "color": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 1
+            },
+            "position": 0
+          },
+          {
+            "color": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 0
+            },
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:569",
+    "name": "Add",
+    "type": "TEXT",
+    "rect": {
+      "x": 300,
+      "y": 478,
+      "width": 29,
+      "height": 16
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      }
+    ],
+    "style": {
+      "fontFamily": "SF UI Display",
+      "fontPostScriptName": "SFUIDisplay-Medium",
+      "fontStyle": "Medium",
+      "fontWeight": 500,
+      "textAutoResize": "WIDTH_AND_HEIGHT",
+      "fontSize": 16,
+      "textAlignHorizontal": "CENTER",
+      "textAlignVertical": "CENTER",
+      "letterSpacing": -0.40799999237060547,
+      "lineHeightPx": 16,
+      "lineHeightPercent": 83.79705047607422,
+      "lineHeightPercentFontSize": 100,
+      "lineHeightUnit": "FONT_SIZE_%"
+    },
+    "text": "Add"
+  },
+  {
+    "id": "1814:570",
+    "name": "ic:outline-add",
+    "type": "FRAME",
+    "rect": {
+      "x": 337,
+      "y": 476,
+      "width": 20,
+      "height": 20
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "visible": false,
+        "type": "SOLID",
+        "color": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 1
+        }
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:571",
+    "name": "Vector",
+    "type": "VECTOR",
+    "rect": {
+      "x": 341.17,
+      "y": 480.17,
+      "width": 11.67,
+      "height": 11.67
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:572",
+    "name": "Frame 1000002864",
+    "type": "FRAME",
+    "rect": {
+      "x": 24,
+      "y": 520,
+      "width": 345,
+      "height": 59
+    },
+    "fills": [],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:573",
+    "name": "Group 144",
+    "type": "GROUP",
+    "rect": {
+      "x": 24,
+      "y": 521.5,
+      "width": 56,
+      "height": 56
+    },
+    "fills": [],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:574",
+    "name": "Ellipse 6",
+    "type": "ELLIPSE",
+    "rect": {
+      "x": 24,
+      "y": 521.5,
+      "width": 56,
+      "height": 56
+    },
+    "fills": [
+      {
+        "opacity": 0.6000000238418579,
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 1,
+          "g": 0.2382436841726303,
+          "b": 0.5880873203277588,
+          "a": 1
+        }
+      },
+      {
+        "blendMode": "NORMAL",
+        "type": "IMAGE",
+        "scaleMode": "FILL",
+        "imageRef": "f51d368d8de6a73f6890a8e9460c83cfeb536099"
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:575",
+    "name": "Frame 1000002874",
+    "type": "FRAME",
+    "rect": {
+      "x": 96,
+      "y": 520,
+      "width": 177,
+      "height": 59
+    },
+    "fills": [],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:576",
+    "name": "Community Helpers Clinic",
+    "type": "TEXT",
+    "rect": {
+      "x": 96,
+      "y": 520,
+      "width": 177,
+      "height": 40
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      }
+    ],
+    "style": {
+      "fontFamily": "SF UI Display",
+      "fontPostScriptName": "SFUIDisplay-Bold",
+      "fontStyle": "Bold",
+      "fontWeight": 700,
+      "textAutoResize": "HEIGHT",
+      "fontSize": 18,
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "TOP",
+      "letterSpacing": -0.5,
+      "lineHeightPx": 19.80000114440918,
+      "lineHeightPercent": 92.1767578125,
+      "lineHeightPercentFontSize": 110,
+      "lineHeightUnit": "FONT_SIZE_%"
+    },
+    "text": "Community Helpers Clinic"
+  },
+  {
+    "id": "1814:577",
+    "name": "4 specialists",
+    "type": "TEXT",
+    "rect": {
+      "x": 96,
+      "y": 564,
+      "width": 177,
+      "height": 15
+    },
+    "fills": [
+      {
+        "opacity": 0.6000000238418579,
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      }
+    ],
+    "style": {
+      "fontFamily": "SF Pro Text",
+      "fontPostScriptName": "SFProText-Regular",
+      "fontStyle": "Regular",
+      "fontWeight": 400,
+      "textAutoResize": "HEIGHT",
+      "fontSize": 14,
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "CENTER",
+      "letterSpacing": -0.40799999237060547,
+      "lineHeightPx": 15.40000057220459,
+      "lineHeightPercent": 92.1767578125,
+      "lineHeightPercentFontSize": 110,
+      "lineHeightUnit": "FONT_SIZE_%"
+    },
+    "text": "4 specialists"
+  },
+  {
+    "id": "1814:578",
+    "name": "Frame 1000002837",
+    "type": "FRAME",
+    "rect": {
+      "x": 289,
+      "y": 531.5,
+      "width": 80,
+      "height": 36
+    },
+    "fills": [],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:579",
+    "name": "Frame 144",
+    "type": "FRAME",
+    "rect": {
+      "x": 289,
+      "y": 531.5,
+      "width": 36,
+      "height": 36
+    },
+    "fills": [],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:580",
+    "name": "Ellipse 1",
+    "type": "ELLIPSE",
+    "rect": {
+      "x": 289,
+      "y": 531.5,
+      "width": 36,
+      "height": 36
+    },
+    "fills": [
+      {
+        "opacity": 0.07999999821186066,
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      },
+      {
+        "opacity": 0.800000011920929,
+        "blendMode": "NORMAL",
+        "visible": false,
+        "type": "GRADIENT_LINEAR",
+        "gradientHandlePositions": [
+          {
+            "x": 0.9999999706115972,
+            "y": 0.013888866123226151
+          },
+          {
+            "x": -2.9388401046048784e-08,
+            "y": 1.0138889257278727
+          },
+          {
+            "x": 0.4999999408092739,
+            "y": -0.48611113387677296
+          }
+        ],
+        "gradientStops": [
+          {
+            "color": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 1
+            },
+            "position": 0
+          },
+          {
+            "color": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 0
+            },
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:581",
+    "name": "ic:outline-mode-edit",
+    "type": "FRAME",
+    "rect": {
+      "x": 298,
+      "y": 540.5,
+      "width": 18,
+      "height": 18
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "visible": false,
+        "type": "SOLID",
+        "color": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 1
+        }
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:582",
+    "name": "Vector",
+    "type": "VECTOR",
+    "rect": {
+      "x": 300.25,
+      "y": 542.75,
+      "width": 13.5,
+      "height": 13.5
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:583",
+    "name": "Frame 143",
+    "type": "FRAME",
+    "rect": {
+      "x": 333,
+      "y": 531.5,
+      "width": 36,
+      "height": 36
+    },
+    "fills": [],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:584",
+    "name": "Ellipse 1",
+    "type": "ELLIPSE",
+    "rect": {
+      "x": 333,
+      "y": 531.5,
+      "width": 36,
+      "height": 36
+    },
+    "fills": [
+      {
+        "opacity": 0.07999999821186066,
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      },
+      {
+        "opacity": 0.800000011920929,
+        "blendMode": "NORMAL",
+        "visible": false,
+        "type": "GRADIENT_LINEAR",
+        "gradientHandlePositions": [
+          {
+            "x": 0.9999999706115972,
+            "y": 0.013888866123226151
+          },
+          {
+            "x": -2.9388401046048784e-08,
+            "y": 1.0138889257278727
+          },
+          {
+            "x": 0.4999999408092739,
+            "y": -0.48611113387677296
+          }
+        ],
+        "gradientStops": [
+          {
+            "color": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 1
+            },
+            "position": 0
+          },
+          {
+            "color": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 0
+            },
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:585",
+    "name": "ic:outline-delete",
+    "type": "FRAME",
+    "rect": {
+      "x": 342,
+      "y": 540.5,
+      "width": 18,
+      "height": 18
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "visible": false,
+        "type": "SOLID",
+        "color": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 1
+        }
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:586",
+    "name": "Vector",
+    "type": "VECTOR",
+    "rect": {
+      "x": 345.75,
+      "y": 542.75,
+      "width": 10.5,
+      "height": 13.5
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:587",
+    "name": "Close",
+    "type": "FRAME",
+    "rect": {
+      "x": 333,
+      "y": 24,
+      "width": 36,
+      "height": 36
+    },
+    "fills": [
+      {
+        "opacity": 0.07999999821186066,
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:588",
+    "name": "SF Symbol / xmark",
+    "type": "VECTOR",
+    "rect": {
+      "x": 344.78,
+      "y": 36.29,
+      "width": 12.44,
+      "height": 12.44
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:589",
+    "name": "Frame 1000002839",
+    "type": "FRAME",
+    "rect": {
+      "x": 24,
+      "y": 24,
+      "width": 89,
+      "height": 36
+    },
+    "fills": [
+      {
+        "opacity": 0.07999999821186066,
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      },
+      {
+        "opacity": 0.800000011920929,
+        "blendMode": "NORMAL",
+        "visible": false,
+        "type": "GRADIENT_LINEAR",
+        "gradientHandlePositions": [
+          {
+            "x": 0.9999999706115972,
+            "y": 0.013888866123226151
+          },
+          {
+            "x": -2.9388401046048784e-08,
+            "y": 1.0138889257278727
+          },
+          {
+            "x": 0.4999999408092739,
+            "y": -0.48611113387677296
+          }
+        ],
+        "gradientStops": [
+          {
+            "color": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 1
+            },
+            "position": 0
+          },
+          {
+            "color": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 0
+            },
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:590",
+    "name": "ic:outline-mode-edit",
+    "type": "FRAME",
+    "rect": {
+      "x": 36,
+      "y": 32,
+      "width": 20,
+      "height": 20
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "visible": false,
+        "type": "SOLID",
+        "color": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 1
+        }
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:591",
+    "name": "Vector",
+    "type": "VECTOR",
+    "rect": {
+      "x": 38.5,
+      "y": 34.5,
+      "width": 15.0,
+      "height": 15.0
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:592",
+    "name": "Rectangle 8",
+    "type": "RECTANGLE",
+    "rect": {
+      "x": 68,
+      "y": 32,
+      "width": 1,
+      "height": 20
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:593",
+    "name": "ic:outline-logout",
+    "type": "FRAME",
+    "rect": {
+      "x": 81,
+      "y": 32,
+      "width": 20,
+      "height": 20
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "visible": false,
+        "type": "SOLID",
+        "color": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 1
+        }
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1814:594",
+    "name": "Vector",
+    "type": "VECTOR",
+    "rect": {
+      "x": 83.5,
+      "y": 34.5,
+      "width": 15,
+      "height": 15
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      }
+    ],
+    "style": null,
+    "text": null
+  }
+]

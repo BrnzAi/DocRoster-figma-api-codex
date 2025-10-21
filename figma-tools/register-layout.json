@@ -1,0 +1,1129 @@
+[
+  {
+    "id": "1848:1678",
+    "name": "reg",
+    "type": "FRAME",
+    "rect": {
+      "x": 0,
+      "y": 0,
+      "width": 393,
+      "height": 718
+    },
+    "fills": [
+      {
+        "opacity": 0.23999999463558197,
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 1
+        }
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1848:1679",
+    "name": "Frame 24",
+    "type": "FRAME",
+    "rect": {
+      "x": 24,
+      "y": 218,
+      "width": 345,
+      "height": 68
+    },
+    "fills": [],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1848:1681",
+    "name": "Register account",
+    "type": "TEXT",
+    "rect": {
+      "x": 24,
+      "y": 218,
+      "width": 345,
+      "height": 38
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      }
+    ],
+    "style": {
+      "fontFamily": "SF Pro Display",
+      "fontPostScriptName": "SFProDisplay-Bold",
+      "fontStyle": "Bold",
+      "fontWeight": 700,
+      "textAutoResize": "HEIGHT",
+      "fontSize": 32,
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "TOP",
+      "letterSpacing": 0.37400001287460327,
+      "lineHeightPx": 38.400001525878906,
+      "lineHeightPercent": 100.55647277832031,
+      "lineHeightPercentFontSize": 120.00000762939453,
+      "lineHeightUnit": "FONT_SIZE_%"
+    },
+    "text": "Register account"
+  },
+  {
+    "id": "1848:1682",
+    "name": "Sign up to view and manage specialists",
+    "type": "TEXT",
+    "rect": {
+      "x": 24,
+      "y": 264,
+      "width": 345,
+      "height": 22
+    },
+    "fills": [
+      {
+        "opacity": 0.6000000238418579,
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      }
+    ],
+    "style": {
+      "fontFamily": "SF UI Display",
+      "fontPostScriptName": "SFUIDisplay-Regular",
+      "fontStyle": "Regular",
+      "fontWeight": 400,
+      "paragraphSpacing": 8,
+      "textAutoResize": "HEIGHT",
+      "fontSize": 18,
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "TOP",
+      "letterSpacing": -0.5,
+      "lineHeightPx": 21.600000381469727,
+      "lineHeightPercent": 100.55647277832031,
+      "lineHeightPercentFontSize": 120.00000762939453,
+      "lineHeightUnit": "FONT_SIZE_%"
+    },
+    "text": "Sign up to view and manage specialists"
+  },
+  {
+    "id": "1848:1683",
+    "name": "Frame 1000002909",
+    "type": "FRAME",
+    "rect": {
+      "x": 0,
+      "y": 310,
+      "width": 393,
+      "height": 376
+    },
+    "fills": [],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1848:1684",
+    "name": "Frame 1000002909",
+    "type": "FRAME",
+    "rect": {
+      "x": 24,
+      "y": 310,
+      "width": 345,
+      "height": 46
+    },
+    "fills": [],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1848:1685",
+    "name": "Frame 1000002907",
+    "type": "FRAME",
+    "rect": {
+      "x": 24,
+      "y": 310,
+      "width": 345,
+      "height": 46
+    },
+    "fills": [],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1848:1686",
+    "name": "Open Button",
+    "type": "FRAME",
+    "rect": {
+      "x": 24,
+      "y": 310,
+      "width": 168.5,
+      "height": 46
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 1
+        }
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1848:1687",
+    "name": "flat-color-icons:google",
+    "type": "FRAME",
+    "rect": {
+      "x": 66.25,
+      "y": 321,
+      "width": 24,
+      "height": 24
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "visible": false,
+        "type": "SOLID",
+        "color": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 1
+        }
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1848:1688",
+    "name": "Vector",
+    "type": "VECTOR",
+    "rect": {
+      "x": 68.25,
+      "y": 323,
+      "width": 20,
+      "height": 20
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 1,
+          "g": 0.7568627595901489,
+          "b": 0.027450980618596077,
+          "a": 1
+        }
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1848:1689",
+    "name": "Vector",
+    "type": "VECTOR",
+    "rect": {
+      "x": 69.4,
+      "y": 323,
+      "width": 15.66,
+      "height": 7.76
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 1,
+          "g": 0.239215686917305,
+          "b": 0,
+          "a": 1
+        }
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1848:1690",
+    "name": "Vector",
+    "type": "VECTOR",
+    "rect": {
+      "x": 69.35,
+      "y": 335.03,
+      "width": 15.61,
+      "height": 7.97
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.2980392277240753,
+          "g": 0.686274528503418,
+          "b": 0.3137255012989044,
+          "a": 1
+        }
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1848:1691",
+    "name": "Vector",
+    "type": "VECTOR",
+    "rect": {
+      "x": 78.25,
+      "y": 331,
+      "width": 10,
+      "height": 9.41
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.09803921729326248,
+          "g": 0.4627451002597809,
+          "b": 0.8235294222831726,
+          "a": 1
+        }
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1848:1692",
+    "name": "Sign up",
+    "type": "TEXT",
+    "rect": {
+      "x": 100.25,
+      "y": 322,
+      "width": 50,
+      "height": 22
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 1
+        }
+      }
+    ],
+    "style": {
+      "fontFamily": "SF Pro Text",
+      "fontPostScriptName": "SFProText-Semibold",
+      "fontStyle": "Semibold",
+      "fontWeight": 600,
+      "textAutoResize": "WIDTH_AND_HEIGHT",
+      "fontSize": 14,
+      "textAlignHorizontal": "CENTER",
+      "textAlignVertical": "CENTER",
+      "letterSpacing": -0.40799999237060547,
+      "lineHeightPx": 22.399999618530273,
+      "lineHeightPercent": 134.07528686523438,
+      "lineHeightPercentFontSize": 160,
+      "lineHeightUnit": "FONT_SIZE_%"
+    },
+    "text": "Sign up"
+  },
+  {
+    "id": "1848:1693",
+    "name": "Open Button",
+    "type": "FRAME",
+    "rect": {
+      "x": 200.5,
+      "y": 310,
+      "width": 168.5,
+      "height": 46
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 1
+        }
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1848:1694",
+    "name": "ic:baseline-apple",
+    "type": "FRAME",
+    "rect": {
+      "x": 242.75,
+      "y": 321,
+      "width": 24,
+      "height": 24
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "visible": false,
+        "type": "SOLID",
+        "color": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 1
+        }
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1848:1695",
+    "name": "Vector",
+    "type": "VECTOR",
+    "rect": {
+      "x": 247.16,
+      "y": 323,
+      "width": 15.17,
+      "height": 18.0
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 1
+        }
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1848:1696",
+    "name": "Sign up",
+    "type": "TEXT",
+    "rect": {
+      "x": 276.75,
+      "y": 322,
+      "width": 50,
+      "height": 22
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 1
+        }
+      }
+    ],
+    "style": {
+      "fontFamily": "SF Pro Text",
+      "fontPostScriptName": "SFProText-Semibold",
+      "fontStyle": "Semibold",
+      "fontWeight": 600,
+      "textAutoResize": "WIDTH_AND_HEIGHT",
+      "fontSize": 14,
+      "textAlignHorizontal": "CENTER",
+      "textAlignVertical": "CENTER",
+      "letterSpacing": -0.40799999237060547,
+      "lineHeightPx": 22.399999618530273,
+      "lineHeightPercent": 134.07528686523438,
+      "lineHeightPercentFontSize": 160,
+      "lineHeightUnit": "FONT_SIZE_%"
+    },
+    "text": "Sign up"
+  },
+  {
+    "id": "1848:1697",
+    "name": "Frame 1000002775",
+    "type": "FRAME",
+    "rect": {
+      "x": 0,
+      "y": 380,
+      "width": 393,
+      "height": 22
+    },
+    "fills": [],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1848:1698",
+    "name": "Rectangle 23",
+    "type": "RECTANGLE",
+    "rect": {
+      "x": 24,
+      "y": 390.5,
+      "width": 146.5,
+      "height": 1
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1848:1699",
+    "name": "OR",
+    "type": "TEXT",
+    "rect": {
+      "x": 186.5,
+      "y": 380,
+      "width": 20,
+      "height": 22
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      }
+    ],
+    "style": {
+      "fontFamily": "SF Pro Text",
+      "fontPostScriptName": "SFProText-Regular",
+      "fontStyle": "Regular",
+      "fontWeight": 400,
+      "textAutoResize": "WIDTH_AND_HEIGHT",
+      "fontSize": 14,
+      "textAlignHorizontal": "CENTER",
+      "textAlignVertical": "CENTER",
+      "letterSpacing": -0.40799999237060547,
+      "lineHeightPx": 22.399999618530273,
+      "lineHeightPercent": 134.07528686523438,
+      "lineHeightPercentFontSize": 160,
+      "lineHeightUnit": "FONT_SIZE_%"
+    },
+    "text": "OR"
+  },
+  {
+    "id": "1848:1700",
+    "name": "Rectangle 24",
+    "type": "RECTANGLE",
+    "rect": {
+      "x": 222.5,
+      "y": 390.5,
+      "width": 146.5,
+      "height": 1
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1848:1701",
+    "name": "Frame 38",
+    "type": "FRAME",
+    "rect": {
+      "x": 24,
+      "y": 426,
+      "width": 345,
+      "height": 214
+    },
+    "fills": [],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1848:1703",
+    "name": "Frame 3",
+    "type": "FRAME",
+    "rect": {
+      "x": 24,
+      "y": 426,
+      "width": 345,
+      "height": 48
+    },
+    "fills": [
+      {
+        "opacity": 0.05000000074505806,
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1848:1704",
+    "name": "Person or company name",
+    "type": "TEXT",
+    "rect": {
+      "x": 40,
+      "y": 439,
+      "width": 313,
+      "height": 22
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      }
+    ],
+    "style": {
+      "fontFamily": "SF Pro Text",
+      "fontPostScriptName": "SFProText-Semibold",
+      "fontStyle": "Semibold",
+      "fontWeight": 600,
+      "paragraphSpacing": 8,
+      "textAutoResize": "HEIGHT",
+      "fontSize": 18,
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "TOP",
+      "letterSpacing": -0.5,
+      "lineHeightPx": 21.600000381469727,
+      "lineHeightPercent": 100.55647277832031,
+      "lineHeightPercentFontSize": 120.00000762939453,
+      "lineHeightUnit": "FONT_SIZE_%"
+    },
+    "text": "Person or company name"
+  },
+  {
+    "id": "1848:1707",
+    "name": "Frame 2",
+    "type": "FRAME",
+    "rect": {
+      "x": 24,
+      "y": 482,
+      "width": 345,
+      "height": 48
+    },
+    "fills": [
+      {
+        "opacity": 0.05000000074505806,
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1848:1708",
+    "name": "Email used for login",
+    "type": "TEXT",
+    "rect": {
+      "x": 40,
+      "y": 495,
+      "width": 165,
+      "height": 22
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      }
+    ],
+    "style": {
+      "fontFamily": "SF Pro Text",
+      "fontPostScriptName": "SFProText-Semibold",
+      "fontStyle": "Semibold",
+      "fontWeight": 600,
+      "paragraphSpacing": 8,
+      "textAutoResize": "WIDTH_AND_HEIGHT",
+      "fontSize": 18,
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "TOP",
+      "letterSpacing": -0.5,
+      "lineHeightPx": 21.600000381469727,
+      "lineHeightPercent": 100.55647277832031,
+      "lineHeightPercentFontSize": 120.00000762939453,
+      "lineHeightUnit": "FONT_SIZE_%"
+    },
+    "text": "Email used for login"
+  },
+  {
+    "id": "1848:1709",
+    "name": "Frame 48",
+    "type": "FRAME",
+    "rect": {
+      "x": 24,
+      "y": 538,
+      "width": 345,
+      "height": 48
+    },
+    "fills": [
+      {
+        "opacity": 0.05000000074505806,
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1848:1710",
+    "name": "Phone number (optional)",
+    "type": "TEXT",
+    "rect": {
+      "x": 40,
+      "y": 551,
+      "width": 209,
+      "height": 22
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      }
+    ],
+    "style": {
+      "fontFamily": "SF Pro Text",
+      "fontPostScriptName": "SFProText-Semibold",
+      "fontStyle": "Semibold",
+      "fontWeight": 600,
+      "paragraphSpacing": 8,
+      "textAutoResize": "WIDTH_AND_HEIGHT",
+      "fontSize": 18,
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "TOP",
+      "letterSpacing": -0.5,
+      "lineHeightPx": 21.600000381469727,
+      "lineHeightPercent": 100.55647277832031,
+      "lineHeightPercentFontSize": 120.00000762939453,
+      "lineHeightUnit": "FONT_SIZE_%"
+    },
+    "text": "Phone number (optional)"
+  },
+  {
+    "id": "1850:2228",
+    "name": "btn",
+    "type": "INSTANCE",
+    "rect": {
+      "x": 24,
+      "y": 594,
+      "width": 345,
+      "height": 46
+    },
+    "fills": [
+      {
+        "opacity": 0.800000011920929,
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "I1850:2228;1850:2202",
+    "name": "Sign up to MediMap",
+    "type": "TEXT",
+    "rect": {
+      "x": 127.5,
+      "y": 606,
+      "width": 138,
+      "height": 22
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 1
+        }
+      }
+    ],
+    "style": {
+      "fontFamily": "SF Pro Text",
+      "fontPostScriptName": "SFProText-Semibold",
+      "fontStyle": "Semibold",
+      "fontWeight": 600,
+      "textAutoResize": "WIDTH_AND_HEIGHT",
+      "fontSize": 14,
+      "textAlignHorizontal": "CENTER",
+      "textAlignVertical": "CENTER",
+      "letterSpacing": -0.40799999237060547,
+      "lineHeightPx": 22.399999618530273,
+      "lineHeightPercent": 134.07528686523438,
+      "lineHeightPercentFontSize": 160,
+      "lineHeightUnit": "FONT_SIZE_%"
+    },
+    "text": "Sign up to DocRoster"
+  },
+  {
+    "id": "1848:1713",
+    "name": "Frame 33",
+    "type": "FRAME",
+    "rect": {
+      "x": 0,
+      "y": 664,
+      "width": 393,
+      "height": 24
+    },
+    "fills": [],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1848:1714",
+    "name": "akar-icons:check-box-fill",
+    "type": "FRAME",
+    "rect": {
+      "x": 34,
+      "y": 664,
+      "width": 24,
+      "height": 24
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "visible": false,
+        "type": "SOLID",
+        "color": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 1
+        }
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1848:1715",
+    "name": "Vector",
+    "type": "VECTOR",
+    "rect": {
+      "x": 36,
+      "y": 666,
+      "width": 20,
+      "height": 20
+    },
+    "fills": [
+      {
+        "opacity": 0.800000011920929,
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1848:1716",
+    "name": "I\u2019ve read and agree to the Terms and Conditions",
+    "type": "TEXT",
+    "rect": {
+      "x": 68,
+      "y": 668.5,
+      "width": 291,
+      "height": 15
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      }
+    ],
+    "style": {
+      "fontFamily": "SF Pro Text",
+      "fontPostScriptName": "SFProText-Bold",
+      "fontStyle": "Bold",
+      "fontWeight": 700,
+      "textAutoResize": "WIDTH_AND_HEIGHT",
+      "fontSize": 14,
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "CENTER",
+      "letterSpacing": -0.40799999237060547,
+      "lineHeightPx": 15.40000057220459,
+      "lineHeightPercent": 92.1767578125,
+      "lineHeightPercentFontSize": 110,
+      "lineHeightUnit": "FONT_SIZE_%"
+    },
+    "text": "I\u2019ve read and agree to the Terms and Conditions"
+  },
+  {
+    "id": "1848:1717",
+    "name": "Group 38",
+    "type": "GROUP",
+    "rect": {
+      "x": 119,
+      "y": 44,
+      "width": 155,
+      "height": 150
+    },
+    "fills": [],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1848:1718",
+    "name": "Rectangle 14",
+    "type": "RECTANGLE",
+    "rect": {
+      "x": 119,
+      "y": 44,
+      "width": 150,
+      "height": 150
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "visible": false,
+        "type": "IMAGE",
+        "scaleMode": "FILL",
+        "imageRef": "f896ce27f9d5736d0784321526ccc2d35c813b24"
+      },
+      {
+        "blendMode": "NORMAL",
+        "type": "IMAGE",
+        "scaleMode": "FILL",
+        "imageRef": "01607cd9fe82c40bc21bec2661fdd176768a408a"
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1848:1719",
+    "name": "akar-icons:camera",
+    "type": "FRAME",
+    "rect": {
+      "x": 226,
+      "y": 146,
+      "width": 48,
+      "height": 48
+    },
+    "fills": [
+      {
+        "opacity": 0.20000000298023224,
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 1
+        }
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1848:1720",
+    "name": "Group",
+    "type": "GROUP",
+    "rect": {
+      "x": 239.33,
+      "y": 159.33,
+      "width": 21.33,
+      "height": 21.33
+    },
+    "fills": [],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1848:1721",
+    "name": "Vector",
+    "type": "VECTOR",
+    "rect": {
+      "x": 239.33,
+      "y": 159.33,
+      "width": 21.33,
+      "height": 21.33
+    },
+    "fills": [],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1848:1722",
+    "name": "Vector",
+    "type": "VECTOR",
+    "rect": {
+      "x": 245.73,
+      "y": 167.87,
+      "width": 8.53,
+      "height": 8.53
+    },
+    "fills": [],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1848:1723",
+    "name": "Vector",
+    "type": "VECTOR",
+    "rect": {
+      "x": 248.93,
+      "y": 163.6,
+      "width": 2.13,
+      "height": 0
+    },
+    "fills": [],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "1850:2318",
+    "name": "close",
+    "type": "INSTANCE",
+    "rect": {
+      "x": 333,
+      "y": 24,
+      "width": 36,
+      "height": 36
+    },
+    "fills": [
+      {
+        "opacity": 0.47999998927116394,
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 1
+        }
+      }
+    ],
+    "style": null,
+    "text": null
+  },
+  {
+    "id": "I1850:2318;1850:2307",
+    "name": "SF Symbol / xmark",
+    "type": "VECTOR",
+    "rect": {
+      "x": 344.78,
+      "y": 35.78,
+      "width": 12.44,
+      "height": 12.44
+    },
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.03921568766236305,
+          "g": 0.09019608050584793,
+          "b": 0.2823529541492462,
+          "a": 1
+        }
+      }
+    ],
+    "style": null,
+    "text": null
+  }
+]

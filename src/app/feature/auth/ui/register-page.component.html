@@ -1,40 +1,80 @@
-<section class="auth section">
-  <div class="container auth__container">
-    <h1>Create your DocRoster account</h1>
-    <p class="auth__lead">Join the pilot workspace to manage assessments, network invites and specialists.</p>
+<section class="auth auth--register">
+  <div class="auth__frame">
+    <img src="assets/figma/login/background-large.png" alt="" class="auth__frame-bg" aria-hidden="true" />
 
-    <form [formGroup]="form" (ngSubmit)="submit()" class="auth__form">
-      <label>
-        Full name
-        <input type="text" formControlName="fullName" placeholder="Alex Morgan" />
-      </label>
-      <label>
-        Work email
-        <input type="email" formControlName="email" placeholder="you@organization.com" />
-      </label>
-      <label>
-        Password
-        <input type="password" formControlName="password" placeholder="Create a strong password" />
-      </label>
-      <label>
-        Confirm password
-        <input type="password" formControlName="confirmPassword" placeholder="Repeat password" />
-      </label>
-      <label>
-        Organization (optional)
-        <input type="text" formControlName="organization" placeholder="DocRoster Pilot Network" />
-      </label>
-
-      <button class="button" type="submit" [disabled]="status() === 'pending'">
-        {{ status() === 'pending' ? 'Creating account…' : 'Continue' }}
+    <div class="auth__card">
+      <img src="assets/figma/register/1848_1718.png" alt="" class="auth__avatar" aria-hidden="true" />
+      <button type="button" class="auth__avatar-action" aria-label="Upload photo">
+        <img src="assets/figma/register/1848_1719.png" alt="" />
       </button>
 
-      <p class="auth__error" *ngIf="status() === 'error'">{{ errorMessage() }}</p>
-      <p class="auth__success" *ngIf="status() === 'success'">Account created! Check your inbox for verification.</p>
-    </form>
+      <button type="button" class="auth__close" aria-label="Back to sign in" (click)="goToLogin()">
+        <img src="assets/figma/register/1850_2318.png" alt="" />
+      </button>
 
-    <div class="auth__links">
-      <a routerLink="/auth/login">Already have an account?</a>
+      <h1 class="auth__title">Register account</h1>
+      <p class="auth__subtitle">Sign up to view and manage specialists</p>
+
+      <button type="button" class="auth__provider auth__provider--google" aria-label="Sign up with Google">
+        <img src="assets/figma/login/google.png" alt="" class="auth__provider-icon" />
+        <span>Sign up</span>
+      </button>
+
+      <button type="button" class="auth__provider auth__provider--apple" aria-label="Sign up with Apple">
+        <img src="assets/figma/login/apple.png" alt="" class="auth__provider-icon" />
+        <span>Sign up</span>
+      </button>
+
+      <div class="auth__divider" aria-hidden="true">
+        <span class="auth__divider-line auth__divider-line--left"></span>
+        <span class="auth__divider-label">OR</span>
+        <span class="auth__divider-line auth__divider-line--right"></span>
+      </div>
+
+      <form [formGroup]="form" (ngSubmit)="submit()" class="auth__form" novalidate>
+        <p class="auth__form-error" *ngIf="showValidationErrors()">Please fill in the required details.</p>
+
+        <label class="auth__field" [class.auth__field--invalid]="isInvalid('fullName')">
+          <input
+            type="text"
+            formControlName="fullName"
+            placeholder="Person or company name"
+            autocomplete="name"
+            [attr.aria-invalid]="isInvalid('fullName')"
+          />
+        </label>
+
+        <label class="auth__field" [class.auth__field--invalid]="isInvalid('email')">
+          <input
+            type="email"
+            formControlName="email"
+            placeholder="Email used for login"
+            autocomplete="email"
+            [attr.aria-invalid]="isInvalid('email')"
+          />
+        </label>
+
+        <label class="auth__field">
+          <input type="tel" formControlName="phone" placeholder="Phone number (optional)" autocomplete="tel" />
+        </label>
+
+        <label class="auth__terms">
+          <input type="checkbox" formControlName="agreeToTerms" />
+          <span class="auth__terms-box">
+            <img src="assets/figma/register/1848_1714.png" alt="" />
+          </span>
+          <span class="auth__terms-label">I’ve read and agree to the Terms and Conditions</span>
+        </label>
+
+        <button class="auth__submit" type="submit" [disabled]="status() === 'pending'">
+          <span>{{ status() === 'pending' ? 'Creating account…' : 'Sign up to DocRoster' }}</span>
+        </button>
+
+        <p class="auth__form-status auth__form-status--error" *ngIf="status() === 'error'">{{ errorMessage() }}</p>
+        <p class="auth__form-status auth__form-status--success" *ngIf="status() === 'success'">
+          Account created! Check your inbox for verification.
+        </p>
+      </form>
     </div>
   </div>
 </section>

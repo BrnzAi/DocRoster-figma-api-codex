@@ -1,5 +1,5 @@
 import { NgIf } from '@angular/common';
-import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 
@@ -19,17 +19,19 @@ export class RegisterPageComponent {
   private readonly router = inject(Router);
 
   readonly status = signal<'idle' | 'pending' | 'success' | 'error'>('idle');
+  readonly submitted = signal(false);
   readonly form = this.fb.nonNullable.group({
-    fullName: ['', [Validators.required, Validators.minLength(3)]],
+    fullName: ['', [Validators.required, Validators.minLength(2)]],
     email: ['', [Validators.required, Validators.email]],
-    password: ['', [Validators.required, Validators.minLength(6)]],
-    confirmPassword: ['', [Validators.required, Validators.minLength(6)]],
-    organization: ['']
+    phone: [''],
+    agreeToTerms: [false, [Validators.requiredTrue]]
   });
   readonly errorMessage = signal<string | null>(null);
+  readonly showValidationErrors = computed(() => this.submitted() && this.form.invalid);
 
   submit(): void {
     if (this.form.invalid || this.status() === 'pending') {
+      this.submitted.set(true);
       this.form.markAllAsTouched();
       return;
     }
@@ -46,5 +48,14 @@ export class RegisterPageComponent {
         this.errorMessage.set(error.message);
       }
     });
+  }
+
+  isInvalid(controlName: 'fullName' | 'email'): boolean {
+    const control = this.form.controls[controlName];
+    return control.invalid && (control.dirty || control.touched || this.submitted());
+  }
+
+  goToLogin(): void {
+    this.router.navigate(['/auth/login']);
   }
 }

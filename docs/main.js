@@ -280,14 +280,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   AuthFacade: () => (/* binding */ AuthFacade)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 7580);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs */ 7919);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ 1318);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs/operators */ 8764);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 7580);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs */ 7919);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ 1318);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs/operators */ 8764);
 /* harmony import */ var _data_access_doc_roster_api_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../data-access/doc-roster-api.service */ 3944);
-/* harmony import */ var _shared_data_access_mocks_doc_roster_mocks__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../shared/data-access/mocks/doc-roster.mocks */ 4981);
-/* harmony import */ var _shared_data_access_mock_http_client_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../shared/data-access/mock-http-client.service */ 2592);
-
+/* harmony import */ var _shared_data_access_mock_http_client_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../shared/data-access/mock-http-client.service */ 2592);
 
 
 
@@ -296,36 +294,32 @@ __webpack_require__.r(__webpack_exports__);
 
 class AuthFacade {
   constructor() {
-    this.http = (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.inject)(_shared_data_access_mock_http_client_service__WEBPACK_IMPORTED_MODULE_2__.MockHttpClientService);
-    this.api = (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.inject)(_data_access_doc_roster_api_service__WEBPACK_IMPORTED_MODULE_0__.DocRosterApiService);
-    this.sessionSignal = (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.signal)(null);
-    this.errorSignal = (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.signal)(null);
-    this.session = (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.computed)(() => this.sessionSignal());
-    this.lastError = (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.computed)(() => this.errorSignal());
+    this.http = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.inject)(_shared_data_access_mock_http_client_service__WEBPACK_IMPORTED_MODULE_1__.MockHttpClientService);
+    this.api = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.inject)(_data_access_doc_roster_api_service__WEBPACK_IMPORTED_MODULE_0__.DocRosterApiService);
+    this.sessionSignal = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.signal)(null);
+    this.errorSignal = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.signal)(null);
+    this.session = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.computed)(() => this.sessionSignal());
+    this.lastError = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.computed)(() => this.errorSignal());
   }
   login(request) {
     this.errorSignal.set(null);
     return this.http.mutate(() => {
-      const isValidUser = request.email.toLowerCase() === _shared_data_access_mocks_doc_roster_mocks__WEBPACK_IMPORTED_MODULE_1__.MOCK_PROFILE.email.toLowerCase() && request.password.length >= 6;
-      if (!isValidUser) {
-        throw new Error('The email or password is incorrect.');
-      }
       const session = {
         token: crypto.randomUUID(),
         expiresAt: new Date(Date.now() + 1000 * 60 * 60 * 8).toISOString(),
-        userId: _shared_data_access_mocks_doc_roster_mocks__WEBPACK_IMPORTED_MODULE_1__.MOCK_PROFILE.id
+        userId: request.email.toLowerCase()
       };
       this.sessionSignal.set(session);
       return session;
-    }).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.catchError)(error => {
+    }).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__.catchError)(error => {
       this.errorSignal.set(error.message);
-      return (0,rxjs__WEBPACK_IMPORTED_MODULE_5__.throwError)(() => error);
+      return (0,rxjs__WEBPACK_IMPORTED_MODULE_4__.throwError)(() => error);
     }));
   }
   register(request) {
     this.errorSignal.set(null);
-    if (request.password !== request.confirmPassword) {
-      return (0,rxjs__WEBPACK_IMPORTED_MODULE_5__.throwError)(() => new Error('Passwords do not match.'));
+    if (!request.agreeToTerms) {
+      return (0,rxjs__WEBPACK_IMPORTED_MODULE_4__.throwError)(() => new Error('You must agree to the terms to continue.'));
     }
     return this.http.mutate(() => {
       const session = {
@@ -346,7 +340,7 @@ class AuthFacade {
   }
   verify(request) {
     this.errorSignal.set(null);
-    return this.http.mutate(() => request.code.trim().length === 6).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_6__.tap)(isValid => {
+    return this.http.mutate(() => request.code.trim().length === 6).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_5__.tap)(isValid => {
       if (!isValid) {
         this.errorSignal.set('The verification code is invalid.');
       }
@@ -364,7 +358,7 @@ class AuthFacade {
     };
   }
   static {
-    this.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjectable"]({
+    this.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjectable"]({
       token: AuthFacade,
       factory: AuthFacade.ɵfac,
       providedIn: 'root'
