@@ -1,0 +1,45 @@
+@use 'styles/variables' as *;
+
+.upload {
+  background: $color-surface-alt;
+
+  &__form {
+    display: grid;
+    gap: $spacing-md;
+    max-width: 640px;
+    margin: 0 auto;
+
+    label {
+      display: grid;
+      gap: 0.35rem;
+      font-weight: 600;
+
+      input,
+      textarea {
+        padding: 0.85rem 1rem;
+        border-radius: $radius-md;
+        border: 1px solid rgba($color-border, 0.9);
+        font-size: 1rem;
+      }
+
+      textarea {
+        resize: vertical;
+      }
+    }
+  }
+
+  &__progress {
+    background: $color-surface;
+    border-radius: $radius-md;
+    padding: 0.75rem 1rem;
+    color: $color-primary;
+  }
+
+  &__message {
+    color: $color-success;
+  }
+
+  &__error {
+    color: $color-danger;
+  }
+}

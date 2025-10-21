@@ -1,0 +1,26 @@
+<section class="assessments section" *ngIf="context$ | async as context; else loading">
+  <div class="container" *ngIf="context.organization as organization; else notFound">
+    <dr-section-header
+      [title]="organization.name"
+      [subtitle]="organization.focusAreas.join(' · ')"
+      badge="Organization assessments"
+    ></dr-section-header>
+
+    <div class="assessments__meta">
+      <span>{{ organization.location }}</span>
+      <span>{{ organization.accreditationLevel }}</span>
+    </div>
+
+    <div class="assessments__grid">
+      <dr-assessment-card *ngFor="let assessment of context.assessments" [assessment]="assessment"></dr-assessment-card>
+    </div>
+  </div>
+</section>
+
+<ng-template #loading>
+  <div class="container section"><p>Loading organization…</p></div>
+</ng-template>
+
+<ng-template #notFound>
+  <div class="container section"><p>Organization not found. Check the DocRoster network map.</p></div>
+</ng-template>

@@ -1,0 +1,43 @@
+<section class="upload section">
+  <div class="container">
+    <dr-section-header
+      title="Upload organization assessments"
+      subtitle="Share structured assessments, readiness scans or checklists with the DocRoster review team."
+      badge="Uploader"
+    ></dr-section-header>
+
+    <form [formGroup]="form" (ngSubmit)="submit()" class="upload__form">
+      <label>
+        Title
+        <input type="text" formControlName="title" placeholder="Northstar Quality Sprint" />
+      </label>
+      <label>
+        Organization
+        <input type="text" formControlName="organization" placeholder="Northstar Health Alliance" />
+      </label>
+      <label>
+        Category
+        <input type="text" formControlName="category" placeholder="Care coordination" />
+      </label>
+      <label>
+        Summary
+        <textarea formControlName="summary" rows="4" placeholder="Outline the goal, scope and next actions"></textarea>
+      </label>
+      <label>
+        File name (mock)
+        <input type="text" formControlName="fileName" placeholder="assessment.pdf" />
+      </label>
+
+      <button class="button" type="submit" [disabled]="isUploading()">
+        {{ isUploading() ? 'Uploading…' : 'Submit for review' }}
+      </button>
+
+      <div class="upload__progress" *ngIf="isUploading()">
+        <span>Progress: {{ progress() }}%</span>
+      </div>
+
+      <p class="upload__message" *ngIf="status() === 'complete'">{{ result() }}</p>
+      <p class="upload__error" *ngIf="status() === 'error'">{{ result() }}</p>
+    </form>
+  </div>
+</section>

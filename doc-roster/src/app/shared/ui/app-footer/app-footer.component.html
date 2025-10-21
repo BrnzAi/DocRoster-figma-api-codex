@@ -1,0 +1,20 @@
+<footer class="footer">
+  <div class="container footer__grid">
+    <div class="footer__brand">
+      <span class="footer__logo">DocRoster</span>
+      <p>Coordinating healthcare stories, assessments and talent in one connected platform.</p>
+    </div>
+    <div class="footer__section">
+      <h4>Resources</h4>
+      <a *ngFor="let item of resources" [routerLink]="item.path">{{ item.label }}</a>
+    </div>
+    <div class="footer__section">
+      <h4>Support</h4>
+      <a *ngFor="let item of support" [routerLink]="item.path">{{ item.label }}</a>
+    </div>
+    <div class="footer__meta">
+      <span>© {{ new Date().getFullYear() }} DocRoster.</span>
+      <span>Designed for the DocRoster pilot preview.</span>
+    </div>
+  </div>
+</footer>

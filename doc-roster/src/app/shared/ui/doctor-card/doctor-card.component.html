@@ -1,0 +1,34 @@
+<article class="doctor-card surface">
+  <div class="doctor-card__avatar" [style.background-image]="doctor.avatarUrl ? 'url(' + doctor.avatarUrl + ')' : ''">
+    <span *ngIf="!doctor.avatarUrl">{{ getInitials(doctor.name) }}</span>
+  </div>
+  <div class="doctor-card__body">
+    <header class="doctor-card__header">
+      <div>
+        <h3>{{ doctor.name }}</h3>
+        <p>{{ doctor.title }} · {{ doctor.specialty }}</p>
+        <span class="doctor-card__rating">★ {{ doctor.rating | number: '1.1-1' }} · {{ doctor.reviewCount }} reviews</span>
+      </div>
+      <div class="doctor-card__meta" *ngIf="clinic">
+        <span>{{ clinic.name }}</span>
+        <small>{{ clinic.address.city }}, {{ clinic.address.state }}</small>
+      </div>
+    </header>
+
+    <ul class="doctor-card__highlights">
+      <li *ngFor="let highlight of doctor.highlights">{{ highlight.label }} · <strong>{{ highlight.value }}</strong></li>
+    </ul>
+
+    <div class="doctor-card__availability" *ngIf="nextAvailable">
+      <span class="doctor-card__chip">Next available · {{ nextAvailable }}</span>
+      <span class="doctor-card__chip" *ngIf="highlightDistance">{{ highlightDistance }} min away</span>
+      <span class="doctor-card__chip" *ngIf="doctor.virtualCare">Virtual visits</span>
+      <span class="doctor-card__chip" *ngIf="doctor.languages.length > 1">{{ doctor.languages.join(', ') }}</span>
+    </div>
+
+    <footer class="doctor-card__footer" *ngIf="showActions">
+      <a class="button" [routerLink]="['/specialists', doctor.id]">Open profile</a>
+      <a class="button button--ghost" [routerLink]="['/review', 'rev-aurora-1']">Read stories</a>
+    </footer>
+  </div>
+</article>

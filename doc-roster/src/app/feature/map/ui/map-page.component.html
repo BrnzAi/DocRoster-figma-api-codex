@@ -1,0 +1,59 @@
+<section class="map-hero section">
+  <div class="container">
+    <dr-section-header
+      title="Navigate the DocRoster care map"
+      subtitle="Preview our connected network of clinics, specialists and assessment programs before the public rollout."
+      badge="Pilot preview"
+    >
+      <div actions class="map-hero__actions">
+        <a class="button" routerLink="/search">Search specialists</a>
+        <a class="button button--ghost" routerLink="/auth/register">Request access</a>
+      </div>
+    </dr-section-header>
+
+    <div class="map-hero__metrics">
+      <dr-metric-pill
+        value="{{ facade.metrics().membersServed | number }}"
+        label="Members served"
+      ></dr-metric-pill>
+      <dr-metric-pill
+        tone="secondary"
+        value="{{ facade.metrics().activeClinics }}"
+        label="Active clinics"
+      ></dr-metric-pill>
+      <dr-metric-pill
+        tone="neutral"
+        value="{{ facade.metrics().availableSpecialists }}"
+        label="Specialists"
+      ></dr-metric-pill>
+      <dr-metric-pill
+        value="{{ facade.metrics().averageSatisfaction | number: '1.1-1' }} ★"
+        label="Community rating"
+      ></dr-metric-pill>
+    </div>
+  </div>
+</section>
+
+<section class="map-section section">
+  <div class="container">
+    <dr-section-header title="Featured pilot clinics" subtitle="See how DocRoster coordinates across physical and virtual fronts."></dr-section-header>
+    <div class="map-section__grid" *ngIf="facade.clinics$ | async as clinics">
+      <dr-clinic-card *ngFor="let clinic of clinics" [clinic]="clinic"></dr-clinic-card>
+    </div>
+  </div>
+</section>
+
+<section class="map-section section map-section--alt">
+  <div class="container">
+    <dr-section-header title="Trending specialists" subtitle="Matching community stories with the right expertise."></dr-section-header>
+    <div class="map-section__grid map-section__grid--doctors" *ngIf="facade.searchResults$ | async as results">
+      <dr-doctor-card
+        *ngFor="let result of results"
+        [doctor]="result.doctor"
+        [clinic]="result.clinic"
+        [nextAvailable]="result.nextAvailable"
+        [highlightDistance]="result.distanceInMinutes"
+      ></dr-doctor-card>
+    </div>
+  </div>
+</section>

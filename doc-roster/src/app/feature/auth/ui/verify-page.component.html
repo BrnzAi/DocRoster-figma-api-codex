@@ -1,0 +1,23 @@
+<section class="auth section">
+  <div class="container auth__container">
+    <h1>Verify your DocRoster account</h1>
+    <p class="auth__lead">Enter the 6-digit code sent to <strong>{{ email() || 'your email' }}</strong>.</p>
+
+    <form [formGroup]="form" (ngSubmit)="submit()" class="auth__form">
+      <label>
+        Verification code
+        <input type="text" formControlName="code" placeholder="123456" maxlength="6" />
+      </label>
+      <button class="button" type="submit" [disabled]="status() === 'pending'">
+        {{ status() === 'pending' ? 'Verifying…' : 'Verify account' }}
+      </button>
+      <p class="auth__success" *ngIf="status() === 'success'">{{ message() }}</p>
+      <p class="auth__error" *ngIf="status() === 'error'">{{ message() }}</p>
+    </form>
+
+    <div class="auth__links">
+      <a routerLink="/auth/recover">Resend code</a>
+      <a routerLink="/auth/login">Back to sign in</a>
+    </div>
+  </div>
+</section>

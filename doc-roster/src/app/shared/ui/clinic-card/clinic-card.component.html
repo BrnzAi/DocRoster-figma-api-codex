@@ -1,0 +1,33 @@
+<article class="clinic-card surface">
+  <div class="clinic-card__header">
+    <div>
+      <span *ngIf="clinic.isVerified" class="clinic-card__pill">Verified network</span>
+      <h3>{{ clinic.name }}</h3>
+      <p>{{ clinic.description }}</p>
+    </div>
+    <div class="clinic-card__rating">
+      <span>{{ clinic.rating | number: '1.1-1' }}</span>
+      <small>{{ clinic.reviewCount }} reviews</small>
+    </div>
+  </div>
+
+  <ul class="clinic-card__tags">
+    <li *ngFor="let specialty of clinic.specialties">{{ specialty }}</li>
+  </ul>
+
+  <div class="clinic-card__meta">
+    <div>
+      <strong>{{ clinic.address.city }}, {{ clinic.address.state }}</strong>
+      <span>{{ clinic.openingHours }}</span>
+    </div>
+    <div>
+      <span>{{ clinic.phone }}</span>
+      <a [href]="'mailto:' + clinic.email">{{ clinic.email }}</a>
+    </div>
+  </div>
+
+  <div class="clinic-card__actions" *ngIf="showActions">
+    <a class="button" [routerLink]="['/search']" [queryParams]="{ clinic: clinic.id }">View specialists</a>
+    <a class="button button--ghost" [routerLink]="['/organizations', 'org-northstar', 'assessments']">Org assessments</a>
+  </div>
+</article>

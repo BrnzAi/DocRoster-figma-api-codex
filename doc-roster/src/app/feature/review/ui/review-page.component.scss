@@ -1,0 +1,23 @@
+@use 'styles/variables' as *;
+
+.review {
+  &__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    color: $color-text-muted;
+    margin-top: 0.75rem;
+  }
+
+  &__context {
+    margin-top: $spacing-xl;
+
+    h3 {
+      margin-bottom: $spacing-md;
+    }
+  }
+
+  &__card {
+    margin-top: $spacing-xl;
+  }
+}

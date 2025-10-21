@@ -1,0 +1,32 @@
+<header class="navigation" [class.navigation--open]="menuOpen()">
+  <div class="navigation__inner container">
+    <a class="navigation__brand" routerLink="/" (click)="closeMenu()">
+      <span class="navigation__logo">DocRoster</span>
+      <span class="navigation__beta">Pilot</span>
+    </a>
+
+    <nav class="navigation__links" [class.navigation__links--visible]="menuOpen()">
+      <a
+        *ngFor="let link of links"
+        routerLink="link.path"
+        routerLinkActive="navigation__link--active"
+        class="navigation__link"
+        (click)="closeMenu()"
+        >{{ link.label }}</a
+      >
+    </nav>
+
+    <div class="navigation__actions">
+      <a class="navigation__action navigation__action--ghost" routerLink="/review/rev-aurora-1">Community stories</a>
+      <a *ngIf="!isAuthenticated(); else accountLink" class="navigation__action" routerLink="/auth/login">Sign in</a>
+      <ng-template #accountLink>
+        <button type="button" class="navigation__action" (click)="signOut()">Sign out</button>
+      </ng-template>
+      <button class="navigation__menu" type="button" (click)="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>

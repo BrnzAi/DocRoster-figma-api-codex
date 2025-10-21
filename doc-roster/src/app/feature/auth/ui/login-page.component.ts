@@ -1,0 +1,45 @@
+import { AsyncPipe, NgIf } from '@angular/common';
+import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
+import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Router, RouterLink } from '@angular/router';
+
+import { AuthFacade } from '../data-access/auth.facade';
+
+@Component({
+  selector: 'dr-login-page',
+  standalone: true,
+  imports: [ReactiveFormsModule, RouterLink, NgIf, AsyncPipe],
+  templateUrl: './login-page.component.html',
+  styleUrls: ['./login-page.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class LoginPageComponent {
+  private readonly fb = inject(FormBuilder);
+  private readonly auth = inject(AuthFacade);
+  private readonly router = inject(Router);
+
+  readonly status = signal<'idle' | 'pending' | 'success' | 'error'>('idle');
+  readonly errorMessage = computed(() => this.auth.lastError());
+
+  readonly form = this.fb.nonNullable.group({
+    email: ['', [Validators.required, Validators.email]],
+    password: ['', [Validators.required, Validators.minLength(6)]],
+    remember: [true]
+  });
+
+  submit(): void {
+    if (this.form.invalid || this.status() === 'pending') {
+      return;
+    }
+    this.status.set('pending');
+    this.auth.login(this.form.getRawValue()).subscribe({
+      next: () => {
+        this.status.set('success');
+        this.router.navigate(['/profile']);
+      },
+      error: () => {
+        this.status.set('error');
+      }
+    });
+  }
+}

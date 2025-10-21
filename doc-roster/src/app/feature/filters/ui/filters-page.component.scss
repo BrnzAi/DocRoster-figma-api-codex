@@ -1,0 +1,51 @@
+@use 'styles/variables' as *;
+
+.filters-hero {
+  background: linear-gradient(135deg, rgba($color-primary, 0.1), rgba($color-secondary, 0.08));
+
+  &__actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  &__selected {
+    margin-top: $spacing-lg;
+    display: grid;
+    gap: 0.5rem;
+
+    span {
+      font-weight: 600;
+      color: $color-text;
+    }
+  }
+}
+
+.filters-layout {
+  display: grid;
+  gap: $spacing-xl;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+
+  &__group {
+    background: $color-surface;
+    border-radius: $radius-lg;
+    padding: 1.5rem;
+    box-shadow: $shadow-soft;
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  &__clear {
+    justify-self: flex-start;
+    background: none;
+    border: none;
+    color: $color-primary;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  &__results {
+    display: grid;
+    gap: $spacing-lg;
+  }
+}

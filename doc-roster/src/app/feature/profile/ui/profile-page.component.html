@@ -1,0 +1,41 @@
+<section class="profile section" *ngIf="profile$ | async as profile">
+  <div class="container">
+    <dr-section-header
+      [title]="profile.name"
+      [subtitle]="profile.bio"
+      badge="Your coordination cockpit"
+    ></dr-section-header>
+
+    <div class="profile__grid">
+      <div class="profile__card">
+        <h3>Account overview</h3>
+        <ul>
+          <li><span>Email</span><strong>{{ profile.email }}</strong></li>
+          <li><span>Role</span><strong>{{ profile.role | titlecase }}</strong></li>
+          <li><span>Organization</span><strong>{{ profile.organization }}</strong></li>
+          <li><span>Last login</span><strong>{{ profile.lastLogin | date: 'medium' }}</strong></li>
+        </ul>
+      </div>
+
+      <div class="profile__card">
+        <h3>Skills & focus</h3>
+        <dr-tag-list [tags]="profile.skills"></dr-tag-list>
+      </div>
+
+      <div class="profile__card profile__notifications">
+        <h3>Notifications</h3>
+        <p>Keep me updated when new assessments or specialists match my teams.</p>
+        <label class="toggle">
+          <input
+            type="checkbox"
+            [checked]="profile.notificationsEnabled"
+            (change)="onToggleNotifications($any($event.target).checked)"
+          />
+          <span></span>
+          <strong>{{ profile.notificationsEnabled ? 'Enabled' : 'Disabled' }}</strong>
+        </label>
+        <span class="profile__saving" *ngIf="isSaving()">Updating…</span>
+      </div>
+    </div>
+  </div>
+</section>

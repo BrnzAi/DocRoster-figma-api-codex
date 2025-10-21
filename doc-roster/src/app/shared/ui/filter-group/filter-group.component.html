@@ -1,0 +1,18 @@
+<section class="filter-group">
+  <header>
+    <h3>{{ group.title }}</h3>
+    <p *ngIf="group.description">{{ group.description }}</p>
+  </header>
+  <div class="filter-group__options">
+    <button
+      type="button"
+      *ngFor="let option of group.options"
+      (click)="onToggle(option.value)"
+      [ngClass]="{ 'filter-group__option--active': isActive(option.value) }"
+      class="filter-group__option"
+    >
+      <span *ngIf="option.icon" class="material-symbols-rounded">{{ option.icon }}</span>
+      {{ option.label }}
+    </button>
+  </div>
+</section>

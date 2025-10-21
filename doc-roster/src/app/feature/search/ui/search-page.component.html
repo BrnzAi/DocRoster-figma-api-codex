@@ -1,0 +1,48 @@
+<section class="search-hero section">
+  <div class="container">
+    <dr-section-header
+      title="Search DocRoster specialists"
+      subtitle="Blend map intelligence, filters and live availability to find the teams you need."
+    >
+      <div actions class="search-hero__actions" *ngIf="hasSelections()">
+        <button class="button button--ghost" type="button" (click)="resetAll()">Reset filters</button>
+      </div>
+    </dr-section-header>
+    <p class="search-hero__meta" *ngIf="(totalResults$ | async) as total">{{ total.length }} specialists across the pilot network.</p>
+  </div>
+</section>
+
+<section class="search-layout container">
+  <aside class="search-layout__filters" *ngIf="filters$ | async as groups">
+    <ng-container *ngFor="let group of groups">
+      <div class="search-layout__filter-group">
+        <dr-filter-group
+          [group]="group"
+          [selected]="selections()[group.id] ?? []"
+          (toggled)="onToggle(group, $event)"
+        ></dr-filter-group>
+        <button
+          type="button"
+          class="search-layout__clear"
+          *ngIf="(selections()[group.id] ?? []).length"
+          (click)="clearGroup(group.id)"
+        >
+          Clear {{ group.title.toLowerCase() }}
+        </button>
+      </div>
+    </ng-container>
+  </aside>
+  <div class="search-layout__results" *ngIf="filteredResults$ | async as results">
+    <div class="search-layout__empty" *ngIf="!results.length">
+      <h3>No matches yet</h3>
+      <p>Adjust the filters or explore the DocRoster map to discover more pilot specialists.</p>
+    </div>
+    <dr-doctor-card
+      *ngFor="let result of results"
+      [doctor]="result.doctor"
+      [clinic]="result.clinic"
+      [nextAvailable]="result.nextAvailable"
+      [highlightDistance]="result.distanceInMinutes"
+    ></dr-doctor-card>
+  </div>
+</section>

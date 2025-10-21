@@ -1,0 +1,36 @@
+<section class="review section" *ngIf="context$ | async as context; else loading">
+  <div class="container" *ngIf="context.review as review; else notFound">
+    <dr-section-header
+      [title]="review.headline"
+      [subtitle]="review.comment"
+      badge="Community review"
+    ></dr-section-header>
+
+    <div class="review__meta">
+      <span>Rated {{ review.rating }}/5</span>
+      <span>{{ review.author }} · {{ review.role }}</span>
+      <span>{{ review.createdAt | date: 'mediumDate' }}</span>
+    </div>
+
+    <div class="review__context" *ngIf="context.doctor">
+      <h3>Specialist referenced</h3>
+      <dr-doctor-card
+        [doctor]="context.doctor"
+        [clinic]="context.clinic"
+        [showActions]="false"
+      ></dr-doctor-card>
+    </div>
+
+    <div class="review__card">
+      <dr-review-card [review]="review"></dr-review-card>
+    </div>
+  </div>
+</section>
+
+<ng-template #loading>
+  <div class="container section"><p>Loading story…</p></div>
+</ng-template>
+
+<ng-template #notFound>
+  <div class="container section"><p>Story not found. Explore other community stories from the map.</p></div>
+</ng-template>

@@ -1,0 +1,22 @@
+<article class="assessment-card surface">
+  <header class="assessment-card__header">
+    <div>
+      <h3>{{ assessment.title }}</h3>
+      <p>{{ assessment.summary }}</p>
+    </div>
+    <div class="assessment-card__progress">
+      <span>{{ assessment.progress }}%</span>
+      <small>Progress</small>
+    </div>
+  </header>
+
+  <div class="assessment-card__meta">
+    <span>{{ assessment.category }}</span>
+    <span>Reviewer · {{ assessment.reviewer }}</span>
+    <span>Updated {{ assessment.updatedAt | date: 'mediumDate' }}</span>
+  </div>
+
+  <ul class="assessment-card__actions">
+    <li *ngFor="let action of assessment.actions">{{ action }}</li>
+  </ul>
+</article>

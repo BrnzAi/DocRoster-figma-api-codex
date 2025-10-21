@@ -1,0 +1,15 @@
+<article class="review-card surface">
+  <header class="review-card__header">
+    <div>
+      <h3>{{ review.headline }}</h3>
+      <p>Rated {{ review.rating }}/5 by {{ review.author }} · {{ review.role }}</p>
+    </div>
+    <span class="review-card__date">{{ review.createdAt | date: 'mediumDate' }}</span>
+  </header>
+
+  <p class="review-card__comment">{{ review.comment }}</p>
+
+  <footer class="review-card__footer">
+    <span *ngFor="let tag of review.tags" class="review-card__tag">#{{ tag }}</span>
+  </footer>
+</article>

@@ -1,0 +1,61 @@
+@use 'styles/variables' as *;
+
+.footer {
+  background: linear-gradient(135deg, rgba($color-primary, 0.08), rgba($color-secondary, 0.08));
+  padding-block: $spacing-xl;
+  color: rgba($color-text, 0.86);
+
+  &__grid {
+    display: grid;
+    gap: $spacing-lg;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    align-items: start;
+  }
+
+  &__brand {
+    max-width: 320px;
+
+    p {
+      margin-top: 0.75rem;
+      line-height: 1.6;
+      color: $color-text-muted;
+    }
+  }
+
+  &__logo {
+    font-weight: 700;
+    font-size: 1.25rem;
+  }
+
+  &__section {
+    display: grid;
+    gap: 0.65rem;
+
+    h4 {
+      margin: 0;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: $color-text;
+    }
+
+    a {
+      color: $color-text-muted;
+      font-weight: 500;
+      transition: color $transition-base;
+
+      &:hover {
+        color: $color-primary;
+      }
+    }
+  }
+
+  &__meta {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    font-size: 0.85rem;
+    color: $color-text-muted;
+  }
+}

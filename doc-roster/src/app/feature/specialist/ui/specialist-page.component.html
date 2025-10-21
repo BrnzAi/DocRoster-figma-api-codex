@@ -1,0 +1,52 @@
+<section class="specialist section" *ngIf="context$ | async as context; else loading">
+  <div class="container" *ngIf="context.doctor as doctor; else notFound">
+    <dr-section-header
+      [title]="doctor.name"
+      [subtitle]="doctor.biography"
+      badge="Specialist profile"
+    ></dr-section-header>
+
+    <div class="specialist__meta">
+      <div>
+        <span class="specialist__rating">★ {{ doctor.rating | number: '1.1-1' }} · {{ doctor.reviewCount }} reviews</span>
+        <dr-tag-list [tags]="doctor.languages"></dr-tag-list>
+      </div>
+      <div class="specialist__highlights">
+        <div *ngFor="let highlight of doctor.highlights">
+          <span>{{ highlight.label }}</span>
+          <strong>{{ highlight.value }}</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="specialist__availability">
+      <h3>Weekly availability</h3>
+      <div class="specialist__schedule">
+        <div *ngFor="let slot of doctor.availability">
+          <span>{{ slot.day }}</span>
+          <strong>{{ slot.times.join(' · ') }}</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="specialist__clinic" *ngIf="context.clinic">
+      <h3>Care hub</h3>
+      <dr-clinic-card [clinic]="context.clinic" [showActions]="false"></dr-clinic-card>
+    </div>
+
+    <div class="specialist__reviews" *ngIf="context.reviews.length">
+      <h3>Stories from the DocRoster community</h3>
+      <div class="specialist__reviews-grid">
+        <dr-review-card *ngFor="let review of context.reviews" [review]="review"></dr-review-card>
+      </div>
+    </div>
+  </div>
+</section>
+
+<ng-template #loading>
+  <div class="container section"><p>Loading profile…</p></div>
+</ng-template>
+
+<ng-template #notFound>
+  <div class="container section"><p>We could not find this specialist. Try exploring the map.</p></div>
+</ng-template>

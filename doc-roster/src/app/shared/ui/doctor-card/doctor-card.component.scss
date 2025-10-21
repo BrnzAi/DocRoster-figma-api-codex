@@ -1,0 +1,108 @@
+@use 'styles/variables' as *;
+
+.doctor-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: $spacing-lg;
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  align-items: start;
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+  }
+
+  &__avatar {
+    width: 88px;
+    height: 88px;
+    border-radius: 24px;
+    background-size: cover;
+    background-position: center;
+    background-color: rgba($color-primary, 0.12);
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: $color-primary;
+  }
+
+  &__body {
+    display: grid;
+    gap: $spacing-md;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    gap: $spacing-md;
+    flex-wrap: wrap;
+
+    h3 {
+      margin: 0;
+      font-size: 1.3rem;
+    }
+
+    p {
+      margin: 0.35rem 0 0 0;
+      color: $color-text-muted;
+    }
+  }
+
+  &__rating {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-weight: 600;
+    color: $color-primary;
+  }
+
+  &__meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.35rem;
+    font-size: 0.95rem;
+    color: $color-text-muted;
+
+    span {
+      font-weight: 600;
+      color: $color-text;
+    }
+  }
+
+  &__highlights {
+    display: grid;
+    gap: 0.45rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    li {
+      color: $color-text-muted;
+      font-size: 0.95rem;
+
+      strong {
+        color: $color-text;
+        font-weight: 600;
+      }
+    }
+  }
+
+  &__availability {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  &__chip {
+    @extend .chip;
+    background: rgba($color-primary, 0.08);
+    border: none;
+    font-size: 0.85rem;
+  }
+
+  &__footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+}

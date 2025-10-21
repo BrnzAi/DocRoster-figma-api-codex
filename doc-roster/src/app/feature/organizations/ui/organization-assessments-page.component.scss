@@ -1,0 +1,18 @@
+@use 'styles/variables' as *;
+
+.assessments {
+  &__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    color: $color-text-muted;
+    margin-top: 0.75rem;
+  }
+
+  &__grid {
+    margin-top: $spacing-lg;
+    display: grid;
+    gap: $spacing-lg;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+}

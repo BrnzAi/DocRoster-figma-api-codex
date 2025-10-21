@@ -1,0 +1,44 @@
+@use 'styles/variables' as *;
+
+.filter-group {
+  display: grid;
+  gap: $spacing-sm;
+
+  header {
+    h3 {
+      margin: 0;
+      font-size: 1.1rem;
+    }
+
+    p {
+      margin: 0.4rem 0 0 0;
+      color: $color-text-muted;
+    }
+  }
+
+  &__options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  &__option {
+    @extend .chip;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    border: 1px solid rgba($color-border, 0.9);
+    cursor: pointer;
+    background: $color-surface;
+
+    &--active {
+      background: rgba($color-primary, 0.12);
+      border-color: rgba($color-primary, 0.4);
+      color: $color-primary;
+    }
+
+    .material-symbols-rounded {
+      font-size: 1rem;
+    }
+  }
+}
