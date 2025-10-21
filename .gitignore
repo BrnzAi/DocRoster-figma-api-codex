@@ -1,14 +1,13 @@
 # Environment
-.env
+figma-tools/.env
 
 # Dependencies
 /node_modules
-/doc-roster/node_modules
+/figma-tools/node_modules
 
 # Build outputs
 /dist
-/doc-roster/dist
-/doc-roster/.angular
+/.angular
 
 # IDE
 /.vscode

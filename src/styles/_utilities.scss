@@ -1,0 +1,57 @@
+@use 'variables' as *;
+
+@mixin badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  background: rgba($color-primary, 0.12);
+  color: $color-primary;
+}
+
+@mixin button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: linear-gradient(135deg, $color-primary, $color-primary-dark);
+  color: $color-surface;
+  transition: transform $transition-base, box-shadow $transition-base;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $shadow-card;
+  }
+
+  &--ghost {
+    background: rgba($color-primary, 0.08);
+    color: $color-primary;
+  }
+}
+
+@mixin chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  background: $color-surface;
+  border: 1px solid rgba($color-border, 0.8);
+  font-weight: 500;
+  color: $color-text;
+  transition: background $transition-base, color $transition-base, border-color $transition-base;
+
+  &--active {
+    background: rgba($color-primary, 0.12);
+    color: $color-primary;
+    border-color: rgba($color-primary, 0.4);
+  }
+}

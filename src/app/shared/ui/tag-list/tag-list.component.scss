@@ -1,0 +1,16 @@
+@use 'styles/variables' as *;
+@use 'styles/utilities' as util;
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  li {
+    @include util.chip;
+    font-size: 0.85rem;
+  }
+}
