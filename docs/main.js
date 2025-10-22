@@ -46,7 +46,7 @@ class AppComponent {
     });
     this.showChrome = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.computed)(() => {
       const url = this.currentUrl();
-      const hiddenRoutes = ['/auth', '/search', '/profile'];
+      const hiddenRoutes = ['/auth', '/search', '/profile', '/specialists'];
       return !hiddenRoutes.some(path => url.startsWith(path));
     });
   }
@@ -125,37 +125,50 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   routes: () => (/* binding */ routes)
 /* harmony export */ });
+/* harmony import */ var _shared_data_access_guards_auth_guard__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./shared/data-access/guards/auth.guard */ 4658);
+
 const routes = [{
   path: '',
-  loadComponent: () => Promise.all(/*! import() */[__webpack_require__.e(541), __webpack_require__.e(435), __webpack_require__.e(670)]).then(__webpack_require__.bind(__webpack_require__, /*! ./feature/map/ui/map-page.component */ 2670)).then(m => m.MapPageComponent),
+  pathMatch: 'full',
+  redirectTo: 'auth/login'
+}, {
+  path: 'map',
+  loadComponent: () => Promise.all(/*! import() */[__webpack_require__.e(541), __webpack_require__.e(670)]).then(__webpack_require__.bind(__webpack_require__, /*! ./feature/map/ui/map-page.component */ 2670)).then(m => m.MapPageComponent),
   title: 'DocRoster — Explore healthcare on the map'
 }, {
   path: 'search',
+  canActivate: [_shared_data_access_guards_auth_guard__WEBPACK_IMPORTED_MODULE_0__.authGuard],
   loadComponent: () => __webpack_require__.e(/*! import() */ 422).then(__webpack_require__.bind(__webpack_require__, /*! ./feature/search/ui/search-page.component */ 1422)).then(m => m.SearchPageComponent),
   title: 'DocRoster — Search specialists'
 }, {
   path: 'filters',
-  loadComponent: () => Promise.all(/*! import() */[__webpack_require__.e(541), __webpack_require__.e(76), __webpack_require__.e(892)]).then(__webpack_require__.bind(__webpack_require__, /*! ./feature/filters/ui/filters-page.component */ 892)).then(m => m.FiltersPageComponent),
+  canActivate: [_shared_data_access_guards_auth_guard__WEBPACK_IMPORTED_MODULE_0__.authGuard],
+  loadComponent: () => Promise.all(/*! import() */[__webpack_require__.e(541), __webpack_require__.e(892)]).then(__webpack_require__.bind(__webpack_require__, /*! ./feature/filters/ui/filters-page.component */ 892)).then(m => m.FiltersPageComponent),
   title: 'DocRoster — Smart filters'
 }, {
   path: 'specialists/:id',
-  loadComponent: () => Promise.all(/*! import() */[__webpack_require__.e(435), __webpack_require__.e(76), __webpack_require__.e(714)]).then(__webpack_require__.bind(__webpack_require__, /*! ./feature/specialist/ui/specialist-page.component */ 9714)).then(m => m.SpecialistPageComponent),
+  canActivate: [_shared_data_access_guards_auth_guard__WEBPACK_IMPORTED_MODULE_0__.authGuard],
+  loadComponent: () => __webpack_require__.e(/*! import() */ 714).then(__webpack_require__.bind(__webpack_require__, /*! ./feature/specialist/ui/specialist-page.component */ 9714)).then(m => m.SpecialistPageComponent),
   title: 'DocRoster — Specialist profile'
 }, {
   path: 'organizations/:id/assessments',
+  canActivate: [_shared_data_access_guards_auth_guard__WEBPACK_IMPORTED_MODULE_0__.authGuard],
   loadComponent: () => __webpack_require__.e(/*! import() */ 609).then(__webpack_require__.bind(__webpack_require__, /*! ./feature/organizations/ui/organization-assessments-page.component */ 9609)).then(m => m.OrganizationAssessmentsPageComponent),
   title: 'DocRoster — Organization assessments'
 }, {
   path: 'profile',
+  canActivate: [_shared_data_access_guards_auth_guard__WEBPACK_IMPORTED_MODULE_0__.authGuard],
   loadComponent: () => __webpack_require__.e(/*! import() */ 488).then(__webpack_require__.bind(__webpack_require__, /*! ./feature/profile/ui/profile-page.component */ 3488)).then(m => m.ProfilePageComponent),
   title: 'DocRoster — Your profile'
 }, {
   path: 'upload',
+  canActivate: [_shared_data_access_guards_auth_guard__WEBPACK_IMPORTED_MODULE_0__.authGuard],
   loadComponent: () => __webpack_require__.e(/*! import() */ 50).then(__webpack_require__.bind(__webpack_require__, /*! ./feature/upload/ui/upload-page.component */ 2050)).then(m => m.UploadPageComponent),
   title: 'DocRoster — Upload assessments'
 }, {
   path: 'review/:id',
-  loadComponent: () => Promise.all(/*! import() */[__webpack_require__.e(541), __webpack_require__.e(76), __webpack_require__.e(566)]).then(__webpack_require__.bind(__webpack_require__, /*! ./feature/review/ui/review-page.component */ 6566)).then(m => m.ReviewPageComponent),
+  canActivate: [_shared_data_access_guards_auth_guard__WEBPACK_IMPORTED_MODULE_0__.authGuard],
+  loadComponent: () => Promise.all(/*! import() */[__webpack_require__.e(541), __webpack_require__.e(566)]).then(__webpack_require__.bind(__webpack_require__, /*! ./feature/review/ui/review-page.component */ 6566)).then(m => m.ReviewPageComponent),
   title: 'DocRoster — Review submission'
 }, {
   path: 'auth',
@@ -182,7 +195,7 @@ const routes = [{
   }]
 }, {
   path: '**',
-  redirectTo: ''
+  redirectTo: 'auth/login'
 }];
 
 /***/ }),
@@ -342,6 +355,10 @@ class AuthFacade {
       sentAt: new Date().toISOString()
     }));
   }
+  uploadAvatar(file) {
+    const reference = `avatar-${crypto.randomUUID()}-${file.name}`;
+    return this.http.mutate(() => reference);
+  }
   verify(request) {
     this.errorSignal.set(null);
     return this.http.mutate(() => request.code.trim().length === 6).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_5__.tap)(isValid => {
@@ -369,6 +386,33 @@ class AuthFacade {
     });
   }
 }
+
+/***/ }),
+
+/***/ 4658:
+/*!*********************************************************!*\
+  !*** ./src/app/shared/data-access/guards/auth.guard.ts ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   authGuard: () => (/* binding */ authGuard)
+/* harmony export */ });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 7580);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ 5072);
+/* harmony import */ var _feature_auth_data_access_auth_facade__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../feature/auth/data-access/auth.facade */ 5990);
+
+
+
+const authGuard = () => {
+  const auth = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_feature_auth_data_access_auth_facade__WEBPACK_IMPORTED_MODULE_0__.AuthFacade);
+  const router = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_router__WEBPACK_IMPORTED_MODULE_2__.Router);
+  if (auth.session()) {
+    return true;
+  }
+  return router.createUrlTree(['/auth/login']);
+};
 
 /***/ }),
 
@@ -524,7 +568,7 @@ const MOCK_DOCTORS = [{
   experienceYears: 14,
   rating: 4.9,
   reviewCount: 142,
-  avatarUrl: 'assets/images/doctors/mariah-lopez.svg',
+  avatarUrl: 'assets/figma/search/1814_1178.png',
   highlights: [{
     label: 'Programs designed',
     value: '58'
@@ -547,7 +591,10 @@ const MOCK_DOCTORS = [{
   }],
   languages: ['English', 'Spanish'],
   acceptedPlans: ['ppo', 'direct'],
-  virtualCare: true
+  virtualCare: true,
+  feeTier: 'medium',
+  gender: 'female',
+  careType: 'hybrid'
 }, {
   id: 'dr-fujiwara',
   name: 'Dr. Kenji Fujiwara',
@@ -558,7 +605,7 @@ const MOCK_DOCTORS = [{
   experienceYears: 11,
   rating: 4.8,
   reviewCount: 97,
-  avatarUrl: 'assets/images/doctors/kenji-fujiwara.svg',
+  avatarUrl: 'assets/figma/search/1814_1186.png',
   highlights: [{
     label: 'Patient panel',
     value: '420 families'
@@ -575,7 +622,10 @@ const MOCK_DOCTORS = [{
   }],
   languages: ['English', 'Japanese'],
   acceptedPlans: ['hmo', 'ppo'],
-  virtualCare: true
+  virtualCare: true,
+  feeTier: 'low',
+  gender: 'male',
+  careType: 'virtual'
 }, {
   id: 'dr-okafor',
   name: 'Dr. Amara Okafor',
@@ -586,7 +636,7 @@ const MOCK_DOCTORS = [{
   experienceYears: 16,
   rating: 4.9,
   reviewCount: 188,
-  avatarUrl: 'assets/images/doctors/amara-okafor.svg',
+  avatarUrl: 'assets/figma/search/1814_1194.png',
   highlights: [{
     label: 'Deliveries',
     value: '1,240+'
@@ -606,7 +656,10 @@ const MOCK_DOCTORS = [{
   }],
   languages: ['English', 'Igbo'],
   acceptedPlans: ['ppo'],
-  virtualCare: false
+  virtualCare: false,
+  feeTier: 'high',
+  gender: 'female',
+  careType: 'inperson'
 }, {
   id: 'dr-fernandez',
   name: 'Dr. Leo Fernández',
@@ -617,7 +670,7 @@ const MOCK_DOCTORS = [{
   experienceYears: 9,
   rating: 4.7,
   reviewCount: 63,
-  avatarUrl: 'assets/images/doctors/leo-fernandez.svg',
+  avatarUrl: 'assets/figma/search/1814_1202.png',
   highlights: [{
     label: 'Return-to-play',
     value: '92%'
@@ -634,7 +687,10 @@ const MOCK_DOCTORS = [{
   }],
   languages: ['English', 'Spanish'],
   acceptedPlans: ['direct'],
-  virtualCare: true
+  virtualCare: true,
+  feeTier: 'medium',
+  gender: 'male',
+  careType: 'hybrid'
 }];
 const MOCK_ORGANIZATIONS = [{
   id: 'org-northstar',
