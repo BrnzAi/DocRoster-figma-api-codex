@@ -88,7 +88,7 @@ class LoginPageComponent {
     this.auth.login(this.form.getRawValue()).subscribe({
       next: () => {
         this.status.set('success');
-        this.router.navigate(['/profile']);
+        this.router.navigate(['/search']);
       },
       error: () => {
         this.status.set('error');

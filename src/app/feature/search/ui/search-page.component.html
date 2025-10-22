@@ -1,62 +1,43 @@
-<section class="search-hero section">
-  <div class="container">
-    <dr-section-header
-      title="Search DocRoster specialists"
-      subtitle="Blend map intelligence, filters and live availability to find the teams you need."
-    >
-      <div actions class="search-hero__actions" *ngIf="hasSelections()">
-        <button class="button button--ghost" type="button" (click)="resetAll()">Reset filters</button>
-      </div>
-    </dr-section-header>
-    <form class="search-hero__form" (ngSubmit)="$event.preventDefault()">
-      <label class="search-hero__field">
-        <span class="material-symbols-rounded" aria-hidden="true">search</span>
-        <input type="search" [formControl]="searchControl" placeholder="Search by name, specialty or clinic" aria-label="Search specialists" />
-        <button
-          type="button"
-          class="search-hero__clear"
-          *ngIf="searchControl.value"
-          (click)="clearSearch()"
-        >
-          Clear
-        </button>
+<section class="search-view">
+  <div class="search-view__card">
+    <div class="search-view__header">
+      <button
+        type="button"
+        class="search-view__control search-view__control--filters"
+        routerLink="/filters"
+        aria-label="Open filters"
+      ></button>
+      <label class="search-view__search">
+        <input
+          type="search"
+          [formControl]="searchControl"
+          placeholder="Find a specialist..."
+          aria-label="Search specialists"
+        />
       </label>
-    </form>
-    <p class="search-hero__meta" *ngIf="(visibleCount$ | async) as count">{{ count }} specialists match your filters.</p>
-  </div>
-</section>
-
-<section class="search-layout container">
-  <aside class="search-layout__filters" *ngIf="filters$ | async as groups">
-    <ng-container *ngFor="let group of groups">
-      <div class="search-layout__filter-group">
-        <dr-filter-group
-          [group]="group"
-          [selected]="selectionForGroup(group.id)"
-          (toggled)="onToggle(group, $event)"
-        ></dr-filter-group>
-        <button
-          type="button"
-          class="search-layout__clear"
-          *ngIf="selectionForGroup(group.id).length"
-          (click)="clearGroup(group.id)"
-        >
-          Clear {{ group.title.toLowerCase() }}
-        </button>
-      </div>
-    </ng-container>
-  </aside>
-  <div class="search-layout__results" *ngIf="visibleResults$ | async as results">
-    <div class="search-layout__empty" *ngIf="!results.length">
-      <h3>No matches yet</h3>
-      <p>Adjust the filters or explore the DocRoster map to discover more pilot specialists.</p>
+      <a class="search-view__control search-view__control--profile" routerLink="/profile">
+        <span>Profile</span>
+      </a>
     </div>
-    <dr-doctor-card
-      *ngFor="let result of results"
-      [doctor]="result.doctor"
-      [clinic]="result.clinic"
-      [nextAvailable]="result.nextAvailable"
-      [highlightDistance]="result.distanceInMinutes"
-    ></dr-doctor-card>
+
+    <div class="search-view__summary">
+      <span>Search results for</span>
+      <h1>{{ searchControl.value ? searchControl.value : defaultPrompt }}</h1>
+    </div>
+
+    <ul class="search-view__results" *ngIf="visibleResults$ | async as results">
+      <li *ngFor="let result of results">
+        <a class="search-view__result" [routerLink]="['/specialists', result.doctor.id]">
+          <img [src]="result.avatar" [alt]="result.doctor.name" class="search-view__result-avatar" />
+          <div class="search-view__result-body">
+            <h2>{{ result.doctor.name }}</h2>
+            <p class="search-view__result-meta">{{ result.doctor.specialty }}</p>
+            <p>{{ result.clinic.name }}</p>
+            <p>{{ result.clinic.address.street }}, {{ result.clinic.address.city }}, {{ result.clinic.address.state }}</p>
+          </div>
+          <span class="search-view__result-chevron" aria-hidden="true"></span>
+        </a>
+      </li>
+    </ul>
   </div>
 </section>

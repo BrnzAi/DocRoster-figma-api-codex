@@ -10,4 +10,5 @@ export interface UserProfile {
   notificationsEnabled: boolean;
   preferredLanguage: string;
   lastLogin: string;
+  phone?: string;
 }

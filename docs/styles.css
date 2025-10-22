@@ -35,7 +35,7 @@ body {
 body {
   margin: 0;
   font-family: "SF Pro Text", "SF Pro Display", "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: linear-gradient(180deg, #f5f6ff 0%, #ffffff 55%, #eef1ff 100%);
+  background: #f1f1f1 url('background-large.png') center/cover fixed no-repeat;
   color: #0a1748;
   -webkit-font-smoothing: antialiased;
 }

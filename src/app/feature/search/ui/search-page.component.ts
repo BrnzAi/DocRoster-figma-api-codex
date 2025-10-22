@@ -1,45 +1,44 @@
 import { AsyncPipe, NgFor, NgIf } from '@angular/common';
-import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 import { combineLatest } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 
-import { DoctorCardComponent } from '../../../shared/ui/doctor-card/doctor-card.component';
-import { FilterGroupComponent } from '../../../shared/ui/filter-group/filter-group.component';
-import { SectionHeaderComponent } from '../../../shared/ui/section-header/section-header.component';
-import { FilterGroup } from '../../../shared/data-access/models/filter.model';
-import { FiltersFacade } from '../../filters/data-access/filters.facade';
 import { SearchFacade } from '../data-access/search.facade';
+import { SearchResult } from '../../../shared/data-access/models/search-result.model';
 
 @Component({
   selector: 'dr-search-page',
   standalone: true,
-  imports: [AsyncPipe, NgFor, NgIf, ReactiveFormsModule, SectionHeaderComponent, FilterGroupComponent, DoctorCardComponent],
+  imports: [AsyncPipe, NgFor, NgIf, ReactiveFormsModule, RouterLink],
   templateUrl: './search-page.component.html',
   styleUrls: ['./search-page.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SearchPageComponent {
-  private readonly filtersFacade = inject(FiltersFacade);
   private readonly searchFacade = inject(SearchFacade);
 
-  readonly filters$ = this.filtersFacade.filters$;
-  readonly selections = this.filtersFacade.selectionsSignal;
-  readonly filteredResults$ = this.filtersFacade.filteredResults$;
-  readonly activeFilters = this.filtersFacade.activeFilterCount;
-  readonly totalResults$ = this.searchFacade.results$;
-  readonly hasSelections = computed(() => this.activeFilters() > 0);
   readonly searchControl = new FormControl('', { nonNullable: true });
-
   private readonly searchTerm$ = this.searchControl.valueChanges.pipe(startWith(''));
 
-  readonly visibleResults$ = combineLatest([this.filteredResults$, this.searchTerm$]).pipe(
+  private readonly results$ = this.searchFacade.results$;
+  readonly defaultPrompt = 'Find me an Occupational Therapist who travels to Thunder Bay for catastrophic assessments';
+
+  readonly visibleResults$ = combineLatest<[SearchResult[], string]>([
+    this.results$,
+    this.searchTerm$
+  ]).pipe(
     map(([results, term]) => {
-      const query = term.trim().toLowerCase();
-      if (!query.length) {
-        return results;
+      const query = (term ?? '').trim().toLowerCase();
+      const enriched = results.map((result, index) => ({
+        ...result,
+        avatar: SEARCH_AVATARS[index % SEARCH_AVATARS.length]
+      }));
+      if (!query) {
+        return enriched;
       }
-      return results.filter((result) => {
+      return enriched.filter((result) => {
         const haystack = [
           result.doctor.name,
           result.doctor.specialty,
@@ -53,26 +52,13 @@ export class SearchPageComponent {
       });
     })
   );
-
-  readonly visibleCount$ = this.visibleResults$.pipe(map((items) => items.length));
-
-  onToggle(group: FilterGroup, value: string): void {
-    this.filtersFacade.toggleOption(group, value);
-  }
-
-  clearGroup(groupId: string): void {
-    this.filtersFacade.clearGroup(groupId);
-  }
-
-  resetAll(): void {
-    this.filtersFacade.resetAll();
-  }
-
-  selectionForGroup(groupId: string): string[] {
-    return this.selections()[groupId] ?? [];
-  }
-
-  clearSearch(): void {
-    this.searchControl.setValue('');
-  }
 }
+
+const SEARCH_AVATARS = [
+  'assets/figma/search/1814_1178.png',
+  'assets/figma/search/1814_1186.png',
+  'assets/figma/search/1814_1194.png',
+  'assets/figma/search/1814_1202.png',
+  'assets/figma/search/1814_1210.png',
+  'assets/figma/search/1814_1218.png'
+];

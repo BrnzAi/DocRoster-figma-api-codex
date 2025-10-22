@@ -44,7 +44,11 @@ class AppComponent {
     this.currentUrl = (0,_angular_core_rxjs_interop__WEBPACK_IMPORTED_MODULE_4__.toSignal)(this.router.events.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_5__.filter)(event => event instanceof _angular_router__WEBPACK_IMPORTED_MODULE_3__.NavigationEnd), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_6__.map)(event => event.urlAfterRedirects), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__.startWith)(this.router.url)), {
       initialValue: this.router.url
     });
-    this.showChrome = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.computed)(() => !this.currentUrl().startsWith('/auth'));
+    this.showChrome = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.computed)(() => {
+      const url = this.currentUrl();
+      const hiddenRoutes = ['/auth', '/search', '/profile'];
+      return !hiddenRoutes.some(path => url.startsWith(path));
+    });
   }
   static {
     this.ɵfac = function AppComponent_Factory(t) {
@@ -78,7 +82,7 @@ class AppComponent {
         }
       },
       dependencies: [_angular_router__WEBPACK_IMPORTED_MODULE_3__.RouterOutlet, _shared_ui_navigation_header_navigation_header_component__WEBPACK_IMPORTED_MODULE_0__.NavigationHeaderComponent, _shared_ui_app_footer_app_footer_component__WEBPACK_IMPORTED_MODULE_1__.AppFooterComponent, _angular_common__WEBPACK_IMPORTED_MODULE_8__.NgIf],
-      styles: ["main[_ngcontent-%COMP%] {\n  padding-block: clamp(2rem, 4vw, 3.5rem);\n}\n\n@media (max-width: 600px) {\n  main[_ngcontent-%COMP%] {\n    padding-block: 1.5rem;\n  }\n}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9hcHAvYXBwLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUVBO0VBQ0UsdUNBQUE7QUFERjs7QUFJQTtFQUNFO0lBQ0UscUJBQUE7RUFERjtBQUNGIiwic291cmNlc0NvbnRlbnQiOlsiQHVzZSAnc3R5bGVzL3ZhcmlhYmxlcycgYXMgKjtcblxubWFpbiB7XG4gIHBhZGRpbmctYmxvY2s6IGNsYW1wKDJyZW0sIDR2dywgMy41cmVtKTtcbn1cblxuQG1lZGlhIChtYXgtd2lkdGg6IDYwMHB4KSB7XG4gIG1haW4ge1xuICAgIHBhZGRpbmctYmxvY2s6IDEuNXJlbTtcbiAgfVxufVxuIl0sInNvdXJjZVJvb3QiOiIifQ== */"]
+      styles: ["main[_ngcontent-%COMP%] {\n  padding: 0;\n}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9hcHAvYXBwLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUVBO0VBQ0UsVUFBQTtBQURGIiwic291cmNlc0NvbnRlbnQiOlsiQHVzZSAnc3R5bGVzL3ZhcmlhYmxlcycgYXMgKjtcblxubWFpbiB7XG4gIHBhZGRpbmc6IDA7XG59XG4iXSwic291cmNlUm9vdCI6IiJ9 */"]
     });
   }
 }
@@ -127,11 +131,11 @@ const routes = [{
   title: 'DocRoster — Explore healthcare on the map'
 }, {
   path: 'search',
-  loadComponent: () => Promise.all(/*! import() */[__webpack_require__.e(541), __webpack_require__.e(874), __webpack_require__.e(422)]).then(__webpack_require__.bind(__webpack_require__, /*! ./feature/search/ui/search-page.component */ 1422)).then(m => m.SearchPageComponent),
+  loadComponent: () => __webpack_require__.e(/*! import() */ 422).then(__webpack_require__.bind(__webpack_require__, /*! ./feature/search/ui/search-page.component */ 1422)).then(m => m.SearchPageComponent),
   title: 'DocRoster — Search specialists'
 }, {
   path: 'filters',
-  loadComponent: () => Promise.all(/*! import() */[__webpack_require__.e(541), __webpack_require__.e(874), __webpack_require__.e(76), __webpack_require__.e(892)]).then(__webpack_require__.bind(__webpack_require__, /*! ./feature/filters/ui/filters-page.component */ 892)).then(m => m.FiltersPageComponent),
+  loadComponent: () => Promise.all(/*! import() */[__webpack_require__.e(541), __webpack_require__.e(76), __webpack_require__.e(892)]).then(__webpack_require__.bind(__webpack_require__, /*! ./feature/filters/ui/filters-page.component */ 892)).then(m => m.FiltersPageComponent),
   title: 'DocRoster — Smart filters'
 }, {
   path: 'specialists/:id',
@@ -143,7 +147,7 @@ const routes = [{
   title: 'DocRoster — Organization assessments'
 }, {
   path: 'profile',
-  loadComponent: () => Promise.all(/*! import() */[__webpack_require__.e(76), __webpack_require__.e(488)]).then(__webpack_require__.bind(__webpack_require__, /*! ./feature/profile/ui/profile-page.component */ 3488)).then(m => m.ProfilePageComponent),
+  loadComponent: () => __webpack_require__.e(/*! import() */ 488).then(__webpack_require__.bind(__webpack_require__, /*! ./feature/profile/ui/profile-page.component */ 3488)).then(m => m.ProfilePageComponent),
   title: 'DocRoster — Your profile'
 }, {
   path: 'upload',
@@ -773,7 +777,8 @@ const MOCK_PROFILE = {
   skills: ['Care coordination', 'Data storytelling', 'Quality improvement'],
   notificationsEnabled: true,
   preferredLanguage: 'English',
-  lastLogin: '2024-03-20T08:45:00Z'
+  lastLogin: '2024-03-20T08:45:00Z',
+  phone: '+1 (416) 123-9870'
 };
 const MOCK_COMMUNITY_METRICS = {
   membersServed: 18452,

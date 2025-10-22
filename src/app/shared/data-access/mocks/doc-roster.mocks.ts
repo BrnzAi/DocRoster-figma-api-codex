@@ -304,7 +304,8 @@ export const MOCK_PROFILE: UserProfile = {
   skills: ['Care coordination', 'Data storytelling', 'Quality improvement'],
   notificationsEnabled: true,
   preferredLanguage: 'English',
-  lastLogin: '2024-03-20T08:45:00Z'
+  lastLogin: '2024-03-20T08:45:00Z',
+  phone: '+1 (416) 123-9870'
 };
 
 export const MOCK_COMMUNITY_METRICS = {

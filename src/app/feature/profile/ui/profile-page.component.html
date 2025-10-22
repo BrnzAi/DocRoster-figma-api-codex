@@ -1,41 +1,63 @@
-<section class="profile section" *ngIf="profile$ | async as profile">
-  <div class="container">
-    <dr-section-header
-      [title]="profile.name"
-      [subtitle]="profile.bio"
-      badge="Your coordination cockpit"
-    ></dr-section-header>
+<section class="profile-view" *ngIf="vm$ | async as vm">
+  <div class="profile-view__frame">
+    <div class="profile-view__card">
+      <img src="assets/figma/profile/1814_483.png" alt="Organization logo" class="profile-view__hero" />
 
-    <div class="profile__grid">
-      <div class="profile__card">
-        <h3>Account overview</h3>
+      <div class="profile-view__header-actions">
+        <button type="button" aria-label="Edit profile" class="profile-view__icon profile-view__icon--edit"></button>
+        <span class="profile-view__header-divider" aria-hidden="true"></span>
+        <button type="button" aria-label="Logout" class="profile-view__icon profile-view__icon--logout"></button>
+      </div>
+
+      <button type="button" class="profile-view__close" routerLink="/search" aria-label="Back to search"></button>
+
+      <div class="profile-view__summary">
+        <h1>{{ vm.profile?.name }}</h1>
+        <div class="profile-view__contact">
+          <a *ngIf="vm.profile" [href]="'mailto:' + vm.profile.email">{{ vm.profile.email }}</a>
+          <a *ngIf="vm.profile?.phone" [href]="'tel:' + vm.profile?.phone">{{ vm.profile?.phone }}</a>
+        </div>
+      </div>
+
+      <hr class="profile-view__divider" />
+
+      <section class="profile-view__stats">
+        <h2>Statistics</h2>
+        <div class="profile-view__stats-grid">
+          <div class="profile-view__stat">
+            <span class="profile-view__stat-value">503</span>
+            <span class="profile-view__stat-label">Total active pins</span>
+          </div>
+          <div class="profile-view__stat">
+            <span class="profile-view__stat-value">11</span>
+            <span class="profile-view__stat-label">Added in 30 d.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="profile-view__specialists">
+        <header>
+          <h2>Your specialists</h2>
+          <button type="button" class="profile-view__add">
+            <span class="profile-view__add-icon"></span>
+            <span>Add</span>
+          </button>
+        </header>
         <ul>
-          <li><span>Email</span><strong>{{ profile.email }}</strong></li>
-          <li><span>Role</span><strong>{{ profile.role | titlecase }}</strong></li>
-          <li><span>Organization</span><strong>{{ profile.organization }}</strong></li>
-          <li><span>Last login</span><strong>{{ profile.lastLogin | date: 'medium' }}</strong></li>
+          <li *ngFor="let specialist of vm.specialists">
+            <img [src]="specialist.avatar" [alt]="specialist.doctor.name" />
+            <div>
+              <h3>{{ specialist.doctor.name }}</h3>
+              <p>{{ specialist.doctor.specialty }}</p>
+              <p>{{ specialist.schedule }}</p>
+            </div>
+            <div class="profile-view__result-actions">
+              <button type="button" aria-label="Edit specialist" class="profile-view__icon profile-view__icon--edit"></button>
+              <button type="button" aria-label="Remove specialist" class="profile-view__icon profile-view__icon--delete"></button>
+            </div>
+          </li>
         </ul>
-      </div>
-
-      <div class="profile__card">
-        <h3>Skills & focus</h3>
-        <dr-tag-list [tags]="profile.skills"></dr-tag-list>
-      </div>
-
-      <div class="profile__card profile__notifications">
-        <h3>Notifications</h3>
-        <p>Keep me updated when new assessments or specialists match my teams.</p>
-        <label class="toggle">
-          <input
-            type="checkbox"
-            [checked]="profile.notificationsEnabled"
-            (change)="onToggleNotifications($any($event.target).checked)"
-          />
-          <span></span>
-          <strong>{{ profile.notificationsEnabled ? 'Enabled' : 'Disabled' }}</strong>
-        </label>
-        <span class="profile__saving" *ngIf="isSaving()">Updating…</span>
-      </div>
+      </section>
     </div>
   </div>
 </section>

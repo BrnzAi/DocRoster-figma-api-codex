@@ -35,7 +35,7 @@ body {
 body {
   margin: 0;
   font-family: $font-family-base;
-  background: linear-gradient(180deg, $color-background 0%, #ffffff 55%, $color-surface-alt 100%);
+  background: #f1f1f1 url('assets/figma/login/background-large.png') center/cover fixed no-repeat;
   color: $color-text;
   -webkit-font-smoothing: antialiased;
 }

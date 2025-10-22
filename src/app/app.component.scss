@@ -1,11 +1,5 @@
 @use 'styles/variables' as *;
 
 main {
-  padding-block: clamp(2rem, 4vw, 3.5rem);
-}
-
-@media (max-width: 600px) {
-  main {
-    padding-block: 1.5rem;
-  }
+  padding: 0;
 }
