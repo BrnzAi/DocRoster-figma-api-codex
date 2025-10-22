@@ -1,19 +1,21 @@
 <section class="search-view">
   <div class="search-view__card">
     <div class="search-view__header">
-      <button
-        type="button"
-        class="search-view__control search-view__control--filters"
-        routerLink="/filters"
-        aria-label="Open filters"
-      ></button>
       <label class="search-view__search">
+        <button
+          type="button"
+          class="search-view__filter-trigger"
+          (click)="openFilters()"
+          [class.is-active]="hasActiveFilters()"
+          aria-label="Filter specialists"
+        ></button>
         <input
           type="search"
           [formControl]="searchControl"
           placeholder="Find a specialist..."
           aria-label="Search specialists"
         />
+        <span class="search-view__search-icon" aria-hidden="true"></span>
       </label>
       <a class="search-view__control search-view__control--profile" routerLink="/profile">
         <span>Profile</span>
@@ -28,7 +30,7 @@
     <ul class="search-view__results" *ngIf="visibleResults$ | async as results">
       <li *ngFor="let result of results">
         <a class="search-view__result" [routerLink]="['/specialists', result.doctor.id]">
-          <img [src]="result.avatar" [alt]="result.doctor.name" class="search-view__result-avatar" />
+          <img [src]="result.doctor.avatarUrl" [alt]="result.doctor.name" class="search-view__result-avatar" />
           <div class="search-view__result-body">
             <h2>{{ result.doctor.name }}</h2>
             <p class="search-view__result-meta">{{ result.doctor.specialty }}</p>
@@ -39,5 +41,114 @@
         </a>
       </li>
     </ul>
+  </div>
+
+  <div class="search-view__filters" *ngIf="showFilters()">
+    <div class="search-view__filters-backdrop" (click)="closeFilters()"></div>
+    <article class="search-view__filters-card" role="dialog" aria-modal="true" aria-label="Filter specialists" (click)="$event.stopPropagation()">
+      <p class="search-view__filters-label">filters</p>
+      <header class="search-view__filters-header">
+        <h2>Filter specialists</h2>
+        <div class="search-view__filters-actions">
+          <div class="search-view__filters-actions-pill">
+            <button
+              type="button"
+              class="search-view__filters-action search-view__filters-action--apply"
+              (click)="applyFilters()"
+              aria-label="Apply filters"
+            ></button>
+            <button
+              type="button"
+              class="search-view__filters-action search-view__filters-action--reset"
+              (click)="resetFilters()"
+              aria-label="Reset filters"
+            ></button>
+          </div>
+          <button
+            type="button"
+            class="search-view__filters-action search-view__filters-action--close"
+            (click)="closeFilters()"
+            aria-label="Close filters"
+          ></button>
+        </div>
+      </header>
+
+      <div class="search-view__filters-body">
+        <section class="search-view__filters-group">
+          <h3>Sorting</h3>
+          <div class="search-view__filters-options">
+            <button
+              type="button"
+              class="search-view__filters-option"
+              *ngFor="let option of sortingOptions"
+              (click)="selectSorting(option.id)"
+              [class.is-active]="isSortingActive(option.id)"
+            >
+              {{ option.label }}
+            </button>
+          </div>
+        </section>
+
+        <section class="search-view__filters-group">
+          <h3>Fees</h3>
+          <div class="search-view__filters-options">
+            <button
+              type="button"
+              class="search-view__filters-option"
+              *ngFor="let option of feeOptions"
+              (click)="toggleFee(option.id)"
+              [class.is-active]="isFeeActive(option.id)"
+            >
+              {{ option.label }}
+            </button>
+          </div>
+        </section>
+
+        <section class="search-view__filters-group">
+          <h3>Gender</h3>
+          <div class="search-view__filters-options">
+            <button
+              type="button"
+              class="search-view__filters-option"
+              *ngFor="let option of genderOptions"
+              (click)="selectGender(option.id)"
+              [class.is-active]="isGenderActive(option.id)"
+            >
+              {{ option.label }}
+            </button>
+          </div>
+        </section>
+
+        <section class="search-view__filters-group">
+          <h3>Location</h3>
+          <div class="search-view__filters-options">
+            <button
+              type="button"
+              class="search-view__filters-option"
+              *ngFor="let option of locationOptions"
+              (click)="toggleLocation(option.id)"
+              [class.is-active]="isLocationActive(option.id)"
+            >
+              {{ option.label }}
+            </button>
+          </div>
+        </section>
+
+        <section class="search-view__filters-group">
+          <h3>Type</h3>
+          <div class="search-view__filters-options">
+            <button
+              type="button"
+              class="search-view__filters-option"
+              *ngFor="let option of careOptions"
+              (click)="toggleCare(option.id)"
+              [class.is-active]="isCareActive(option.id)"
+            >
+              {{ option.label }}
+            </button>
+          </div>
+        </section>
+      </div>
+    </article>
   </div>
 </section>

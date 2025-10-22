@@ -8,19 +8,22 @@ $figma-primary-soft: rgba(10, 23, 72, 0.05);
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px;
-  background: #f1f1f1;
+  padding: clamp(16px, 4vw, 32px);
+  background: url('../../../../assets/figma/login/background-large.png') center/cover no-repeat fixed;
   font-family: 'SF Pro Text', 'SF Pro Display', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  overflow: auto;
+  overflow-y: auto;
 }
 
 .auth__frame {
   position: relative;
-  width: 1048px;
-  height: 752px;
-  border-radius: 13px;
-  overflow: hidden;
-  background: #f1f1f1;
+  width: min(100%, 1048px);
+  border-radius: 24px;
+  overflow: visible;
+  display: flex;
+  justify-content: center;
+  padding: clamp(32px, 6vw, 48px);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(28px);
 }
 
 .auth__frame-bg {
@@ -29,82 +32,119 @@ $figma-primary-soft: rgba(10, 23, 72, 0.05);
   width: 100%;
   height: 100%;
   object-fit: cover;
+  opacity: 0.4;
+  z-index: -1;
 }
 
 .auth__card {
-  position: absolute;
-  left: 328px;
-  top: 84px;
-  width: 393px;
-  height: 718px;
+  position: relative;
+  width: min(100%, 393px);
   border-radius: 32px;
   background: rgba(255, 255, 255, 0.24);
   box-shadow: 0 40px 80px rgba(0, 0, 0, 0.25);
   border: 1px solid rgba(255, 255, 255, 0.24);
   backdrop-filter: blur(24px);
+  padding: 32px 24px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.auth__card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.auth__avatar-shell {
+  position: relative;
 }
 
 .auth__avatar {
-  position: absolute;
-  left: 119px;
-  top: 44px;
   width: 150px;
   height: 150px;
   object-fit: cover;
   border-radius: 24px;
+  box-shadow: 0 18px 38px rgba(10, 23, 72, 0.25);
+}
+
+.auth__avatar-input {
+  display: none;
 }
 
 .auth__avatar-action {
   position: absolute;
-  left: 227px;
-  top: 144px;
+  right: 8px;
+  bottom: 8px;
   width: 48px;
   height: 48px;
   padding: 0;
   border: none;
-  background: transparent;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 12px 32px rgba($figma-primary, 0.18);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
+  transition: transform 0.2s ease;
 
   img {
-    width: 100%;
-    height: 100%;
+    width: 24px;
+    height: 24px;
+  }
+
+  &:hover {
+    transform: translateY(-1px);
   }
 
   &:focus-visible {
     outline: 2px solid rgba($color-primary, 0.4);
-    border-radius: 50%;
+    outline-offset: 3px;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: wait;
+    transform: none;
   }
 }
 
 .auth__close {
-  position: absolute;
-  right: 24px;
-  top: 24px;
-  width: 36px;
-  height: 36px;
-  padding: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
   border: none;
-  background: transparent;
-  cursor: pointer;
-  display: flex;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 24px 48px rgba($figma-primary, 0.18);
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
 
   img {
-    width: 36px;
-    height: 36px;
+    width: 24px;
+    height: 24px;
+  }
+
+  &:hover {
+    transform: translateY(-1px);
   }
 
   &:focus-visible {
     outline: 2px solid rgba($color-primary, 0.4);
-    border-radius: 50%;
+    outline-offset: 4px;
   }
 }
 
+.auth__intro {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
 .auth__title {
-  position: absolute;
-  left: 24px;
-  top: 218px;
   margin: 0;
   font-size: 32px;
   font-weight: 700;
@@ -113,23 +153,25 @@ $figma-primary-soft: rgba(10, 23, 72, 0.05);
 }
 
 .auth__subtitle {
-  position: absolute;
-  left: 24px;
-  top: 264px;
   margin: 0;
   font-size: 18px;
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: -0.5px;
-  color: rgba($figma-primary, 0.8);
+  color: rgba($figma-primary, 0.78);
+}
+
+.auth__providers {
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
 }
 
 .auth__provider {
-  position: absolute;
-  display: flex;
+  flex: 1 1 0;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 12px;
-  width: 168.5px;
   height: 46px;
   border-radius: 24px;
   border: none;
@@ -139,15 +181,11 @@ $figma-primary-soft: rgba(10, 23, 72, 0.05);
   font-size: 14px;
   letter-spacing: -0.408px;
   cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
 
-  &--google {
-    left: 24px;
-    top: 310px;
-  }
-
-  &--apple {
-    left: 200.5px;
-    top: 310px;
+  &:hover {
+    transform: translateY(-1px);
+    background: rgba(0, 0, 0, 0.92);
   }
 
   &:focus-visible {
@@ -161,43 +199,26 @@ $figma-primary-soft: rgba(10, 23, 72, 0.05);
   height: 24px;
 }
 
+.auth__divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 .auth__divider-line {
-  position: absolute;
+  flex: 1;
   height: 1px;
-  background: $figma-primary;
-  opacity: 0.7;
-
-  &--left {
-    left: 24px;
-    top: 390.5px;
-    width: 146.5px;
-  }
-
-  &--right {
-    left: 222.5px;
-    top: 390.5px;
-    width: 146.5px;
-  }
+  background: rgba($figma-primary, 0.6);
 }
 
 .auth__divider-label {
-  position: absolute;
-  left: 186.5px;
-  top: 380px;
-  width: 20px;
-  height: 22px;
-  text-align: center;
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: -0.408px;
-  color: $figma-primary;
+  color: rgba($figma-primary, 0.78);
 }
 
 .auth__form {
-  position: absolute;
-  left: 24px;
-  top: 432px;
-  width: 345px;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -245,11 +266,10 @@ $figma-primary-soft: rgba(10, 23, 72, 0.05);
 }
 
 .auth__terms {
-  position: relative;
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-top: 16px;
+  margin-top: 8px;
   font-size: 14px;
   font-weight: 700;
   letter-spacing: -0.408px;
@@ -280,6 +300,12 @@ $figma-primary-soft: rgba(10, 23, 72, 0.05);
   display: inline-flex;
   align-items: center;
   line-height: 15.4px;
+
+  a {
+    color: inherit;
+    text-decoration: underline;
+    margin-left: 4px;
+  }
 }
 
 .auth__terms input:not(:checked) + .auth__terms-box img {
@@ -292,7 +318,7 @@ $figma-primary-soft: rgba(10, 23, 72, 0.05);
   height: 46px;
   border-radius: 24px;
   border: none;
-  background: rgba(10, 23, 72, 0.8);
+  background: rgba(10, 23, 72, 0.88);
   color: #ffffff;
   font-weight: 600;
   font-size: 14px;
@@ -327,20 +353,22 @@ $figma-primary-soft: rgba(10, 23, 72, 0.05);
   }
 }
 
-@media (max-width: 1160px) {
-  .auth__frame {
-    transform: scale(0.85);
+@media (max-width: 640px) {
+  .auth__providers {
+    flex-direction: column;
   }
-}
 
-@media (max-width: 960px) {
-  .auth__frame {
-    transform: scale(0.7);
+  .auth__card {
+    padding: 28px 20px 32px;
   }
-}
 
-@media (max-width: 720px) {
-  .auth__frame {
-    transform: scale(0.6);
+  .auth__avatar {
+    width: 124px;
+    height: 124px;
+  }
+
+  .auth__avatar-action {
+    width: 40px;
+    height: 40px;
   }
 }

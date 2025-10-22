@@ -4,20 +4,21 @@
     <div class="auth__card">
       <div class="auth__card-map" aria-hidden="true"></div>
 
-      <button type="button" class="auth__provider auth__provider--google" aria-label="Sign in with Google">
-        <img src="assets/figma/login/google.png" alt="" class="auth__provider-icon" />
-        <span class="auth__provider-label">Sign in</span>
-      </button>
-
-      <button type="button" class="auth__provider auth__provider--apple" aria-label="Sign in with Apple">
-        <img src="assets/figma/login/apple.png" alt="" class="auth__provider-icon" />
-        <span class="auth__provider-label">Sign in</span>
-      </button>
+      <div class="auth__providers">
+        <button type="button" class="auth__provider" aria-label="Sign in with Google">
+          <img src="assets/figma/login/google.png" alt="" class="auth__provider-icon" />
+          <span class="auth__provider-label">Sign in</span>
+        </button>
+        <button type="button" class="auth__provider" aria-label="Sign in with Apple">
+          <img src="assets/figma/login/apple.png" alt="" class="auth__provider-icon" />
+          <span class="auth__provider-label">Sign in</span>
+        </button>
+      </div>
 
       <div class="auth__divider" aria-hidden="true">
-        <span class="auth__divider-line auth__divider-line--left"></span>
+        <span class="auth__divider-line"></span>
         <span class="auth__divider-label">OR</span>
-        <span class="auth__divider-line auth__divider-line--right"></span>
+        <span class="auth__divider-line"></span>
       </div>
 
       <form [formGroup]="form" (ngSubmit)="submit()" class="auth__form" novalidate>
@@ -60,8 +61,8 @@
       </form>
 
       <p class="auth__footnote">
-        <span>Does not have an account? </span>
-        <a routerLink="/auth/register">Register now!</a>
+        <span>Don’t have an account? </span>
+        <a routerLink="/auth/register">Register now</a>
       </p>
     </div>
   </div>

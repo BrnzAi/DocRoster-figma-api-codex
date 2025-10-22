@@ -1,43 +1,57 @@
 import { Routes } from '@angular/router';
 
+import { authGuard } from './shared/data-access/guards/auth.guard';
+
 export const routes: Routes = [
   {
     path: '',
+    pathMatch: 'full',
+    redirectTo: 'auth/login'
+  },
+  {
+    path: 'map',
     loadComponent: () => import('./feature/map/ui/map-page.component').then((m) => m.MapPageComponent),
     title: 'DocRoster — Explore healthcare on the map'
   },
   {
     path: 'search',
+    canActivate: [authGuard],
     loadComponent: () => import('./feature/search/ui/search-page.component').then((m) => m.SearchPageComponent),
     title: 'DocRoster — Search specialists'
   },
   {
     path: 'filters',
+    canActivate: [authGuard],
     loadComponent: () => import('./feature/filters/ui/filters-page.component').then((m) => m.FiltersPageComponent),
     title: 'DocRoster — Smart filters'
   },
   {
     path: 'specialists/:id',
+    canActivate: [authGuard],
     loadComponent: () => import('./feature/specialist/ui/specialist-page.component').then((m) => m.SpecialistPageComponent),
     title: 'DocRoster — Specialist profile'
   },
   {
     path: 'organizations/:id/assessments',
+    canActivate: [authGuard],
     loadComponent: () => import('./feature/organizations/ui/organization-assessments-page.component').then((m) => m.OrganizationAssessmentsPageComponent),
     title: 'DocRoster — Organization assessments'
   },
   {
     path: 'profile',
+    canActivate: [authGuard],
     loadComponent: () => import('./feature/profile/ui/profile-page.component').then((m) => m.ProfilePageComponent),
     title: 'DocRoster — Your profile'
   },
   {
     path: 'upload',
+    canActivate: [authGuard],
     loadComponent: () => import('./feature/upload/ui/upload-page.component').then((m) => m.UploadPageComponent),
     title: 'DocRoster — Upload assessments'
   },
   {
     path: 'review/:id',
+    canActivate: [authGuard],
     loadComponent: () => import('./feature/review/ui/review-page.component').then((m) => m.ReviewPageComponent),
     title: 'DocRoster — Review submission'
   },
@@ -73,6 +87,6 @@ export const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: ''
+    redirectTo: 'auth/login'
   }
 ];

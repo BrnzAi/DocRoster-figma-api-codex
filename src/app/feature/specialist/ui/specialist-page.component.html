@@ -1,52 +1,61 @@
-<section class="specialist section" *ngIf="context$ | async as context; else loading">
-  <div class="container" *ngIf="context.doctor as doctor; else notFound">
-    <dr-section-header
-      [title]="doctor.name"
-      [subtitle]="doctor.biography"
-      badge="Specialist profile"
-    ></dr-section-header>
-
-    <div class="specialist__meta">
-      <div>
-        <span class="specialist__rating">★ {{ doctor.rating | number: '1.1-1' }} · {{ doctor.reviewCount }} reviews</span>
-        <dr-tag-list [tags]="doctor.languages"></dr-tag-list>
+<section class="specialist-view" *ngIf="context$ | async as context; else loading">
+  <div class="specialist-view__frame" *ngIf="context.doctor as doctor; else notFound">
+    <article class="specialist-view__card">
+      <div class="specialist-view__media">
+        <img [src]="doctor.avatarUrl" [alt]="doctor.name" class="specialist-view__portrait" />
+        <span class="specialist-view__badge">specialist</span>
+        <button
+          type="button"
+          class="specialist-view__close"
+          routerLink="/search"
+          aria-label="Back to search results"
+        ></button>
       </div>
-      <div class="specialist__highlights">
-        <div *ngFor="let highlight of doctor.highlights">
-          <span>{{ highlight.label }}</span>
-          <strong>{{ highlight.value }}</strong>
+
+      <div class="specialist-view__content">
+        <header class="specialist-view__header">
+          <h1>{{ doctor.name }}</h1>
+          <p class="specialist-view__specialty">{{ doctor.specialty }}</p>
+          <p class="specialist-view__bio">{{ doctor.biography }}</p>
+        </header>
+
+        <div class="specialist-view__contact" *ngIf="context.clinic as clinic">
+          <a
+            *ngIf="clinic.phone"
+            class="specialist-view__action specialist-view__action--primary"
+            [href]="formatPhoneHref(clinic.phone)"
+          >
+            Call now
+          </a>
+          <a
+            *ngIf="clinic.address"
+            class="specialist-view__action specialist-view__action--secondary"
+            target="_blank"
+            rel="noopener"
+            [href]="buildMapsLink(clinic.address)"
+          >
+            Navigate
+          </a>
         </div>
       </div>
-    </div>
 
-    <div class="specialist__availability">
-      <h3>Weekly availability</h3>
-      <div class="specialist__schedule">
-        <div *ngFor="let slot of doctor.availability">
-          <span>{{ slot.day }}</span>
-          <strong>{{ slot.times.join(' · ') }}</strong>
-        </div>
-      </div>
-    </div>
-
-    <div class="specialist__clinic" *ngIf="context.clinic">
-      <h3>Care hub</h3>
-      <dr-clinic-card [clinic]="context.clinic" [showActions]="false"></dr-clinic-card>
-    </div>
-
-    <div class="specialist__reviews" *ngIf="context.reviews.length">
-      <h3>Stories from the DocRoster community</h3>
-      <div class="specialist__reviews-grid">
-        <dr-review-card *ngFor="let review of context.reviews" [review]="review"></dr-review-card>
-      </div>
-    </div>
+      <section class="specialist-view__section" *ngIf="doctor.highlights?.length">
+        <h2>Specializations</h2>
+        <ul>
+          <li *ngFor="let highlight of doctor.highlights!">
+            <span>{{ highlight.label }}</span>
+            <strong>{{ highlight.value }}</strong>
+          </li>
+        </ul>
+      </section>
+    </article>
   </div>
 </section>
 
 <ng-template #loading>
-  <div class="container section"><p>Loading profile…</p></div>
+  <div class="specialist-view__fallback"><p>Loading profile…</p></div>
 </ng-template>
 
 <ng-template #notFound>
-  <div class="container section"><p>We could not find this specialist. Try exploring the map.</p></div>
+  <div class="specialist-view__fallback"><p>We could not find this specialist. Try exploring the map.</p></div>
 </ng-template>

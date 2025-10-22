@@ -1,5 +1,5 @@
 import { NgIf } from '@angular/common';
-import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, ViewChild, computed, inject, signal } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 
@@ -18,8 +18,12 @@ export class RegisterPageComponent {
   private readonly auth = inject(AuthFacade);
   private readonly router = inject(Router);
 
+  @ViewChild('avatarInput') private avatarInput?: ElementRef<HTMLInputElement>;
+
   readonly status = signal<'idle' | 'pending' | 'success' | 'error'>('idle');
   readonly submitted = signal(false);
+  readonly avatarUploading = signal(false);
+  readonly avatarSrc = signal<string>('assets/figma/register/1848_1718.png');
   readonly form = this.fb.nonNullable.group({
     fullName: ['', [Validators.required, Validators.minLength(2)]],
     email: ['', [Validators.required, Validators.email]],
@@ -57,5 +61,37 @@ export class RegisterPageComponent {
 
   goToLogin(): void {
     this.router.navigate(['/auth/login']);
+  }
+
+  triggerAvatarUpload(): void {
+    this.avatarInput?.nativeElement.click();
+  }
+
+  onAvatarSelected(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    const file = input.files?.[0];
+    if (!file) {
+      return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = () => {
+      const result = reader.result as string | null;
+      if (result) {
+        this.avatarSrc.set(result);
+      }
+      this.avatarUploading.set(true);
+      this.auth.uploadAvatar(file).subscribe({
+        next: () => {
+          this.avatarUploading.set(false);
+        },
+        error: (error: Error) => {
+          console.error(error);
+          this.avatarUploading.set(false);
+        }
+      });
+      input.value = '';
+    };
+    reader.readAsDataURL(file);
   }
 }

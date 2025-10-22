@@ -92,7 +92,7 @@ export const MOCK_DOCTORS: Doctor[] = [
     experienceYears: 14,
     rating: 4.9,
     reviewCount: 142,
-    avatarUrl: 'assets/images/doctors/mariah-lopez.svg',
+    avatarUrl: 'assets/figma/search/1814_1178.png',
     highlights: [
       { label: 'Programs designed', value: '58' },
       { label: 'Community rating', value: '4.9/5' },
@@ -105,7 +105,10 @@ export const MOCK_DOCTORS: Doctor[] = [
     ],
     languages: ['English', 'Spanish'],
     acceptedPlans: ['ppo', 'direct'],
-    virtualCare: true
+    virtualCare: true,
+    feeTier: 'medium',
+    gender: 'female',
+    careType: 'hybrid'
   },
   {
     id: 'dr-fujiwara',
@@ -117,7 +120,7 @@ export const MOCK_DOCTORS: Doctor[] = [
     experienceYears: 11,
     rating: 4.8,
     reviewCount: 97,
-    avatarUrl: 'assets/images/doctors/kenji-fujiwara.svg',
+    avatarUrl: 'assets/figma/search/1814_1186.png',
     highlights: [
       { label: 'Patient panel', value: '420 families' },
       { label: 'After-hours chat', value: 'Under 15 min' }
@@ -128,7 +131,10 @@ export const MOCK_DOCTORS: Doctor[] = [
     ],
     languages: ['English', 'Japanese'],
     acceptedPlans: ['hmo', 'ppo'],
-    virtualCare: true
+    virtualCare: true,
+    feeTier: 'low',
+    gender: 'male',
+    careType: 'virtual'
   },
   {
     id: 'dr-okafor',
@@ -140,7 +146,7 @@ export const MOCK_DOCTORS: Doctor[] = [
     experienceYears: 16,
     rating: 4.9,
     reviewCount: 188,
-    avatarUrl: 'assets/images/doctors/amara-okafor.svg',
+    avatarUrl: 'assets/figma/search/1814_1194.png',
     highlights: [
       { label: 'Deliveries', value: '1,240+' },
       { label: 'Cesarean rate', value: '12%' }
@@ -152,7 +158,10 @@ export const MOCK_DOCTORS: Doctor[] = [
     ],
     languages: ['English', 'Igbo'],
     acceptedPlans: ['ppo'],
-    virtualCare: false
+    virtualCare: false,
+    feeTier: 'high',
+    gender: 'female',
+    careType: 'inperson'
   },
   {
     id: 'dr-fernandez',
@@ -164,7 +173,7 @@ export const MOCK_DOCTORS: Doctor[] = [
     experienceYears: 9,
     rating: 4.7,
     reviewCount: 63,
-    avatarUrl: 'assets/images/doctors/leo-fernandez.svg',
+    avatarUrl: 'assets/figma/search/1814_1202.png',
     highlights: [
       { label: 'Return-to-play', value: '92%' },
       { label: 'Avg recovery', value: '4.5 weeks' }
@@ -175,7 +184,10 @@ export const MOCK_DOCTORS: Doctor[] = [
     ],
     languages: ['English', 'Spanish'],
     acceptedPlans: ['direct'],
-    virtualCare: true
+    virtualCare: true,
+    feeTier: 'medium',
+    gender: 'male',
+    careType: 'hybrid'
   }
 ];
 

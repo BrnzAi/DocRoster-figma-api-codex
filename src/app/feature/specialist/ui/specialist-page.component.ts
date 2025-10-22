@@ -1,12 +1,8 @@
-import { AsyncPipe, DatePipe, DecimalPipe, NgFor, NgIf } from '@angular/common';
+import { AsyncPipe, NgFor, NgIf } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { map, switchMap } from 'rxjs/operators';
 
-import { ClinicCardComponent } from '../../../shared/ui/clinic-card/clinic-card.component';
-import { ReviewCardComponent } from '../../../shared/ui/review-card/review-card.component';
-import { SectionHeaderComponent } from '../../../shared/ui/section-header/section-header.component';
-import { TagListComponent } from '../../../shared/ui/tag-list/tag-list.component';
 import { SpecialistFacade } from '../data-access/specialist.facade';
 
 @Component({
@@ -16,12 +12,7 @@ import { SpecialistFacade } from '../data-access/specialist.facade';
     AsyncPipe,
     NgIf,
     NgFor,
-    DatePipe,
-    DecimalPipe,
-    SectionHeaderComponent,
-    ClinicCardComponent,
-    ReviewCardComponent,
-    TagListComponent
+    RouterLink
   ],
   templateUrl: './specialist-page.component.html',
   styleUrls: ['./specialist-page.component.scss'],
@@ -35,4 +26,13 @@ export class SpecialistPageComponent {
     map((params) => params.get('id') ?? ''),
     switchMap((id) => this.facade.getDoctorProfileContext(id))
   );
+
+  formatPhoneHref(phone: string): string {
+    return `tel:${phone.replace(/[^\d+]/g, '')}`;
+  }
+
+  buildMapsLink(address: { street: string; city: string; state: string }): string {
+    const query = `${address.street}, ${address.city}, ${address.state}`;
+    return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+  }
 }

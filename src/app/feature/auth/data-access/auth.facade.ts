@@ -59,6 +59,11 @@ export class AuthFacade {
     return this.http.mutate(() => ({ email: request.email, sentAt: new Date().toISOString() }));
   }
 
+  uploadAvatar(file: File): Observable<string> {
+    const reference = `avatar-${crypto.randomUUID()}-${file.name}`;
+    return this.http.mutate(() => reference);
+  }
+
   verify(request: VerificationRequest): Observable<boolean> {
     this.errorSignal.set(null);
     return this.http.mutate(() => request.code.trim().length === 6).pipe(

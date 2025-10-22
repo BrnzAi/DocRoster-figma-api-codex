@@ -24,4 +24,7 @@ export interface Doctor {
   languages: string[];
   acceptedPlans: string[];
   virtualCare: boolean;
+  feeTier?: 'low' | 'medium' | 'high';
+  gender?: 'male' | 'female' | 'nonbinary';
+  careType?: 'hybrid' | 'inperson' | 'virtual';
 }
