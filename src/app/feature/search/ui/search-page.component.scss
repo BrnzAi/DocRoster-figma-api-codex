@@ -247,9 +247,11 @@ $panel-glass: rgba(255, 255, 255, 0.26);
   position: fixed;
   inset: 0;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
   z-index: 4;
+  pointer-events: auto;
 }
 
 .search-panel__filters-backdrop {
@@ -257,12 +259,13 @@ $panel-glass: rgba(255, 255, 255, 0.26);
   inset: 0;
   background: rgba($figma-primary, 0.45);
   backdrop-filter: blur(20px);
+  pointer-events: auto;
 }
 
 .search-panel__filters-card {
   position: relative;
   width: min(100%, 360px);
-  margin: 24px;
+  margin: 0;
   border-radius: 32px;
   border: 1px solid rgba(255, 255, 255, 0.24);
   background: rgba(255, 255, 255, 0.28);
@@ -274,6 +277,8 @@ $panel-glass: rgba(255, 255, 255, 0.26);
   flex-direction: column;
   gap: 20px;
   z-index: 5;
+  max-height: min(90vh, 640px);
+  pointer-events: auto;
 }
 
 .search-panel__filters-label {
@@ -290,6 +295,7 @@ $panel-glass: rgba(255, 255, 255, 0.26);
   align-items: center;
   justify-content: space-between;
   gap: 16px;
+  flex: 0 0 auto;
 
   h2 {
     margin: 0;
@@ -367,6 +373,9 @@ $panel-glass: rgba(255, 255, 255, 0.26);
   display: flex;
   flex-direction: column;
   gap: 20px;
+  flex: 1 1 auto;
+  overflow-y: auto;
+  padding-right: 8px;
 }
 
 .search-panel__filters-group + .search-panel__filters-group {

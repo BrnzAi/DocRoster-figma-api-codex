@@ -3,27 +3,25 @@
 $figma-primary: rgba(10, 23, 72, 1);
 $figma-muted: rgba(10, 23, 72, 0.6);
 
+:host {
+  display: block;
+  pointer-events: none;
+}
+
 .profile-view {
   position: relative;
   min-height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: clamp(2rem, 6vw, 4rem);
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
   font-family: 'SF Pro Text', 'SF Pro Display', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-}
-
-.profile-view::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background: url('../../../../assets/figma/login/background-large.png') center/cover no-repeat;
-  z-index: -2;
+  pointer-events: none;
 }
 
 .profile-view__frame {
-  width: min(100%, 393px);
-  margin: 0 auto;
+  width: min(100%, 420px);
+  pointer-events: none;
 }
 
 .profile-view__card {
@@ -40,6 +38,9 @@ $figma-muted: rgba(10, 23, 72, 0.6);
   flex-direction: column;
   gap: 24px;
   overflow: hidden;
+  pointer-events: auto;
+  max-height: calc(100vh - clamp(1.5rem, 4vw, 2.5rem) * 2);
+  overflow-y: auto;
 }
 
 .profile-view__hero {

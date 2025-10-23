@@ -31,8 +31,7 @@
               "includePaths": [
                 "src"
               ]
-            },
-            "baseHref": "./"
+            }
           },
           "configurations": {
             "production": {
