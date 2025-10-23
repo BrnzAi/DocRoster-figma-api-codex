@@ -9,9 +9,7 @@
           </button>
           <input #avatarInput type="file" accept="image/*" class="auth__avatar-input" (change)="onAvatarSelected($event)" />
         </div>
-        <button type="button" class="auth__close" aria-label="Back to sign in" (click)="goToLogin()">
-          <img src="assets/figma/register/1850_2318.png" alt="" />
-        </button>
+        <button type="button" class="auth__close" aria-label="Back to sign in" (click)="goToLogin()"></button>
       </div>
 
       <div class="auth__intro">
@@ -24,12 +22,12 @@
       <div class="auth__providers">
         <button type="button" class="auth__provider" aria-label="Sign up with Google">
           <img src="assets/figma/login/google.png" alt="" class="auth__provider-icon" />
-          <span>Sign up with Google</span>
+          <span>Sign up</span>
         </button>
 
         <button type="button" class="auth__provider" aria-label="Sign up with Apple">
           <img src="assets/figma/login/apple.png" alt="" class="auth__provider-icon" />
-          <span>Sign up with Apple</span>
+          <span>Sign up</span>
         </button>
       </div>
 

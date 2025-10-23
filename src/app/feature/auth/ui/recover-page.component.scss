@@ -49,25 +49,35 @@ $figma-primary-soft: rgba(10, 23, 72, 0.05);
   position: absolute;
   right: 24px;
   top: 24px;
-  width: 40px;
-  height: 40px;
-  border: none;
+  width: 44px;
+  height: 44px;
+  border: 0.5px solid rgba($figma-primary, 0.12);
   background: rgba(255, 255, 255, 0.92);
   border-radius: 50%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  box-shadow: 0 20px 40px rgba($figma-primary, 0.2);
-
-  img {
-    width: 20px;
-    height: 20px;
-  }
+  box-shadow: 0 24px 48px rgba($figma-primary, 0.24);
+  transition: transform 0.2s ease;
+  padding: 0;
 
   &:focus-visible {
     outline: 2px solid rgba($color-primary, 0.4);
     outline-offset: 4px;
+  }
+
+  &:before {
+    content: '';
+    width: 16px;
+    height: 16px;
+    background: $figma-primary;
+    mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%230A1748" d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>') center/contain;
+    -webkit-mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%230A1748" d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>') center/contain;
+  }
+
+  &:hover {
+    transform: translateY(-1px);
   }
 }
 
