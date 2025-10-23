@@ -29,6 +29,11 @@ export class AppComponent {
 
   readonly showChrome = computed(() => {
     const url = this.currentUrl();
+
+    if (!url || url === '/' || url === '') {
+      return false;
+    }
+
     const hiddenRoutes = ['/auth', '/search', '/profile', '/specialists'];
     return !hiddenRoutes.some((path) => url.startsWith(path));
   });

@@ -1,5 +1,5 @@
 import { NgFor, NgIf } from '@angular/common';
-import { ChangeDetectionStrategy, Component, computed, effect, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, HostBinding, computed, effect, inject, signal } from '@angular/core';
 import { toObservable, toSignal } from '@angular/core/rxjs-interop';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
@@ -110,6 +110,11 @@ export class SearchPageComponent {
   private readonly searchFacade = inject(SearchFacade);
   private readonly router = inject(Router);
   protected readonly mapState = inject(MapStateService);
+
+  @HostBinding('class.has-filters-open')
+  get hasFiltersOpen(): boolean {
+    return this.showFilters();
+  }
 
   readonly searchControl = new FormControl('', { nonNullable: true });
   private readonly searchTerm$ = this.searchControl.valueChanges.pipe(startWith(''));

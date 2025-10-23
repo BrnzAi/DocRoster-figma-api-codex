@@ -1,23 +1,25 @@
-<section class="auth section">
-  <div class="container auth__container">
-    <h1>Verify your DocRoster account</h1>
-    <p class="auth__lead">Enter the 6-digit code sent to <strong>{{ email() || 'your email' }}</strong>.</p>
+<section class="auth auth--verify">
+  <div class="auth__frame">
+    <div class="auth__card auth__card--verify">
+      <h1 class="auth__title">Verify your DocRoster account</h1>
+      <p class="auth__lead">Enter the 6-digit code sent to <strong>{{ email() || 'your email' }}</strong>.</p>
 
-    <form [formGroup]="form" (ngSubmit)="submit()" class="auth__form">
-      <label>
-        Verification code
-        <input type="text" formControlName="code" placeholder="123456" maxlength="6" />
-      </label>
-      <button class="button" type="submit" [disabled]="status() === 'pending'">
-        {{ status() === 'pending' ? 'Verifying…' : 'Verify account' }}
-      </button>
-      <p class="auth__success" *ngIf="status() === 'success'">{{ message() }}</p>
-      <p class="auth__error" *ngIf="status() === 'error'">{{ message() }}</p>
-    </form>
+      <form [formGroup]="form" (ngSubmit)="submit()" class="auth__form">
+        <label class="auth__field auth__field--code">
+          <span>Verification code</span>
+          <input type="text" formControlName="code" placeholder="123456" maxlength="6" inputmode="numeric" />
+        </label>
+        <button class="auth__submit" type="submit" [disabled]="status() === 'pending'">
+          {{ status() === 'pending' ? 'Verifying…' : 'Verify account' }}
+        </button>
+        <p class="auth__form-status auth__form-status--success" *ngIf="status() === 'success'">{{ message() }}</p>
+        <p class="auth__form-status auth__form-status--error" *ngIf="status() === 'error'">{{ message() }}</p>
+      </form>
 
-    <div class="auth__links">
-      <a routerLink="/auth/recover">Resend code</a>
-      <a routerLink="/auth/login">Back to sign in</a>
+      <div class="auth__links">
+        <a routerLink="/auth/recover">Resend code</a>
+        <a routerLink="/auth/login">Back to sign in</a>
+      </div>
     </div>
   </div>
 </section>

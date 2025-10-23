@@ -9,9 +9,9 @@ $figma-primary-soft: rgba(10, 23, 72, 0.05);
   justify-content: center;
   align-items: center;
   padding: clamp(16px, 4vw, 32px);
-  background: url('../../../../assets/figma/login/background-large.png') center/cover no-repeat fixed;
   font-family: 'SF Pro Text', 'SF Pro Display', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   overflow-y: auto;
+  pointer-events: none;
 }
 
 .auth__frame {
@@ -22,18 +22,7 @@ $figma-primary-soft: rgba(10, 23, 72, 0.05);
   display: flex;
   justify-content: center;
   padding: clamp(32px, 6vw, 48px);
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(28px);
-}
-
-.auth__frame-bg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.4;
-  z-index: -1;
+  pointer-events: auto;
 }
 
 .auth__card {
@@ -48,6 +37,7 @@ $figma-primary-soft: rgba(10, 23, 72, 0.05);
   display: flex;
   flex-direction: column;
   gap: 24px;
+  pointer-events: auto;
 }
 
 .auth__card-header {
