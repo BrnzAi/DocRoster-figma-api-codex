@@ -38,6 +38,12 @@ $figma-primary: rgba(10, 23, 72, 1);
   pointer-events: auto;
 }
 
+.auth__card-logo {
+  align-self: center;
+  width: 258px;
+  height: 160px;
+}
+
 .auth__title {
   margin: 0;
   font-size: 32px;

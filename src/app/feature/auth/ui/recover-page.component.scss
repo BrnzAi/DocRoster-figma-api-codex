@@ -39,6 +39,12 @@ $figma-primary-soft: rgba(10, 23, 72, 0.05);
   pointer-events: auto;
 }
 
+.auth__card-logo {
+  align-self: center;
+  width: 258px;
+  height: 160px;
+}
+
 .auth__close {
   position: absolute;
   right: 24px;
