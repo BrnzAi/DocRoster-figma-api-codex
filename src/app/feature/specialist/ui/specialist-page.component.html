@@ -1,61 +1,51 @@
-<section class="specialist-view" *ngIf="context$ | async as context; else loading">
-  <div class="specialist-view__frame" *ngIf="context.doctor as doctor; else notFound">
-    <article class="specialist-view__card">
-      <div class="specialist-view__media">
-        <img [src]="doctor.avatarUrl" [alt]="doctor.name" class="specialist-view__portrait" />
-        <span class="specialist-view__badge">specialist</span>
-        <button
-          type="button"
-          class="specialist-view__close"
-          routerLink="/search"
-          aria-label="Back to search results"
-        ></button>
-      </div>
-
-      <div class="specialist-view__content">
-        <header class="specialist-view__header">
+<section class="specialist-panel" *ngIf="context$ | async as context; else loading">
+  <ng-container *ngIf="context.doctor as doctor; else notFound">
+    <header class="specialist-panel__header">
+      <button type="button" class="specialist-panel__close" routerLink="/search" aria-label="Back to search"></button>
+      <div class="specialist-panel__identity">
+        <img [src]="doctor.avatarUrl" [alt]="doctor.name" />
+        <div>
           <h1>{{ doctor.name }}</h1>
-          <p class="specialist-view__specialty">{{ doctor.specialty }}</p>
-          <p class="specialist-view__bio">{{ doctor.biography }}</p>
-        </header>
-
-        <div class="specialist-view__contact" *ngIf="context.clinic as clinic">
-          <a
-            *ngIf="clinic.phone"
-            class="specialist-view__action specialist-view__action--primary"
-            [href]="formatPhoneHref(clinic.phone)"
-          >
-            Call now
-          </a>
-          <a
-            *ngIf="clinic.address"
-            class="specialist-view__action specialist-view__action--secondary"
-            target="_blank"
-            rel="noopener"
-            [href]="buildMapsLink(clinic.address)"
-          >
-            Navigate
-          </a>
+          <p>{{ doctor.specialty }}</p>
         </div>
       </div>
+    </header>
 
-      <section class="specialist-view__section" *ngIf="doctor.highlights?.length">
-        <h2>Specializations</h2>
-        <ul>
-          <li *ngFor="let highlight of doctor.highlights!">
-            <span>{{ highlight.label }}</span>
-            <strong>{{ highlight.value }}</strong>
-          </li>
-        </ul>
-      </section>
-    </article>
-  </div>
+    <div class="specialist-panel__section">
+      <h2>Biography</h2>
+      <p>{{ doctor.biography }}</p>
+    </div>
+
+    <div class="specialist-panel__section" *ngIf="context.clinic as clinic">
+      <h2>Clinic</h2>
+      <p>
+        {{ clinic.name }}<br />
+        {{ clinic.address.street }}, {{ clinic.address.city }}, {{ clinic.address.state }}
+      </p>
+      <div class="specialist-panel__actions">
+        <a *ngIf="clinic.phone" [href]="formatPhoneHref(clinic.phone)">Call now</a>
+        <a *ngIf="clinic.address" [href]="buildMapsLink(clinic.address)" target="_blank" rel="noopener"
+          >Navigate</a
+        >
+      </div>
+    </div>
+
+    <div class="specialist-panel__section" *ngIf="doctor.highlights?.length">
+      <h2>Specializations</h2>
+      <ul>
+        <li *ngFor="let highlight of doctor.highlights!">
+          <span>{{ highlight.label }}</span>
+          <strong>{{ highlight.value }}</strong>
+        </li>
+      </ul>
+    </div>
+  </ng-container>
 </section>
 
 <ng-template #loading>
-  <div class="specialist-view__fallback"><p>Loading profile…</p></div>
+  <div class="specialist-panel__fallback"><p>Loading profile…</p></div>
 </ng-template>
 
 <ng-template #notFound>
-  <div class="specialist-view__fallback"><p>We could not find this specialist. Try exploring the map.</p></div>
+  <div class="specialist-panel__fallback"><p>We could not find this specialist. Try exploring the map.</p></div>
 </ng-template>

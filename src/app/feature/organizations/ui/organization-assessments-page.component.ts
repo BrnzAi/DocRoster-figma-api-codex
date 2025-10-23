@@ -8,12 +8,12 @@ import { SectionHeaderComponent } from '../../../shared/ui/section-header/sectio
 import { OrganizationsFacade } from '../data-access/organizations.facade';
 
 @Component({
-  selector: 'dr-organization-assessments-page',
-  standalone: true,
-  imports: [AsyncPipe, NgIf, NgFor, SectionHeaderComponent, AssessmentCardComponent],
-  templateUrl: './organization-assessments-page.component.html',
-  styleUrls: ['./organization-assessments-page.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'dr-organization-assessments-page',
+    standalone: true,
+    imports: [AsyncPipe, NgIf, NgFor, SectionHeaderComponent, AssessmentCardComponent],
+    templateUrl: './organization-assessments-page.component.html',
+    styleUrls: ['./organization-assessments-page.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class OrganizationAssessmentsPageComponent {
   private readonly route = inject(ActivatedRoute);

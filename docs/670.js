@@ -1,0 +1,373 @@
+"use strict";
+(self["webpackChunkdoc_roster"] = self["webpackChunkdoc_roster"] || []).push([[670],{
+
+/***/ 79:
+/*!****************************************************************!*\
+  !*** ./src/app/shared/ui/metric-pill/metric-pill.component.ts ***!
+  \****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   MetricPillComponent: () => (/* binding */ MetricPillComponent)
+/* harmony export */ });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 2481);
+var _staticBlock;
+
+class MetricPillComponent {
+  constructor() {
+    this.tone = 'primary';
+  }
+  static #_ = _staticBlock = () => (this.ɵfac = function MetricPillComponent_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || MetricPillComponent)();
+  }, this.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+    type: MetricPillComponent,
+    selectors: [["dr-metric-pill"]],
+    inputs: {
+      value: "value",
+      label: "label",
+      tone: "tone"
+    },
+    decls: 5,
+    vars: 6,
+    consts: [[1, "metric"], [1, "metric__value"], [1, "metric__label"]],
+    template: function MetricPillComponent_Template(rf, ctx) {
+      if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdomElementStart"](0, "div", 0)(1, "span", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdomElementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdomElementStart"](3, "span", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdomElementEnd"]()();
+      }
+      if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("metric--secondary", ctx.tone === "secondary")("metric--neutral", ctx.tone === "neutral");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.value);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.label);
+      }
+    },
+    styles: [".metric[_ngcontent-%COMP%] {\n  display: inline-grid;\n  gap: 0.2rem;\n  padding: 0.85rem 1.25rem;\n  border-radius: 16px;\n  background: linear-gradient(135deg, rgba(61, 122, 255, 0.12), rgba(30, 58, 138, 0.1));\n  min-width: 148px;\n}\n.metric__value[_ngcontent-%COMP%] {\n  font-size: 1.4rem;\n  font-weight: 700;\n  color: #1e3a8a;\n}\n.metric__label[_ngcontent-%COMP%] {\n  font-size: 0.9rem;\n  color: #6d7ba1;\n}\n.metric--secondary[_ngcontent-%COMP%] {\n  background: linear-gradient(135deg, rgba(33, 177, 40, 0.15), rgba(61, 122, 255, 0.12));\n}\n.metric--secondary[_ngcontent-%COMP%]   .metric__value[_ngcontent-%COMP%] {\n  color: #21b128;\n}\n.metric--neutral[_ngcontent-%COMP%] {\n  background: rgba(213, 220, 240, 0.4);\n}\n.metric--neutral[_ngcontent-%COMP%]   .metric__value[_ngcontent-%COMP%] {\n  color: #0a1748;\n}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9hcHAvc2hhcmVkL3VpL21ldHJpYy1waWxsL21ldHJpYy1waWxsLmNvbXBvbmVudC5zY3NzIiwid2VicGFjazovLy4vc3JjL3N0eWxlcy9fdmFyaWFibGVzLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBRUE7RUFDRSxvQkFBQTtFQUNBLFdBQUE7RUFDQSx3QkFBQTtFQUNBLG1CQ1FVO0VEUFYscUZBQUE7RUFDQSxnQkFBQTtBQURGO0FBR0U7RUFDRSxpQkFBQTtFQUNBLGdCQUFBO0VBQ0EsY0NaaUI7QURXckI7QUFJRTtFQUNFLGlCQUFBO0VBQ0EsY0NWZTtBRFFuQjtBQUtFO0VBQ0Usc0ZBQUE7QUFISjtBQUtJO0VBQ0UsY0N2Qlk7QURvQmxCO0FBT0U7RUFDRSxvQ0FBQTtBQUxKO0FBT0k7RUFDRSxjQzFCTztBRHFCYiIsInNvdXJjZXNDb250ZW50IjpbIkB1c2UgJ3N0eWxlcy92YXJpYWJsZXMnIGFzICo7XG5cbi5tZXRyaWMge1xuICBkaXNwbGF5OiBpbmxpbmUtZ3JpZDtcbiAgZ2FwOiAwLjJyZW07XG4gIHBhZGRpbmc6IDAuODVyZW0gMS4yNXJlbTtcbiAgYm9yZGVyLXJhZGl1czogJHJhZGl1cy1sZztcbiAgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KDEzNWRlZywgcmdiYSgkY29sb3ItcHJpbWFyeSwgMC4xMiksIHJnYmEoJGNvbG9yLXByaW1hcnktZGFyaywgMC4xKSk7XG4gIG1pbi13aWR0aDogMTQ4cHg7XG5cbiAgJl9fdmFsdWUge1xuICAgIGZvbnQtc2l6ZTogMS40cmVtO1xuICAgIGZvbnQtd2VpZ2h0OiA3MDA7XG4gICAgY29sb3I6ICRjb2xvci1wcmltYXJ5LWRhcms7XG4gIH1cblxuICAmX19sYWJlbCB7XG4gICAgZm9udC1zaXplOiAwLjlyZW07XG4gICAgY29sb3I6ICRjb2xvci10ZXh0LW11dGVkO1xuICB9XG5cbiAgJi0tc2Vjb25kYXJ5IHtcbiAgICBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoMTM1ZGVnLCByZ2JhKCRjb2xvci1zZWNvbmRhcnksIDAuMTUpLCByZ2JhKCRjb2xvci1wcmltYXJ5LCAwLjEyKSk7XG5cbiAgICAubWV0cmljX192YWx1ZSB7XG4gICAgICBjb2xvcjogJGNvbG9yLXNlY29uZGFyeTtcbiAgICB9XG4gIH1cblxuICAmLS1uZXV0cmFsIHtcbiAgICBiYWNrZ3JvdW5kOiByZ2JhKCRjb2xvci1ib3JkZXIsIDAuNCk7XG5cbiAgICAubWV0cmljX192YWx1ZSB7XG4gICAgICBjb2xvcjogJGNvbG9yLXRleHQ7XG4gICAgfVxuICB9XG59XG4iLCIkY29sb3ItcHJpbWFyeTogIzNkN2FmZjtcbiRjb2xvci1wcmltYXJ5LWRhcms6ICMxZTNhOGE7XG4kY29sb3Itc2Vjb25kYXJ5OiAjMjFiMTI4O1xuJGNvbG9yLWFjY2VudDogI2ZmM2Q5NjtcbiRjb2xvci1iYWNrZ3JvdW5kOiAjZjVmNmZmO1xuJGNvbG9yLXN1cmZhY2U6ICNmZmZmZmY7XG4kY29sb3Itc3VyZmFjZS1hbHQ6ICNlZWYxZmY7XG4kY29sb3ItdGV4dDogIzBhMTc0ODtcbiRjb2xvci10ZXh0LW11dGVkOiAjNmQ3YmExO1xuJGNvbG9yLWJvcmRlcjogI2Q1ZGNmMDtcbiRjb2xvci1zdWNjZXNzOiAjMjFiMTI4O1xuJGNvbG9yLXdhcm5pbmc6ICNmZjU3M2Q7XG4kY29sb3ItZGFuZ2VyOiAjZmYzZDAwO1xuJHJhZGl1cy14bDogMjRweDtcbiRyYWRpdXMtbGc6IDE2cHg7XG4kcmFkaXVzLW1kOiAxMnB4O1xuJHJhZGl1cy1zbTogOHB4O1xuJHNwYWNpbmcteHM6IDAuNXJlbTtcbiRzcGFjaW5nLXNtOiAwLjc1cmVtO1xuJHNwYWNpbmctbWQ6IDFyZW07XG4kc3BhY2luZy1sZzogMS41cmVtO1xuJHNwYWNpbmcteGw6IDJyZW07XG4kc3BhY2luZy14eGw6IDNyZW07XG4kc2hhZG93LXNvZnQ6IDAgMjBweCA0MHB4IHJnYmEoMTUsIDIzLCA0MiwgMC4wOCk7XG4kc2hhZG93LWNhcmQ6IDAgMjRweCA2MHB4IHJnYmEoMTUsIDIzLCA0MiwgMC4xMik7XG4kdHJhbnNpdGlvbi1iYXNlOiAxODBtcyBlYXNlLWluLW91dDtcbiRmb250LWZhbWlseS1iYXNlOiAnU0YgUHJvIFRleHQnLCAnU0YgUHJvIERpc3BsYXknLCAnSW50ZXInLCBzeXN0ZW0tdWksIC1hcHBsZS1zeXN0ZW0sIEJsaW5rTWFjU3lzdGVtRm9udCwgJ1NlZ29lIFVJJywgc2Fucy1zZXJpZjtcbiRtYXgtY29udGVudC13aWR0aDogMTE4MHB4O1xuIl0sInNvdXJjZVJvb3QiOiIifQ== */"],
+    changeDetection: 0
+  }));
+}
+_staticBlock();
+
+/***/ }),
+
+/***/ 1435:
+/*!****************************************************************!*\
+  !*** ./src/app/shared/ui/clinic-card/clinic-card.component.ts ***!
+  \****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ClinicCardComponent: () => (/* binding */ ClinicCardComponent)
+/* harmony export */ });
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/common */ 3683);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ 4487);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 2481);
+var _staticBlock;
+
+
+
+const _c0 = () => ["/search"];
+const _c1 = a0 => ({
+  clinic: a0
+});
+const _c2 = () => ["/organizations", "org-northstar", "assessments"];
+function ClinicCardComponent_span_3_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "span", 9);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1, "Verified network");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+  }
+}
+function ClinicCardComponent_li_15_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "li");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const specialty_r1 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](specialty_r1);
+  }
+}
+function ClinicCardComponent_div_27_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 10)(1, "a", 11);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](2, "View specialists");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](3, "a", 12);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](4, "Org assessments");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()();
+  }
+  if (rf & 2) {
+    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpureFunction0"](3, _c0))("queryParams", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpureFunction1"](4, _c1, ctx_r1.clinic.id));
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpureFunction0"](6, _c2));
+  }
+}
+class ClinicCardComponent {
+  constructor() {
+    this.showActions = true;
+  }
+  static #_ = _staticBlock = () => (this.ɵfac = function ClinicCardComponent_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || ClinicCardComponent)();
+  }, this.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({
+    type: ClinicCardComponent,
+    selectors: [["dr-clinic-card"]],
+    inputs: {
+      clinic: "clinic",
+      showActions: "showActions"
+    },
+    decls: 28,
+    vars: 16,
+    consts: [[1, "clinic-card", "surface"], [1, "clinic-card__header"], ["class", "clinic-card__pill", 4, "ngIf"], [1, "clinic-card__rating"], [1, "clinic-card__tags"], [4, "ngFor", "ngForOf"], [1, "clinic-card__meta"], [3, "href"], ["class", "clinic-card__actions", 4, "ngIf"], [1, "clinic-card__pill"], [1, "clinic-card__actions"], [1, "button", 3, "routerLink", "queryParams"], [1, "button", "button--ghost", 3, "routerLink"]],
+    template: function ClinicCardComponent_Template(rf, ctx) {
+      if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "article", 0)(1, "div", 1)(2, "div");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](3, ClinicCardComponent_span_3_Template, 2, 0, "span", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](4, "h3");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](6, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](8, "div", 3)(9, "span");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipe"](11, "number");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](12, "small");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](13);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](14, "ul", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](15, ClinicCardComponent_li_15_Template, 2, 1, "li", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](16, "div", 6)(17, "div")(18, "strong");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](19);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](20, "span");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](21);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](22, "div")(23, "span");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](24);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](25, "a", 7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](26);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](27, ClinicCardComponent_div_27_Template, 5, 7, "div", 8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+      }
+      if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", ctx.clinic.isVerified);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](ctx.clinic.name);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](ctx.clinic.description);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipeBind2"](11, 13, ctx.clinic.rating, "1.1-1"));
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate1"]("", ctx.clinic.reviewCount, " reviews");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngForOf", ctx.clinic.specialties);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate2"]("", ctx.clinic.address.city, ", ", ctx.clinic.address.state);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](ctx.clinic.openingHours);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](ctx.clinic.phone);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("href", "mailto:" + ctx.clinic.email, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵsanitizeUrl"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](ctx.clinic.email);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", ctx.showActions);
+      }
+    },
+    dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_0__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_0__.NgIf, _angular_router__WEBPACK_IMPORTED_MODULE_1__.RouterLink, _angular_common__WEBPACK_IMPORTED_MODULE_0__.DecimalPipe],
+    styles: [".clinic-card[_ngcontent-%COMP%] {\n  display: grid;\n  gap: 1rem;\n  padding: clamp(1.5rem, 3vw, 2.25rem);\n}\n.clinic-card__header[_ngcontent-%COMP%] {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: space-between;\n  gap: 1rem;\n}\n.clinic-card__header[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  margin: 0;\n  font-size: 1.4rem;\n}\n.clinic-card__header[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  margin: 0.35rem 0 0 0;\n  color: #6d7ba1;\n  max-width: 560px;\n  line-height: 1.6;\n}\n.clinic-card__pill[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 0.25rem;\n  padding: 0.25rem 0.75rem;\n  border-radius: 999px;\n  font-weight: 600;\n  font-size: 0.875rem;\n  background: rgba(61, 122, 255, 0.12);\n  color: #3d7aff;\n  margin-bottom: 0.75rem;\n}\n.clinic-card__rating[_ngcontent-%COMP%] {\n  display: grid;\n  place-items: center;\n  min-width: 120px;\n  padding: 0.75rem 1rem;\n  border-radius: 12px;\n  background: rgba(33, 177, 40, 0.12);\n}\n.clinic-card__rating[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n  font-size: 1.5rem;\n  font-weight: 700;\n}\n.clinic-card__rating[_ngcontent-%COMP%]   small[_ngcontent-%COMP%] {\n  color: #6d7ba1;\n}\n.clinic-card__tags[_ngcontent-%COMP%] {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 0.5rem;\n  padding: 0;\n  margin: 0;\n  list-style: none;\n}\n.clinic-card__tags[_ngcontent-%COMP%]   li[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 0.5rem;\n  padding: 0.5rem 1rem;\n  border-radius: 999px;\n  background: #ffffff;\n  border: 1px solid rgba(213, 220, 240, 0.8);\n  font-weight: 500;\n  color: #0a1748;\n  transition: background 180ms ease-in-out, color 180ms ease-in-out, border-color 180ms ease-in-out;\n  font-size: 0.85rem;\n}\n.clinic-card__tags[_ngcontent-%COMP%]   li--active[_ngcontent-%COMP%] {\n  background: rgba(61, 122, 255, 0.12);\n  color: #3d7aff;\n  border-color: rgba(61, 122, 255, 0.4);\n}\n.clinic-card__meta[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));\n  gap: 1rem;\n  color: #6d7ba1;\n}\n.clinic-card__meta[_ngcontent-%COMP%]   strong[_ngcontent-%COMP%] {\n  color: #0a1748;\n  display: block;\n  font-size: 1rem;\n  margin-bottom: 0.3rem;\n}\n.clinic-card__meta[_ngcontent-%COMP%]   span[_ngcontent-%COMP%], \n.clinic-card__meta[_ngcontent-%COMP%]   a[_ngcontent-%COMP%] {\n  display: block;\n  font-size: 0.95rem;\n}\n.clinic-card__meta[_ngcontent-%COMP%]   a[_ngcontent-%COMP%] {\n  color: #3d7aff;\n}\n.clinic-card__actions[_ngcontent-%COMP%] {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 0.75rem;\n}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9hcHAvc2hhcmVkL3VpL2NsaW5pYy1jYXJkL2NsaW5pYy1jYXJkLmNvbXBvbmVudC5zY3NzIiwid2VicGFjazovLy4vc3JjL3N0eWxlcy9fdmFyaWFibGVzLnNjc3MiLCJ3ZWJwYWNrOi8vLi9zcmMvc3R5bGVzL191dGlsaXRpZXMuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFHQTtFQUNFLGFBQUE7RUFDQSxTQ2NXO0VEYlgsb0NBQUE7QUFGRjtBQUlFO0VBQ0UsYUFBQTtFQUNBLGVBQUE7RUFDQSw4QkFBQTtFQUNBLFNDT1M7QURUYjtBQUlJO0VBQ0UsU0FBQTtFQUNBLGlCQUFBO0FBRk47QUFLSTtFQUNFLHFCQUFBO0VBQ0EsY0NiYTtFRGNiLGdCQUFBO0VBQ0EsZ0JBQUE7QUFITjtBQU9FO0VFeEJBLG9CQUFBO0VBQ0EsbUJBQUE7RUFDQSxZQUFBO0VBQ0Esd0JBQUE7RUFDQSxvQkFBQTtFQUNBLGdCQUFBO0VBQ0EsbUJBQUE7RUFDQSxvQ0FBQTtFQUNBLGNEWGM7RUQ2Qlosc0JBQUE7QUFHSjtBQUFFO0VBQ0UsYUFBQTtFQUNBLG1CQUFBO0VBQ0EsZ0JBQUE7RUFDQSxxQkFBQTtFQUNBLG1CQ3RCUTtFRHVCUixtQ0FBQTtBQUVKO0FBQUk7RUFDRSxpQkFBQTtFQUNBLGdCQUFBO0FBRU47QUFDSTtFQUNFLGNDdENhO0FEdUNuQjtBQUdFO0VBQ0UsYUFBQTtFQUNBLGVBQUE7RUFDQSxXQUFBO0VBQ0EsVUFBQTtFQUNBLFNBQUE7RUFDQSxnQkFBQTtBQURKO0FBR0k7RUVsQkYsb0JBQUE7RUFDQSxtQkFBQTtFQUNBLFdBQUE7RUFDQSxvQkFBQTtFQUNBLG9CQUFBO0VBQ0EsbUJEeENjO0VDeUNkLDBDQUFBO0VBQ0EsZ0JBQUE7RUFDQSxjRHpDVztFQzBDWCxpR0FBQTtFRldJLGtCQUFBO0FBUU47QUVqQkU7RUFDRSxvQ0FBQTtFQUNBLGNEckRZO0VDc0RaLHFDQUFBO0FGbUJKO0FBVEU7RUFDRSxhQUFBO0VBQ0EsMkRBQUE7RUFDQSxTQ2hEUztFRGlEVCxjQzVEZTtBRHVFbkI7QUFUSTtFQUNFLGNDaEVPO0VEaUVQLGNBQUE7RUFDQSxlQUFBO0VBQ0EscUJBQUE7QUFXTjtBQVJJOztFQUVFLGNBQUE7RUFDQSxrQkFBQTtBQVVOO0FBUEk7RUFDRSxjQ3BGVTtBRDZGaEI7QUFMRTtFQUNFLGFBQUE7RUFDQSxlQUFBO0VBQ0EsWUFBQTtBQU9KIiwic291cmNlc0NvbnRlbnQiOlsiQHVzZSAnc3R5bGVzL3ZhcmlhYmxlcycgYXMgKjtcbkB1c2UgJ3N0eWxlcy91dGlsaXRpZXMnIGFzIHV0aWw7XG5cbi5jbGluaWMtY2FyZCB7XG4gIGRpc3BsYXk6IGdyaWQ7XG4gIGdhcDogJHNwYWNpbmctbWQ7XG4gIHBhZGRpbmc6IGNsYW1wKDEuNXJlbSwgM3Z3LCAyLjI1cmVtKTtcblxuICAmX19oZWFkZXIge1xuICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgZmxleC13cmFwOiB3cmFwO1xuICAgIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcbiAgICBnYXA6ICRzcGFjaW5nLW1kO1xuXG4gICAgaDMge1xuICAgICAgbWFyZ2luOiAwO1xuICAgICAgZm9udC1zaXplOiAxLjRyZW07XG4gICAgfVxuXG4gICAgcCB7XG4gICAgICBtYXJnaW46IDAuMzVyZW0gMCAwIDA7XG4gICAgICBjb2xvcjogJGNvbG9yLXRleHQtbXV0ZWQ7XG4gICAgICBtYXgtd2lkdGg6IDU2MHB4O1xuICAgICAgbGluZS1oZWlnaHQ6IDEuNjtcbiAgICB9XG4gIH1cblxuICAmX19waWxsIHtcbiAgICBAaW5jbHVkZSB1dGlsLmJhZGdlO1xuICAgIG1hcmdpbi1ib3R0b206IDAuNzVyZW07XG4gIH1cblxuICAmX19yYXRpbmcge1xuICAgIGRpc3BsYXk6IGdyaWQ7XG4gICAgcGxhY2UtaXRlbXM6IGNlbnRlcjtcbiAgICBtaW4td2lkdGg6IDEyMHB4O1xuICAgIHBhZGRpbmc6IDAuNzVyZW0gMXJlbTtcbiAgICBib3JkZXItcmFkaXVzOiAkcmFkaXVzLW1kO1xuICAgIGJhY2tncm91bmQ6IHJnYmEoJGNvbG9yLXNlY29uZGFyeSwgMC4xMik7XG5cbiAgICBzcGFuIHtcbiAgICAgIGZvbnQtc2l6ZTogMS41cmVtO1xuICAgICAgZm9udC13ZWlnaHQ6IDcwMDtcbiAgICB9XG5cbiAgICBzbWFsbCB7XG4gICAgICBjb2xvcjogJGNvbG9yLXRleHQtbXV0ZWQ7XG4gICAgfVxuICB9XG5cbiAgJl9fdGFncyB7XG4gICAgZGlzcGxheTogZmxleDtcbiAgICBmbGV4LXdyYXA6IHdyYXA7XG4gICAgZ2FwOiAwLjVyZW07XG4gICAgcGFkZGluZzogMDtcbiAgICBtYXJnaW46IDA7XG4gICAgbGlzdC1zdHlsZTogbm9uZTtcblxuICAgIGxpIHtcbiAgICAgIEBpbmNsdWRlIHV0aWwuY2hpcDtcbiAgICAgIGZvbnQtc2l6ZTogMC44NXJlbTtcbiAgICB9XG4gIH1cblxuICAmX19tZXRhIHtcbiAgICBkaXNwbGF5OiBncmlkO1xuICAgIGdyaWQtdGVtcGxhdGUtY29sdW1uczogcmVwZWF0KGF1dG8tZml0LCBtaW5tYXgoMTgwcHgsIDFmcikpO1xuICAgIGdhcDogJHNwYWNpbmctbWQ7XG4gICAgY29sb3I6ICRjb2xvci10ZXh0LW11dGVkO1xuXG4gICAgc3Ryb25nIHtcbiAgICAgIGNvbG9yOiAkY29sb3ItdGV4dDtcbiAgICAgIGRpc3BsYXk6IGJsb2NrO1xuICAgICAgZm9udC1zaXplOiAxcmVtO1xuICAgICAgbWFyZ2luLWJvdHRvbTogMC4zcmVtO1xuICAgIH1cblxuICAgIHNwYW4sXG4gICAgYSB7XG4gICAgICBkaXNwbGF5OiBibG9jaztcbiAgICAgIGZvbnQtc2l6ZTogMC45NXJlbTtcbiAgICB9XG5cbiAgICBhIHtcbiAgICAgIGNvbG9yOiAkY29sb3ItcHJpbWFyeTtcbiAgICB9XG4gIH1cblxuICAmX19hY3Rpb25zIHtcbiAgICBkaXNwbGF5OiBmbGV4O1xuICAgIGZsZXgtd3JhcDogd3JhcDtcbiAgICBnYXA6IDAuNzVyZW07XG4gIH1cbn1cbiIsIiRjb2xvci1wcmltYXJ5OiAjM2Q3YWZmO1xuJGNvbG9yLXByaW1hcnktZGFyazogIzFlM2E4YTtcbiRjb2xvci1zZWNvbmRhcnk6ICMyMWIxMjg7XG4kY29sb3ItYWNjZW50OiAjZmYzZDk2O1xuJGNvbG9yLWJhY2tncm91bmQ6ICNmNWY2ZmY7XG4kY29sb3Itc3VyZmFjZTogI2ZmZmZmZjtcbiRjb2xvci1zdXJmYWNlLWFsdDogI2VlZjFmZjtcbiRjb2xvci10ZXh0OiAjMGExNzQ4O1xuJGNvbG9yLXRleHQtbXV0ZWQ6ICM2ZDdiYTE7XG4kY29sb3ItYm9yZGVyOiAjZDVkY2YwO1xuJGNvbG9yLXN1Y2Nlc3M6ICMyMWIxMjg7XG4kY29sb3Itd2FybmluZzogI2ZmNTczZDtcbiRjb2xvci1kYW5nZXI6ICNmZjNkMDA7XG4kcmFkaXVzLXhsOiAyNHB4O1xuJHJhZGl1cy1sZzogMTZweDtcbiRyYWRpdXMtbWQ6IDEycHg7XG4kcmFkaXVzLXNtOiA4cHg7XG4kc3BhY2luZy14czogMC41cmVtO1xuJHNwYWNpbmctc206IDAuNzVyZW07XG4kc3BhY2luZy1tZDogMXJlbTtcbiRzcGFjaW5nLWxnOiAxLjVyZW07XG4kc3BhY2luZy14bDogMnJlbTtcbiRzcGFjaW5nLXh4bDogM3JlbTtcbiRzaGFkb3ctc29mdDogMCAyMHB4IDQwcHggcmdiYSgxNSwgMjMsIDQyLCAwLjA4KTtcbiRzaGFkb3ctY2FyZDogMCAyNHB4IDYwcHggcmdiYSgxNSwgMjMsIDQyLCAwLjEyKTtcbiR0cmFuc2l0aW9uLWJhc2U6IDE4MG1zIGVhc2UtaW4tb3V0O1xuJGZvbnQtZmFtaWx5LWJhc2U6ICdTRiBQcm8gVGV4dCcsICdTRiBQcm8gRGlzcGxheScsICdJbnRlcicsIHN5c3RlbS11aSwgLWFwcGxlLXN5c3RlbSwgQmxpbmtNYWNTeXN0ZW1Gb250LCAnU2Vnb2UgVUknLCBzYW5zLXNlcmlmO1xuJG1heC1jb250ZW50LXdpZHRoOiAxMTgwcHg7XG4iLCJAdXNlICd2YXJpYWJsZXMnIGFzICo7XG5cbkBtaXhpbiBiYWRnZSB7XG4gIGRpc3BsYXk6IGlubGluZS1mbGV4O1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xuICBnYXA6IDAuMjVyZW07XG4gIHBhZGRpbmc6IDAuMjVyZW0gMC43NXJlbTtcbiAgYm9yZGVyLXJhZGl1czogOTk5cHg7XG4gIGZvbnQtd2VpZ2h0OiA2MDA7XG4gIGZvbnQtc2l6ZTogMC44NzVyZW07XG4gIGJhY2tncm91bmQ6IHJnYmEoJGNvbG9yLXByaW1hcnksIDAuMTIpO1xuICBjb2xvcjogJGNvbG9yLXByaW1hcnk7XG59XG5cbkBtaXhpbiBidXR0b24ge1xuICBkaXNwbGF5OiBpbmxpbmUtZmxleDtcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gIGdhcDogMC41cmVtO1xuICBib3JkZXItcmFkaXVzOiA5OTlweDtcbiAgYm9yZGVyOiBub25lO1xuICBwYWRkaW5nOiAwLjc1cmVtIDEuNXJlbTtcbiAgZm9udC13ZWlnaHQ6IDYwMDtcbiAgY3Vyc29yOiBwb2ludGVyO1xuICBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoMTM1ZGVnLCAkY29sb3ItcHJpbWFyeSwgJGNvbG9yLXByaW1hcnktZGFyayk7XG4gIGNvbG9yOiAkY29sb3Itc3VyZmFjZTtcbiAgdHJhbnNpdGlvbjogdHJhbnNmb3JtICR0cmFuc2l0aW9uLWJhc2UsIGJveC1zaGFkb3cgJHRyYW5zaXRpb24tYmFzZTtcblxuICAmOmhvdmVyIHtcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoLTJweCk7XG4gICAgYm94LXNoYWRvdzogJHNoYWRvdy1jYXJkO1xuICB9XG5cbiAgJi0tZ2hvc3Qge1xuICAgIGJhY2tncm91bmQ6IHJnYmEoJGNvbG9yLXByaW1hcnksIDAuMDgpO1xuICAgIGNvbG9yOiAkY29sb3ItcHJpbWFyeTtcbiAgfVxufVxuXG5AbWl4aW4gY2hpcCB7XG4gIGRpc3BsYXk6IGlubGluZS1mbGV4O1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xuICBnYXA6IDAuNXJlbTtcbiAgcGFkZGluZzogMC41cmVtIDFyZW07XG4gIGJvcmRlci1yYWRpdXM6IDk5OXB4O1xuICBiYWNrZ3JvdW5kOiAkY29sb3Itc3VyZmFjZTtcbiAgYm9yZGVyOiAxcHggc29saWQgcmdiYSgkY29sb3ItYm9yZGVyLCAwLjgpO1xuICBmb250LXdlaWdodDogNTAwO1xuICBjb2xvcjogJGNvbG9yLXRleHQ7XG4gIHRyYW5zaXRpb246IGJhY2tncm91bmQgJHRyYW5zaXRpb24tYmFzZSwgY29sb3IgJHRyYW5zaXRpb24tYmFzZSwgYm9yZGVyLWNvbG9yICR0cmFuc2l0aW9uLWJhc2U7XG5cbiAgJi0tYWN0aXZlIHtcbiAgICBiYWNrZ3JvdW5kOiByZ2JhKCRjb2xvci1wcmltYXJ5LCAwLjEyKTtcbiAgICBjb2xvcjogJGNvbG9yLXByaW1hcnk7XG4gICAgYm9yZGVyLWNvbG9yOiByZ2JhKCRjb2xvci1wcmltYXJ5LCAwLjQpO1xuICB9XG59XG4iXSwic291cmNlUm9vdCI6IiJ9 */"],
+    changeDetection: 0
+  }));
+}
+_staticBlock();
+
+/***/ }),
+
+/***/ 2670:
+/*!******************************************************!*\
+  !*** ./src/app/feature/map/ui/map-page.component.ts ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   MapPageComponent: () => (/* binding */ MapPageComponent)
+/* harmony export */ });
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/common */ 3683);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ 4487);
+/* harmony import */ var _shared_ui_clinic_card_clinic_card_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../shared/ui/clinic-card/clinic-card.component */ 1435);
+/* harmony import */ var _shared_ui_doctor_card_doctor_card_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../shared/ui/doctor-card/doctor-card.component */ 5831);
+/* harmony import */ var _shared_ui_metric_pill_metric_pill_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../shared/ui/metric-pill/metric-pill.component */ 79);
+/* harmony import */ var _shared_ui_section_header_section_header_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../shared/ui/section-header/section-header.component */ 9719);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 2481);
+/* harmony import */ var _data_access_map_facade__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../data-access/map.facade */ 8944);
+var _staticBlock;
+
+
+
+
+
+
+
+
+function MapPageComponent_div_18_dr_clinic_card_1_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](0, "dr-clinic-card", 19);
+  }
+  if (rf & 2) {
+    const clinic_r1 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("clinic", clinic_r1);
+  }
+}
+function MapPageComponent_div_18_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 17);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](1, MapPageComponent_div_18_dr_clinic_card_1_Template, 1, 1, "dr-clinic-card", 18);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const clinics_r2 = ctx.ngIf;
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngForOf", clinics_r2);
+  }
+}
+function MapPageComponent_div_23_dr_doctor_card_1_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](0, "dr-doctor-card", 22);
+  }
+  if (rf & 2) {
+    const result_r3 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("doctor", result_r3.doctor)("clinic", result_r3.clinic)("nextAvailable", result_r3.nextAvailable)("highlightDistance", result_r3.distanceInMinutes);
+  }
+}
+function MapPageComponent_div_23_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 20);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](1, MapPageComponent_div_23_dr_doctor_card_1_Template, 1, 4, "dr-doctor-card", 21);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const results_r4 = ctx.ngIf;
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngForOf", results_r4);
+  }
+}
+class MapPageComponent {
+  constructor(facade) {
+    this.facade = facade;
+  }
+  static #_ = _staticBlock = () => (this.ɵfac = function MapPageComponent_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || MapPageComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_data_access_map_facade__WEBPACK_IMPORTED_MODULE_7__.MapFacade));
+  }, this.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineComponent"]({
+    type: MapPageComponent,
+    selectors: [["dr-map-page"]],
+    decls: 25,
+    vars: 19,
+    consts: [[1, "map-hero", "section"], [1, "container"], ["title", "Navigate the DocRoster care map", "subtitle", "Preview our connected network of clinics, specialists and assessment programs before the public rollout.", "badge", "Pilot preview"], ["actions", "", 1, "map-hero__actions"], ["routerLink", "/search", 1, "button"], ["routerLink", "/auth/register", 1, "button", "button--ghost"], [1, "map-hero__metrics"], ["label", "Members served", 3, "value"], ["tone", "secondary", "label", "Active clinics", 3, "value"], ["tone", "neutral", "label", "Specialists", 3, "value"], ["label", "Community rating", 3, "value"], [1, "map-section", "section"], ["title", "Featured pilot clinics", "subtitle", "See how DocRoster coordinates across physical and virtual fronts."], ["class", "map-section__grid", 4, "ngIf"], [1, "map-section", "section", "map-section--alt"], ["title", "Trending specialists", "subtitle", "Matching community stories with the right expertise."], ["class", "map-section__grid map-section__grid--doctors", 4, "ngIf"], [1, "map-section__grid"], [3, "clinic", 4, "ngFor", "ngForOf"], [3, "clinic"], [1, "map-section__grid", "map-section__grid--doctors"], [3, "doctor", "clinic", "nextAvailable", "highlightDistance", 4, "ngFor", "ngForOf"], [3, "doctor", "clinic", "nextAvailable", "highlightDistance"]],
+    template: function MapPageComponent_Template(rf, ctx) {
+      if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "section", 0)(1, "div", 1)(2, "dr-section-header", 2)(3, "div", 3)(4, "a", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](5, "Search specialists");
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](6, "a", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](7, "Request access");
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](8, "div", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](9, "dr-metric-pill", 7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipe"](10, "number");
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](11, "dr-metric-pill", 8)(12, "dr-metric-pill", 9)(13, "dr-metric-pill", 10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipe"](14, "number");
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](15, "section", 11)(16, "div", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](17, "dr-section-header", 12);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](18, MapPageComponent_div_18_Template, 2, 1, "div", 13);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipe"](19, "async");
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](20, "section", 14)(21, "div", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](22, "dr-section-header", 15);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](23, MapPageComponent_div_23_Template, 2, 1, "div", 16);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipe"](24, "async");
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()();
+      }
+      if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](9);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("value", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵinterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind1"](10, 10, ctx.facade.metrics().membersServed)));
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("value", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵinterpolate"](ctx.facade.metrics().activeClinics));
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("value", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵinterpolate"](ctx.facade.metrics().availableSpecialists));
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("value", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵinterpolate1"]("", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind2"](14, 12, ctx.facade.metrics().averageSatisfaction, "1.1-1"), " \u2605"));
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind1"](19, 15, ctx.facade.clinics$));
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind1"](24, 17, ctx.facade.searchResults$));
+      }
+    },
+    dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_0__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_0__.NgIf, _angular_router__WEBPACK_IMPORTED_MODULE_1__.RouterLink, _shared_ui_section_header_section_header_component__WEBPACK_IMPORTED_MODULE_5__.SectionHeaderComponent, _shared_ui_metric_pill_metric_pill_component__WEBPACK_IMPORTED_MODULE_4__.MetricPillComponent, _shared_ui_clinic_card_clinic_card_component__WEBPACK_IMPORTED_MODULE_2__.ClinicCardComponent, _shared_ui_doctor_card_doctor_card_component__WEBPACK_IMPORTED_MODULE_3__.DoctorCardComponent, _angular_common__WEBPACK_IMPORTED_MODULE_0__.AsyncPipe, _angular_common__WEBPACK_IMPORTED_MODULE_0__.DecimalPipe],
+    styles: [".map-hero[_ngcontent-%COMP%] {\n  background: radial-gradient(circle at top left, rgba(61, 122, 255, 0.18), transparent 55%), linear-gradient(180deg, rgba(61, 122, 255, 0.08), transparent 60%);\n}\n.map-hero__actions[_ngcontent-%COMP%] {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 0.75rem;\n}\n.map-hero__metrics[_ngcontent-%COMP%] {\n  margin-top: 2rem;\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));\n  gap: 1rem;\n}\n\n.map-section__grid[_ngcontent-%COMP%] {\n  display: grid;\n  gap: 1.5rem;\n  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));\n}\n.map-section__grid--doctors[_ngcontent-%COMP%] {\n  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));\n}\n.map-section--alt[_ngcontent-%COMP%] {\n  background: #eef1ff;\n}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9hcHAvZmVhdHVyZS9tYXAvdWkvbWFwLXBhZ2UuY29tcG9uZW50LnNjc3MiLCJ3ZWJwYWNrOi8vLi9zcmMvc3R5bGVzL192YXJpYWJsZXMuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFFQTtFQUNFLDhKQUFBO0FBREY7QUFJRTtFQUNFLGFBQUE7RUFDQSxlQUFBO0VBQ0EsWUFBQTtBQUZKO0FBS0U7RUFDRSxnQkNRUztFRFBULGFBQUE7RUFDQSwyREFBQTtFQUNBLFNDR1M7QUROYjs7QUFRRTtFQUNFLGFBQUE7RUFDQSxXQ0hTO0VESVQsMkRBQUE7QUFMSjtBQVFFO0VBQ0UsMkRBQUE7QUFOSjtBQVNFO0VBQ0UsbUJDMUJnQjtBRG1CcEIiLCJzb3VyY2VzQ29udGVudCI6WyJAdXNlICdzdHlsZXMvdmFyaWFibGVzJyBhcyAqO1xuXG4ubWFwLWhlcm8ge1xuICBiYWNrZ3JvdW5kOiByYWRpYWwtZ3JhZGllbnQoY2lyY2xlIGF0IHRvcCBsZWZ0LCByZ2JhKCRjb2xvci1wcmltYXJ5LCAwLjE4KSwgdHJhbnNwYXJlbnQgNTUlKSxcbiAgICBsaW5lYXItZ3JhZGllbnQoMTgwZGVnLCByZ2JhKCRjb2xvci1wcmltYXJ5LCAwLjA4KSwgdHJhbnNwYXJlbnQgNjAlKTtcblxuICAmX19hY3Rpb25zIHtcbiAgICBkaXNwbGF5OiBmbGV4O1xuICAgIGZsZXgtd3JhcDogd3JhcDtcbiAgICBnYXA6IDAuNzVyZW07XG4gIH1cblxuICAmX19tZXRyaWNzIHtcbiAgICBtYXJnaW4tdG9wOiAkc3BhY2luZy14bDtcbiAgICBkaXNwbGF5OiBncmlkO1xuICAgIGdyaWQtdGVtcGxhdGUtY29sdW1uczogcmVwZWF0KGF1dG8tZml0LCBtaW5tYXgoMTYwcHgsIDFmcikpO1xuICAgIGdhcDogJHNwYWNpbmctbWQ7XG4gIH1cbn1cblxuLm1hcC1zZWN0aW9uIHtcbiAgJl9fZ3JpZCB7XG4gICAgZGlzcGxheTogZ3JpZDtcbiAgICBnYXA6ICRzcGFjaW5nLWxnO1xuICAgIGdyaWQtdGVtcGxhdGUtY29sdW1uczogcmVwZWF0KGF1dG8tZml0LCBtaW5tYXgoMjgwcHgsIDFmcikpO1xuICB9XG5cbiAgJl9fZ3JpZC0tZG9jdG9ycyB7XG4gICAgZ3JpZC10ZW1wbGF0ZS1jb2x1bW5zOiByZXBlYXQoYXV0by1maXQsIG1pbm1heCgzNDBweCwgMWZyKSk7XG4gIH1cblxuICAmLS1hbHQge1xuICAgIGJhY2tncm91bmQ6ICRjb2xvci1zdXJmYWNlLWFsdDtcbiAgfVxufVxuIiwiJGNvbG9yLXByaW1hcnk6ICMzZDdhZmY7XG4kY29sb3ItcHJpbWFyeS1kYXJrOiAjMWUzYThhO1xuJGNvbG9yLXNlY29uZGFyeTogIzIxYjEyODtcbiRjb2xvci1hY2NlbnQ6ICNmZjNkOTY7XG4kY29sb3ItYmFja2dyb3VuZDogI2Y1ZjZmZjtcbiRjb2xvci1zdXJmYWNlOiAjZmZmZmZmO1xuJGNvbG9yLXN1cmZhY2UtYWx0OiAjZWVmMWZmO1xuJGNvbG9yLXRleHQ6ICMwYTE3NDg7XG4kY29sb3ItdGV4dC1tdXRlZDogIzZkN2JhMTtcbiRjb2xvci1ib3JkZXI6ICNkNWRjZjA7XG4kY29sb3Itc3VjY2VzczogIzIxYjEyODtcbiRjb2xvci13YXJuaW5nOiAjZmY1NzNkO1xuJGNvbG9yLWRhbmdlcjogI2ZmM2QwMDtcbiRyYWRpdXMteGw6IDI0cHg7XG4kcmFkaXVzLWxnOiAxNnB4O1xuJHJhZGl1cy1tZDogMTJweDtcbiRyYWRpdXMtc206IDhweDtcbiRzcGFjaW5nLXhzOiAwLjVyZW07XG4kc3BhY2luZy1zbTogMC43NXJlbTtcbiRzcGFjaW5nLW1kOiAxcmVtO1xuJHNwYWNpbmctbGc6IDEuNXJlbTtcbiRzcGFjaW5nLXhsOiAycmVtO1xuJHNwYWNpbmcteHhsOiAzcmVtO1xuJHNoYWRvdy1zb2Z0OiAwIDIwcHggNDBweCByZ2JhKDE1LCAyMywgNDIsIDAuMDgpO1xuJHNoYWRvdy1jYXJkOiAwIDI0cHggNjBweCByZ2JhKDE1LCAyMywgNDIsIDAuMTIpO1xuJHRyYW5zaXRpb24tYmFzZTogMTgwbXMgZWFzZS1pbi1vdXQ7XG4kZm9udC1mYW1pbHktYmFzZTogJ1NGIFBybyBUZXh0JywgJ1NGIFBybyBEaXNwbGF5JywgJ0ludGVyJywgc3lzdGVtLXVpLCAtYXBwbGUtc3lzdGVtLCBCbGlua01hY1N5c3RlbUZvbnQsICdTZWdvZSBVSScsIHNhbnMtc2VyaWY7XG4kbWF4LWNvbnRlbnQtd2lkdGg6IDExODBweDtcbiJdLCJzb3VyY2VSb290IjoiIn0= */"],
+    changeDetection: 0
+  }));
+}
+_staticBlock();
+
+/***/ }),
+
+/***/ 8944:
+/*!*******************************************************!*\
+  !*** ./src/app/feature/map/data-access/map.facade.ts ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   MapFacade: () => (/* binding */ MapFacade)
+/* harmony export */ });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 4205);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 3705);
+/* harmony import */ var _data_access_doc_roster_api_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../data-access/doc-roster-api.service */ 3944);
+var _staticBlock;
+
+
+
+class MapFacade {
+  constructor() {
+    this.api = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_data_access_doc_roster_api_service__WEBPACK_IMPORTED_MODULE_2__.DocRosterApiService);
+    this.clinics$ = this.api.getClinics();
+    this.searchResults$ = this.api.getSearchResults();
+    this.metrics = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.computed)(() => this.api.metrics(), ...(ngDevMode ? [{
+      debugName: "metrics"
+    }] : []));
+  }
+  static #_ = _staticBlock = () => (this.ɵfac = function MapFacade_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || MapFacade)();
+  }, this.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+    token: MapFacade,
+    factory: MapFacade.ɵfac,
+    providedIn: 'root'
+  }));
+}
+_staticBlock();
+
+/***/ })
+
+}]);
+//# sourceMappingURL=670.js.map

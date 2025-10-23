@@ -4,12 +4,12 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from 
 import { FilterGroup } from '../../data-access/models/filter.model';
 
 @Component({
-  selector: 'dr-filter-group',
-  standalone: true,
-  imports: [NgFor, NgClass, NgIf],
-  templateUrl: './filter-group.component.html',
-  styleUrls: ['./filter-group.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'dr-filter-group',
+    standalone: true,
+    imports: [NgFor, NgClass, NgIf],
+    templateUrl: './filter-group.component.html',
+    styleUrls: ['./filter-group.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FilterGroupComponent {
   @Input({ required: true }) group!: FilterGroup;

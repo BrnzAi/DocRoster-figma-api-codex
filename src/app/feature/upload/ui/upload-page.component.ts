@@ -6,12 +6,12 @@ import { SectionHeaderComponent } from '../../../shared/ui/section-header/sectio
 import { UploadFacade } from '../data-access/upload.facade';
 
 @Component({
-  selector: 'dr-upload-page',
-  standalone: true,
-  imports: [ReactiveFormsModule, NgIf, SectionHeaderComponent],
-  templateUrl: './upload-page.component.html',
-  styleUrls: ['./upload-page.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'dr-upload-page',
+    standalone: true,
+    imports: [ReactiveFormsModule, NgIf, SectionHeaderComponent],
+    templateUrl: './upload-page.component.html',
+    styleUrls: ['./upload-page.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class UploadPageComponent {
   private readonly fb = inject(FormBuilder);

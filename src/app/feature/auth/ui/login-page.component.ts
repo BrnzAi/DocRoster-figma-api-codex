@@ -1,4 +1,4 @@
-import { AsyncPipe, NgIf } from '@angular/common';
+import { NgIf } from '@angular/common';
 import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
@@ -6,12 +6,12 @@ import { Router, RouterLink } from '@angular/router';
 import { AuthFacade } from '../data-access/auth.facade';
 
 @Component({
-  selector: 'dr-login-page',
-  standalone: true,
-  imports: [ReactiveFormsModule, RouterLink, NgIf, AsyncPipe],
-  templateUrl: './login-page.component.html',
-  styleUrls: ['./login-page.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'dr-login-page',
+    standalone: true,
+    imports: [ReactiveFormsModule, RouterLink, NgIf],
+    templateUrl: './login-page.component.html',
+    styleUrls: ['./login-page.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LoginPageComponent {
   private readonly fb = inject(FormBuilder);

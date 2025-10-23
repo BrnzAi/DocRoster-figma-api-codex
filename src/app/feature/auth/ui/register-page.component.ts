@@ -1,17 +1,17 @@
 import { NgIf } from '@angular/common';
 import { ChangeDetectionStrategy, Component, ElementRef, ViewChild, computed, inject, signal } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Router, RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 
 import { AuthFacade } from '../data-access/auth.facade';
 
 @Component({
-  selector: 'dr-register-page',
-  standalone: true,
-  imports: [ReactiveFormsModule, RouterLink, NgIf],
-  templateUrl: './register-page.component.html',
-  styleUrls: ['./register-page.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'dr-register-page',
+    standalone: true,
+    imports: [ReactiveFormsModule, NgIf],
+    templateUrl: './register-page.component.html',
+    styleUrls: ['./register-page.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class RegisterPageComponent {
   private readonly fb = inject(FormBuilder);

@@ -6,12 +6,12 @@ import { Clinic } from '../../data-access/models/clinic.model';
 import { Doctor } from '../../data-access/models/doctor.model';
 
 @Component({
-  selector: 'dr-doctor-card',
-  standalone: true,
-  imports: [NgFor, NgIf, RouterLink, DecimalPipe],
-  templateUrl: './doctor-card.component.html',
-  styleUrls: ['./doctor-card.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'dr-doctor-card',
+    standalone: true,
+    imports: [NgFor, NgIf, RouterLink, DecimalPipe],
+    templateUrl: './doctor-card.component.html',
+    styleUrls: ['./doctor-card.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DoctorCardComponent {
   @Input({ required: true }) doctor!: Doctor;

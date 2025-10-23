@@ -1,4 +1,3 @@
-import { AsyncPipe, NgIf } from '@angular/common';
 import { Component, computed, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
@@ -6,11 +5,11 @@ import { Router, RouterLink } from '@angular/router';
 import { AuthFacade } from '../../../feature/auth/data-access/auth.facade';
 
 @Component({
-  selector: 'dr-navigation-header',
-  standalone: true,
-  imports: [RouterLink, ReactiveFormsModule, NgIf, AsyncPipe],
-  templateUrl: './navigation-header.component.html',
-  styleUrls: ['./navigation-header.component.scss']
+    selector: 'dr-navigation-header',
+    standalone: true,
+    imports: [RouterLink, ReactiveFormsModule],
+    templateUrl: './navigation-header.component.html',
+    styleUrls: ['./navigation-header.component.scss']
 })
 export class NavigationHeaderComponent {
   private readonly auth = inject(AuthFacade);

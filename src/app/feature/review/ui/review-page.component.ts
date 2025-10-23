@@ -9,12 +9,12 @@ import { SectionHeaderComponent } from '../../../shared/ui/section-header/sectio
 import { ReviewFacade } from '../data-access/review.facade';
 
 @Component({
-  selector: 'dr-review-page',
-  standalone: true,
-  imports: [AsyncPipe, NgIf, DatePipe, SectionHeaderComponent, ReviewCardComponent, DoctorCardComponent],
-  templateUrl: './review-page.component.html',
-  styleUrls: ['./review-page.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'dr-review-page',
+    standalone: true,
+    imports: [AsyncPipe, NgIf, DatePipe, SectionHeaderComponent, ReviewCardComponent, DoctorCardComponent],
+    templateUrl: './review-page.component.html',
+    styleUrls: ['./review-page.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ReviewPageComponent {
   private readonly route = inject(ActivatedRoute);

@@ -1,4 +1,4 @@
-import { AsyncPipe, JsonPipe, NgFor, NgIf } from '@angular/common';
+import { AsyncPipe, NgFor, NgIf } from '@angular/common';
 import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
 
 import { DoctorCardComponent } from '../../../shared/ui/doctor-card/doctor-card.component';
@@ -9,12 +9,12 @@ import { FilterGroup } from '../../../shared/data-access/models/filter.model';
 import { FiltersFacade } from '../data-access/filters.facade';
 
 @Component({
-  selector: 'dr-filters-page',
-  standalone: true,
-  imports: [AsyncPipe, NgFor, NgIf, JsonPipe, SectionHeaderComponent, FilterGroupComponent, TagListComponent, DoctorCardComponent],
-  templateUrl: './filters-page.component.html',
-  styleUrls: ['./filters-page.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'dr-filters-page',
+    standalone: true,
+    imports: [AsyncPipe, NgFor, NgIf, SectionHeaderComponent, FilterGroupComponent, TagListComponent, DoctorCardComponent],
+    templateUrl: './filters-page.component.html',
+    styleUrls: ['./filters-page.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FiltersPageComponent {
   private readonly facade = inject(FiltersFacade);

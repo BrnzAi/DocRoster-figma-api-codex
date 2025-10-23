@@ -8,12 +8,12 @@ import { DocRosterApiService } from '../../../data-access/doc-roster-api.service
 import { ProfileFacade } from '../data-access/profile.facade';
 
 @Component({
-  selector: 'dr-profile-page',
-  standalone: true,
-  imports: [AsyncPipe, NgIf, NgFor, RouterLink],
-  templateUrl: './profile-page.component.html',
-  styleUrls: ['./profile-page.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'dr-profile-page',
+    standalone: true,
+    imports: [AsyncPipe, NgIf, NgFor, RouterLink],
+    templateUrl: './profile-page.component.html',
+    styleUrls: ['./profile-page.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProfilePageComponent {
   private readonly facade = inject(ProfileFacade);

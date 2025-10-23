@@ -8,11 +8,11 @@ interface FooterLink {
 }
 
 @Component({
-  selector: 'dr-app-footer',
-  standalone: true,
-  imports: [RouterLink, NgFor],
-  templateUrl: './app-footer.component.html',
-  styleUrls: ['./app-footer.component.scss']
+    selector: 'dr-app-footer',
+    standalone: true,
+    imports: [RouterLink, NgFor],
+    templateUrl: './app-footer.component.html',
+    styleUrls: ['./app-footer.component.scss']
 })
 export class AppFooterComponent {
   readonly currentYear = new Date().getFullYear();

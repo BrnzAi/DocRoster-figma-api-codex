@@ -1,10 +1,10 @@
-<section class="search-view">
-  <div class="search-view__card">
-    <div class="search-view__header">
-      <label class="search-view__search">
+<ng-container *ngIf="visibleResults() as results">
+  <section class="search-panel">
+    <div class="search-panel__header">
+      <label class="search-panel__search">
         <button
           type="button"
-          class="search-view__filter-trigger"
+          class="search-panel__filter-trigger"
           (click)="openFilters()"
           [class.is-active]="hasActiveFilters()"
           aria-label="Filter specialists"
@@ -15,71 +15,76 @@
           placeholder="Find a specialist..."
           aria-label="Search specialists"
         />
-        <span class="search-view__search-icon" aria-hidden="true"></span>
+        <span class="search-panel__search-icon" aria-hidden="true"></span>
       </label>
-      <a class="search-view__control search-view__control--profile" routerLink="/profile">
+      <a class="search-panel__profile" routerLink="/profile">
         <span>Profile</span>
       </a>
     </div>
 
-    <div class="search-view__summary">
+    <div class="search-panel__summary">
       <span>Search results for</span>
       <h1>{{ searchControl.value ? searchControl.value : defaultPrompt }}</h1>
+      <p>{{ results.length }} specialists</p>
     </div>
 
-    <ul class="search-view__results" *ngIf="visibleResults$ | async as results">
-      <li *ngFor="let result of results">
-        <a class="search-view__result" [routerLink]="['/specialists', result.doctor.id]">
-          <img [src]="result.doctor.avatarUrl" [alt]="result.doctor.name" class="search-view__result-avatar" />
-          <div class="search-view__result-body">
-            <h2>{{ result.doctor.name }}</h2>
-            <p class="search-view__result-meta">{{ result.doctor.specialty }}</p>
-            <p>{{ result.clinic.name }}</p>
-            <p>{{ result.clinic.address.street }}, {{ result.clinic.address.city }}, {{ result.clinic.address.state }}</p>
-          </div>
-          <span class="search-view__result-chevron" aria-hidden="true"></span>
-        </a>
-      </li>
-    </ul>
-  </div>
+    <div class="search-panel__results" [class.search-panel__results--empty]="!results.length">
+      <ng-container *ngIf="results.length; else emptyList">
+        <ul>
+          <li
+            *ngFor="let result of results; trackBy: trackByDoctor"
+            [class.is-active]="mapState.activeDoctorId() === result.doctor.id"
+            (mouseenter)="setActiveDoctor(result.doctor.id)"
+            (focusin)="setActiveDoctor(result.doctor.id)"
+            tabIndex="0"
+          >
+            <button type="button" (click)="openDoctor(result.doctor.id)">
+              <img [src]="result.doctor.avatarUrl" [alt]="result.doctor.name" />
+              <div>
+                <h2>{{ result.doctor.name }}</h2>
+                <p class="meta">{{ result.doctor.specialty }}</p>
+                <p>{{ result.clinic.name }}</p>
+                <p>{{ result.clinic.address.street }}, {{ result.clinic.address.city }}, {{ result.clinic.address.state }}</p>
+              </div>
+              <span aria-hidden="true"></span>
+            </button>
+          </li>
+        </ul>
+      </ng-container>
+      <ng-template #emptyList>
+        <p class="search-panel__empty">No specialists match the current filters.</p>
+      </ng-template>
+    </div>
+  </section>
 
-  <div class="search-view__filters" *ngIf="showFilters()">
-    <div class="search-view__filters-backdrop" (click)="closeFilters()"></div>
-    <article class="search-view__filters-card" role="dialog" aria-modal="true" aria-label="Filter specialists" (click)="$event.stopPropagation()">
-      <p class="search-view__filters-label">filters</p>
-      <header class="search-view__filters-header">
+  <div class="search-panel__filters" *ngIf="showFilters()">
+    <div class="search-panel__filters-backdrop" (click)="closeFilters()"></div>
+    <article
+      class="search-panel__filters-card"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Filter specialists"
+      (click)="$event.stopPropagation()"
+    >
+      <p class="search-panel__filters-label">filters</p>
+      <header class="search-panel__filters-header">
         <h2>Filter specialists</h2>
-        <div class="search-view__filters-actions">
-          <div class="search-view__filters-actions-pill">
-            <button
-              type="button"
-              class="search-view__filters-action search-view__filters-action--apply"
-              (click)="applyFilters()"
-              aria-label="Apply filters"
-            ></button>
-            <button
-              type="button"
-              class="search-view__filters-action search-view__filters-action--reset"
-              (click)="resetFilters()"
-              aria-label="Reset filters"
-            ></button>
+        <div class="search-panel__filters-actions">
+          <div class="search-panel__filters-actions-pill">
+            <button type="button" class="search-panel__filters-action" (click)="applyFilters()" aria-label="Apply filters"></button>
+            <button type="button" class="search-panel__filters-action" (click)="resetFilters()" aria-label="Reset filters"></button>
           </div>
-          <button
-            type="button"
-            class="search-view__filters-action search-view__filters-action--close"
-            (click)="closeFilters()"
-            aria-label="Close filters"
-          ></button>
+          <button type="button" class="search-panel__filters-action" (click)="closeFilters()" aria-label="Close filters"></button>
         </div>
       </header>
 
-      <div class="search-view__filters-body">
-        <section class="search-view__filters-group">
+      <div class="search-panel__filters-body">
+        <section class="search-panel__filters-group">
           <h3>Sorting</h3>
-          <div class="search-view__filters-options">
+          <div class="search-panel__filters-options">
             <button
               type="button"
-              class="search-view__filters-option"
+              class="search-panel__filters-option"
               *ngFor="let option of sortingOptions"
               (click)="selectSorting(option.id)"
               [class.is-active]="isSortingActive(option.id)"
@@ -89,12 +94,12 @@
           </div>
         </section>
 
-        <section class="search-view__filters-group">
+        <section class="search-panel__filters-group">
           <h3>Fees</h3>
-          <div class="search-view__filters-options">
+          <div class="search-panel__filters-options">
             <button
               type="button"
-              class="search-view__filters-option"
+              class="search-panel__filters-option"
               *ngFor="let option of feeOptions"
               (click)="toggleFee(option.id)"
               [class.is-active]="isFeeActive(option.id)"
@@ -104,12 +109,12 @@
           </div>
         </section>
 
-        <section class="search-view__filters-group">
+        <section class="search-panel__filters-group">
           <h3>Gender</h3>
-          <div class="search-view__filters-options">
+          <div class="search-panel__filters-options">
             <button
               type="button"
-              class="search-view__filters-option"
+              class="search-panel__filters-option"
               *ngFor="let option of genderOptions"
               (click)="selectGender(option.id)"
               [class.is-active]="isGenderActive(option.id)"
@@ -119,12 +124,12 @@
           </div>
         </section>
 
-        <section class="search-view__filters-group">
+        <section class="search-panel__filters-group">
           <h3>Location</h3>
-          <div class="search-view__filters-options">
+          <div class="search-panel__filters-options">
             <button
               type="button"
-              class="search-view__filters-option"
+              class="search-panel__filters-option"
               *ngFor="let option of locationOptions"
               (click)="toggleLocation(option.id)"
               [class.is-active]="isLocationActive(option.id)"
@@ -134,12 +139,12 @@
           </div>
         </section>
 
-        <section class="search-view__filters-group">
+        <section class="search-panel__filters-group">
           <h3>Type</h3>
-          <div class="search-view__filters-options">
+          <div class="search-panel__filters-options">
             <button
               type="button"
-              class="search-view__filters-option"
+              class="search-panel__filters-option"
               *ngFor="let option of careOptions"
               (click)="toggleCare(option.id)"
               [class.is-active]="isCareActive(option.id)"
@@ -151,4 +156,4 @@
       </div>
     </article>
   </div>
-</section>
+</ng-container>

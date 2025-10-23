@@ -1,7 +1,10 @@
-<div class="app-shell">
-  <dr-navigation-header *ngIf="showChrome()" />
-  <main>
-    <router-outlet />
-  </main>
-  <dr-app-footer *ngIf="showChrome()" />
+<div class="app-shell" [class.app-shell--map-active]="isMapInteractive()">
+  <dr-map-shell></dr-map-shell>
+  <div class="app-shell__overlay" [class.app-shell__overlay--map-active]="isMapInteractive()">
+    <dr-navigation-header *ngIf="showChrome()" />
+    <main>
+      <router-outlet />
+    </main>
+    <dr-app-footer *ngIf="showChrome()" />
+  </div>
 </div>

@@ -1,13 +1,14 @@
-import { AsyncPipe, NgFor, NgIf } from '@angular/common';
-import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
-import { toObservable } from '@angular/core/rxjs-interop';
+import { NgFor, NgIf } from '@angular/common';
+import { ChangeDetectionStrategy, Component, computed, effect, inject, signal } from '@angular/core';
+import { toObservable, toSignal } from '@angular/core/rxjs-interop';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { combineLatest } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 
 import { SearchFacade } from '../data-access/search.facade';
 import { SearchResult } from '../../../shared/data-access/models/search-result.model';
+import { MapStateService } from '../../../shared/data-access/map-state.service';
 
 type SortingOption = 'fee' | 'distance' | 'availability';
 type FeeOption = 'low' | 'medium' | 'high' | null;
@@ -98,15 +99,17 @@ const resolveFeeRank = (tier: FeeOption): number => {
 };
 
 @Component({
-  selector: 'dr-search-page',
-  standalone: true,
-  imports: [AsyncPipe, NgFor, NgIf, ReactiveFormsModule, RouterLink],
-  templateUrl: './search-page.component.html',
-  styleUrls: ['./search-page.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'dr-search-page',
+    standalone: true,
+    imports: [NgFor, NgIf, ReactiveFormsModule, RouterLink],
+    templateUrl: './search-page.component.html',
+    styleUrls: ['./search-page.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SearchPageComponent {
   private readonly searchFacade = inject(SearchFacade);
+  private readonly router = inject(Router);
+  protected readonly mapState = inject(MapStateService);
 
   readonly searchControl = new FormControl('', { nonNullable: true });
   private readonly searchTerm$ = this.searchControl.valueChanges.pipe(startWith(''));
@@ -121,7 +124,7 @@ export class SearchPageComponent {
 
   private readonly appliedFilters$ = toObservable(this.appliedFilters);
 
-  readonly visibleResults$ = combineLatest<[SearchResult[], string, FilterState]>([
+  private readonly filteredResults$ = combineLatest<[SearchResult[], string, FilterState]>([
     this.results$,
     this.searchTerm$,
     this.appliedFilters$
@@ -188,6 +191,14 @@ export class SearchPageComponent {
       return sorted;
     })
   );
+
+  readonly visibleResults = toSignal(this.filteredResults$, { initialValue: [] as SearchResult[] });
+
+  constructor() {
+    effect(() => {
+      this.mapState.setResults(this.visibleResults());
+    });
+  }
 
   readonly sortingOptions = SORTING_OPTIONS;
   readonly feeOptions = FEE_OPTIONS;
@@ -261,5 +272,18 @@ export class SearchPageComponent {
 
   isCareActive(option: Exclude<CareOption, null>): boolean {
     return this.workingFilters().care === option;
+  }
+
+  setActiveDoctor(doctorId: string): void {
+    this.mapState.setActiveDoctor(doctorId);
+  }
+
+  openDoctor(doctorId: string): void {
+    this.mapState.setActiveDoctor(doctorId);
+    this.router.navigate(['/specialists', doctorId]);
+  }
+
+  trackByDoctor(_index: number, result: SearchResult): string {
+    return result.doctor.id;
   }
 }

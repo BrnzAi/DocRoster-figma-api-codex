@@ -1,0 +1,52 @@
+<div class="map-shell">
+  <ng-container *ngIf="apiReady(); else loading">
+    <google-map
+      #map
+      class="map-shell__map"
+      [center]="mapCenter()"
+      [options]="mapOptions"
+      height="100%"
+      width="100%"
+    >
+      <ng-container *ngIf="useAdvancedMarkers; else fallbackMarkers">
+        <ng-container *ngFor="let marker of markers(); trackBy: trackByDoctor">
+          <map-advanced-marker
+            [position]="marker.position"
+            (mapClick)="onMarkerClick(marker.doctorId)"
+          >
+            <button
+              type="button"
+              class="map-shell__marker"
+              [class.is-active]="marker.doctorId === mapState.activeDoctorId()"
+              (click)="onMarkerClick(marker.doctorId); $event.stopPropagation()"
+              (keydown.enter)="onMarkerClick(marker.doctorId); $event.stopPropagation()"
+              (keydown.space)="onMarkerClick(marker.doctorId); $event.preventDefault(); onMarkerClick(marker.doctorId)"
+              aria-label="View {{ marker.title }} details"
+            >
+              <img [src]="marker.avatar" [alt]="marker.title" />
+            </button>
+          </map-advanced-marker>
+        </ng-container>
+      </ng-container>
+
+      <ng-template #fallbackMarkers>
+        <ng-container *ngFor="let marker of markers(); trackBy: trackByDoctor">
+          <map-marker
+            [position]="marker.position"
+            [options]="getFallbackMarkerOptions(marker)"
+            (mapClick)="onMarkerClick(marker.doctorId)"
+          ></map-marker>
+        </ng-container>
+      </ng-template>
+    </google-map>
+  </ng-container>
+
+  <ng-template #loading>
+    <div class="map-shell__fallback">
+      <div class="map-shell__fallback-card">
+        <h3>{{ loadError() ? 'Map unavailable' : 'Loading map' }}</h3>
+        <p>{{ loadError() ? loadError() : 'Fetching locations and interactive map tiles…' }}</p>
+      </div>
+    </div>
+  </ng-template>
+</div>

@@ -1,5 +1,44 @@
 @use 'styles/variables' as *;
 
+.app-shell {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.app-shell:not(.app-shell--map-active) dr-map-shell {
+  pointer-events: none;
+}
+
+.app-shell__overlay {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  pointer-events: auto;
+}
+
+.app-shell__overlay--map-active {
+  pointer-events: none;
+
+  > * {
+    pointer-events: auto;
+  }
+
+  main {
+    pointer-events: none;
+
+    > * {
+      pointer-events: auto;
+    }
+  }
+}
+
 main {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
   padding: 0;
 }

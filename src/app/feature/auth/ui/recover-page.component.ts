@@ -6,12 +6,12 @@ import { RouterLink } from '@angular/router';
 import { AuthFacade } from '../data-access/auth.facade';
 
 @Component({
-  selector: 'dr-recover-page',
-  standalone: true,
-  imports: [ReactiveFormsModule, RouterLink, NgIf],
-  templateUrl: './recover-page.component.html',
-  styleUrls: ['./recover-page.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'dr-recover-page',
+    standalone: true,
+    imports: [ReactiveFormsModule, RouterLink, NgIf],
+    templateUrl: './recover-page.component.html',
+    styleUrls: ['./recover-page.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class RecoverPageComponent {
   private readonly fb = inject(FormBuilder);

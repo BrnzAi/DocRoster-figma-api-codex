@@ -1,273 +1,174 @@
 @use 'styles/variables' as *;
 
+:host {
+  display: block;
+  pointer-events: none;
+}
+
 $figma-primary: rgba(10, 23, 72, 1);
 
-.specialist-view {
+.specialist-panel {
   position: relative;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: clamp(2rem, 6vw, 4rem);
-  font-family: 'SF Pro Text', 'SF Pro Display', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-}
-
-.specialist-view::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background: url('../../../../assets/figma/login/background-large.png') center/cover no-repeat;
-  z-index: -2;
-}
-
-.specialist-view__frame {
-  width: min(100%, 393px);
-  margin: 0 auto;
-}
-
-.specialist-view__card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
+  z-index: 2;
+  width: min(420px, 92vw);
+  margin: clamp(1.5rem, 4vw, 2.5rem);
+  padding: clamp(1.75rem, 4vw, 2.75rem);
   border-radius: 32px;
-  border: 1px solid rgba(255, 255, 255, 0.24);
-  background: rgba(255, 255, 255, 0.24);
-  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(24px);
-  overflow: hidden;
-}
-
-.specialist-view__media {
-  position: relative;
-  isolation: isolate;
-  height: 360px;
-  overflow: hidden;
-}
-
-.specialist-view__media::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(13, 23, 65, 0) 45%, rgba(13, 23, 65, 0.6) 100%);
-  z-index: 1;
-}
-
-.specialist-view__portrait {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.specialist-view__badge {
-  position: absolute;
-  top: 24px;
-  left: 24px;
-  z-index: 2;
-  padding: 8px 16px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.8);
-  color: $figma-primary;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  box-shadow: 0 12px 24px rgba($figma-primary, 0.16);
-}
-
-.specialist-view__close {
-  position: absolute;
-  top: 24px;
-  right: 24px;
-  z-index: 2;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  border: 0.5px solid rgba($figma-primary, 0.12);
-  background: rgba(255, 255, 255, 0.85);
-  box-shadow: 0 0 48px rgba($figma-primary, 0.24);
-  backdrop-filter: blur(12px);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-.specialist-view__close::before {
-  content: '';
-  width: 16px;
-  height: 16px;
-  background: $figma-primary;
-  mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%230A1748" d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>') center/contain;
-  -webkit-mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%230A1748" d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>') center/contain;
-}
-
-.specialist-view__content {
+  background: rgba(255, 255, 255, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  box-shadow: 0 48px 120px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(26px);
   display: flex;
   flex-direction: column;
   gap: 24px;
-  padding: 0 24px 8px;
   color: $figma-primary;
+  pointer-events: auto;
 }
 
-.specialist-view__header h1 {
-  margin: 0;
-  font-size: 32px;
-  font-weight: 700;
-  letter-spacing: 0.374px;
-}
-
-.specialist-view__specialty {
-  margin: 8px 0;
-  font-size: 16px;
-  font-weight: 600;
-  letter-spacing: 0.24px;
-  color: rgba($figma-primary, 0.8);
-}
-
-.specialist-view__bio {
-  margin: 0;
-  font-size: 15px;
-  line-height: 1.6;
-  letter-spacing: 0.2px;
-  color: rgba($figma-primary, 0.82);
-}
-
-.specialist-view__contact {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.specialist-view__action {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  position: relative;
-  padding: 12px 24px 12px 48px;
-  border-radius: 999px;
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.2px;
-  text-decoration: none;
-  border: 1px solid rgba(255, 61, 150, 0.2);
-  transition: transform 0.2s ease;
-  backdrop-filter: blur(12px);
-}
-
-.specialist-view__action:hover {
-  transform: translateY(-1px);
-}
-
-.specialist-view__action::before {
-  content: '';
-  position: absolute;
-  left: 20px;
-  width: 18px;
-  height: 18px;
-}
-
-.specialist-view__action--primary {
-  background: $figma-primary;
-  color: #fff;
-}
-
-.specialist-view__action--primary::before {
-  background: #fff;
-  mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18"><path fill="%23000" d="M12 9H14C14 6.24 11.76 4 9 4V6C10.66 6 12 7.34 12 9ZM16 9H18C18 6.61305 17.0518 4.32387 15.364 2.63604C13.6761 0.948211 11.3869 0 9 0V2C12.87 2 16 5.13 16 9ZM17 12.5C15.75 12.5 14.55 12.3 13.43 11.93C13.33 11.9 13.22 11.88 13.12 11.88C12.86 11.88 12.61 11.98 12.41 12.17L10.21 14.37C7.37139 12.9259 5.06406 10.6186 3.62 7.78L5.82 5.57C5.95245 5.44434 6.04632 5.28352 6.0906 5.1064C6.13488 4.92928 6.12773 4.7432 6.07 4.57C5.69132 3.41789 5.4989 2.21274 5.5 1C5.5 0.45 5.05 0 4.5 0H1C0.45 0 0 0.45 0 1C0 10.39 7.61 18 17 18C17.55 18 18 17.55 18 17V13.5C18 12.95 17.55 12.5 17 12.5ZM2.03 2H3.53C3.6 2.88 3.75 3.75 3.98 4.58L2.78 5.79C2.38 4.58 2.12 3.32 2.03 2ZM16 15.97C14.68 15.88 13.4 15.62 12.2 15.21L13.4 14.01C14.25 14.25 15.12 14.4 16 14.46V15.97Z"/></svg>') center/contain;
-  -webkit-mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18"><path fill="%23000" d="M12 9H14C14 6.24 11.76 4 9 4V6C10.66 6 12 7.34 12 9ZM16 9H18C18 6.61305 17.0518 4.32387 15.364 2.63604C13.6761 0.948211 11.3869 0 9 0V2C12.87 2 16 5.13 16 9ZM17 12.5C15.75 12.5 14.55 12.3 13.43 11.93C13.33 11.9 13.22 11.88 13.12 11.88C12.86 11.88 12.61 11.98 12.41 12.17L10.21 14.37C7.37139 12.9259 5.06406 10.6186 3.62 7.78L5.82 5.57C5.95245 5.44434 6.04632 5.28352 6.0906 5.1064C6.13488 4.92928 6.12773 4.7432 6.07 4.57C5.69132 3.41789 5.4989 2.21274 5.5 1C5.5 0.45 5.05 0 4.5 0H1C0.45 0 0 0.45 0 1C0 10.39 7.61 18 17 18C17.55 18 18 17.55 18 17V13.5C18 12.95 17.55 12.5 17 12.5ZM2.03 2H3.53C3.6 2.88 3.75 3.75 3.98 4.58L2.78 5.79C2.38 4.58 2.12 3.32 2.03 2ZM16 15.97C14.68 15.88 13.4 15.62 12.2 15.21L13.4 14.01C14.25 14.25 15.12 14.4 16 14.46V15.97Z"/></svg>') center/contain;
-}
-
-.specialist-view__action--secondary {
-  background: rgba(255, 255, 255, 0.92);
-  color: $figma-primary;
-}
-
-.specialist-view__action--secondary::before {
-  width: 20px;
-  height: 20px;
-  background: $figma-primary;
-  mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23000" d="M12 7.27L16.28 17.7L12.81 16.17L12 15.81L11.19 16.17L7.72 17.7L12 7.27ZM12 2L4.5 20.29L5.21 21L12 18L18.79 21L19.5 20.29L12 2Z"/></svg>') center/contain;
-  -webkit-mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23000" d="M12 7.27L16.28 17.7L12.81 16.17L12 15.81L11.19 16.17L7.72 17.7L12 7.27ZM12 2L4.5 20.29L5.21 21L12 18L18.79 21L19.5 20.29L12 2Z"/></svg>') center/contain;
-}
-
-.specialist-view__section {
-  padding: 0 24px 24px;
-  color: $figma-primary;
-  border-top: 1px solid rgba($figma-primary, 0.12);
-  margin-top: 4px;
-}
-
-.specialist-view__section h2 {
-  margin: 0 0 16px;
-  font-size: 14px;
-  letter-spacing: 0.28px;
-  text-transform: uppercase;
-  color: rgba($figma-primary, 0.72);
-}
-
-.specialist-view__section ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  gap: 12px;
-}
-
-.specialist-view__section li {
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 18px;
-  padding: 12px 16px;
-  border: 0.5px solid rgba($figma-primary, 0.08);
+.specialist-panel__header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 14px;
-  letter-spacing: 0.1px;
+  gap: 16px;
 }
 
-.specialist-view__section li span {
-  color: rgba($figma-primary, 0.7);
+.specialist-panel__close {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 0.5px solid rgba($figma-primary, 0.12);
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 24px 48px rgba($figma-primary, 0.24);
+  cursor: pointer;
+
+  &::before {
+    content: '';
+    display: block;
+    width: 16px;
+    height: 16px;
+    margin: auto;
+    background: $figma-primary;
+    mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%230A1748" d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>') center/contain;
+  }
 }
 
-.specialist-view__section li strong {
-  color: $figma-primary;
-  font-weight: 700;
+.specialist-panel__identity {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  img {
+    width: 64px;
+    height: 64px;
+    border-radius: 22px;
+    object-fit: cover;
+    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.24);
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  p {
+    margin: 4px 0 0;
+    font-weight: 600;
+    color: rgba($figma-primary, 0.75);
+  }
 }
 
-.specialist-view__fallback {
-  width: min(100%, 420px);
-  margin: clamp(2rem, 6vw, 4rem) auto;
+.specialist-panel__section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  h2 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2px;
+  }
+
+  p {
+    margin: 0;
+    line-height: 1.6;
+    color: rgba($figma-primary, 0.78);
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 12px;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.82);
+    border: 0.5px solid rgba($figma-primary, 0.1);
+
+    span {
+      color: rgba($figma-primary, 0.65);
+    }
+
+    strong {
+      color: $figma-primary;
+      font-weight: 700;
+    }
+  }
+}
+
+.specialist-panel__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  a {
+    padding: 10px 18px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: -0.05px;
+    border: 0.5px solid rgba(255, 61, 150, 0.24);
+    backdrop-filter: blur(12px);
+
+    &:first-child {
+      background: rgba(255, 61, 150, 0.85);
+      color: #fff;
+    }
+
+    &:last-child {
+      background: rgba(255, 255, 255, 0.95);
+      color: $figma-primary;
+    }
+  }
+}
+
+.specialist-panel__fallback {
+  position: relative;
+  z-index: 2;
+  width: min(420px, 92vw);
+  margin: clamp(1.5rem, 4vw, 2.5rem);
   padding: 24px;
-  border-radius: 24px;
-  background: rgba(255, 255, 255, 0.32);
-  border: 1px solid rgba(255, 255, 255, 0.24);
-  box-shadow: 0 32px 64px rgba(0, 0, 0, 0.18);
-  backdrop-filter: blur(18px);
+  border-radius: 32px;
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  box-shadow: 0 48px 120px rgba(0, 0, 0, 0.2);
   text-align: center;
   color: $figma-primary;
 }
 
-@media (max-width: 480px) {
-  .specialist-view {
-    padding: 24px 16px;
-  }
-
-  .specialist-view__card {
-    gap: 16px;
-  }
-
-  .specialist-view__media {
-    height: 300px;
-  }
-
-  .specialist-view__content {
-    padding-inline: 20px;
-  }
-
-  .specialist-view__section {
-    padding: 0 20px 20px;
+@media (max-width: 768px) {
+  .specialist-panel {
+    width: min(480px, 100%);
+    margin: clamp(1rem, 4vw, 1.5rem);
+    padding: clamp(1.5rem, 4vw, 2rem);
   }
 }

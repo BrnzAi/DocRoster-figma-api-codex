@@ -6,12 +6,12 @@ import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { AuthFacade } from '../data-access/auth.facade';
 
 @Component({
-  selector: 'dr-verify-page',
-  standalone: true,
-  imports: [ReactiveFormsModule, RouterLink, NgIf],
-  templateUrl: './verify-page.component.html',
-  styleUrls: ['./verify-page.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'dr-verify-page',
+    standalone: true,
+    imports: [ReactiveFormsModule, RouterLink, NgIf],
+    templateUrl: './verify-page.component.html',
+    styleUrls: ['./verify-page.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class VerifyPageComponent {
   private readonly fb = inject(FormBuilder);
