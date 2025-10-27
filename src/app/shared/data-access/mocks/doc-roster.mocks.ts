@@ -8,102 +8,180 @@ import { UserProfile } from '../models/user-profile.model';
 
 export const MOCK_CLINICS: Clinic[] = [
   {
-    id: 'clinic-aurora',
-    name: 'Aurora Integrative Care',
-    description: 'Whole-person medical practice blending advanced diagnostics with lifestyle medicine and personalized coaching.',
-    specialties: ['Primary care', 'Lifestyle medicine', 'Virtual visits'],
+    id: 'clinic-health-advancement',
+    name: 'Health Advancement Center',
+    description:
+      'Flagship care campus specialising in preventive medicine, integrative diagnostics and mobile case teams.',
+    specialties: ['General medicine', 'Preventive care', 'Hybrid visits'],
     rating: 4.9,
-    reviewCount: 268,
-    phone: '+1 (415) 555-1845',
-    email: 'hello@aurora.care',
+    reviewCount: 284,
+    phone: '+1 (424) 555-0188',
+    email: 'hello@healthadvancement.org',
     address: {
-      street: '580 Market Street',
-      city: 'San Francisco',
+      street: '123 Sunshine Ave',
+      city: 'Beverly Hills',
       state: 'CA',
-      postalCode: '94104',
+      postalCode: '90210',
       country: 'USA'
     },
     coordinates: {
-      latitude: 37.79248,
-      longitude: -122.4012
+      latitude: 34.0736,
+      longitude: -118.4004
     },
     heroImage: 'assets/images/clinics/aurora-clinic.svg',
-    openingHours: 'Mon–Fri · 7:00–19:00',
+    openingHours: 'Mon–Fri · 8:00–18:00',
     isVerified: true
   },
   {
-    id: 'clinic-riverbend',
-    name: 'Riverbend Pediatrics Collective',
-    description: 'Community-first pediatric group with collaborative team care, extended hours and on-call guidance.',
-    specialties: ['Pediatrics', 'Care coordination', 'Weekend clinic'],
-    rating: 4.7,
-    reviewCount: 184,
-    phone: '+1 (206) 555-9087',
-    email: 'support@riverbendpeds.org',
+    id: 'clinic-connection-point',
+    name: 'Connection Point Center',
+    description:
+      'Regional collaborative hub aligning specialty consults, maternal care and on-site diagnostics for travelling teams.',
+    specialties: ['Gynecology', 'Maternal care', 'Consult coordination'],
+    rating: 4.8,
+    reviewCount: 231,
+    phone: '+1 (323) 555-9070',
+    email: 'connect@connectionpoint.center',
     address: {
-      street: '910 Union Street',
-      city: 'Seattle',
-      state: 'WA',
-      postalCode: '98101',
+      street: '456 Skill St',
+      city: 'Los Angeles',
+      state: 'CA',
+      postalCode: '90211',
       country: 'USA'
     },
     coordinates: {
-      latitude: 47.6101,
-      longitude: -122.3321
+      latitude: 34.0595,
+      longitude: -118.3821
     },
     heroImage: 'assets/images/clinics/riverbend.svg',
+    openingHours: 'Mon–Sat · 7:30–19:00',
+    isVerified: true
+  },
+  {
+    id: 'clinic-community-wellness',
+    name: 'Community Wellness Initiative',
+    description:
+      'Dermatology collective combining onsite specialists, remote screening and neighbourhood outreach events.',
+    specialties: ['Dermatology', 'Mobile screening', 'Telederm'],
+    rating: 4.7,
+    reviewCount: 198,
+    phone: '+1 (213) 555-4420',
+    email: 'care@communitywellness.org',
+    address: {
+      street: '789 Awareness Blvd',
+      city: 'Culver City',
+      state: 'CA',
+      postalCode: '90212',
+      country: 'USA'
+    },
+    coordinates: {
+      latitude: 34.024,
+      longitude: -118.3965
+    },
+    heroImage: 'assets/images/clinics/lakeside.svg',
+    openingHours: 'Mon–Fri · 8:30–18:30',
+    isVerified: true
+  },
+  {
+    id: 'clinic-progressive-health',
+    name: 'Progressive Health Hub',
+    description:
+      'Women’s health campus pairing collaborative surgical teams with long-tail recovery support and digital follow-up.',
+    specialties: ['Women’s health', 'Surgery support', 'Virtual follow-up'],
+    rating: 4.9,
+    reviewCount: 256,
+    phone: '+1 (310) 555-6120',
+    email: 'hello@progressivehub.com',
+    address: {
+      street: '456 Inspire Ave',
+      city: 'Santa Monica',
+      state: 'CA',
+      postalCode: '90214',
+      country: 'USA'
+    },
+    coordinates: {
+      latitude: 34.0195,
+      longitude: -118.4912
+    },
+    heroImage: 'assets/images/clinics/aurora-clinic.svg',
     openingHours: 'Mon–Sat · 8:00–20:00',
     isVerified: true
   },
   {
-    id: 'clinic-lakeside',
-    name: 'Lakeside Women’s Health',
-    description: 'Evidence-led obstetrics and gynecology practice featuring remote monitoring and on-site diagnostics.',
-    specialties: ['Obstetrics', 'Gynecology', 'Telehealth'],
-    rating: 4.8,
-    reviewCount: 312,
-    phone: '+1 (312) 555-7400',
-    email: 'contact@lakesidewh.com',
+    id: 'clinic-innovative-care',
+    name: 'Innovative Care Clinic',
+    description:
+      'Rapid diagnostics team offering mobile lab work, catastrophic assessment programmes and collaborative reporting.',
+    specialties: ['Laboratory diagnostics', 'Mobile teams', 'Assessments'],
+    rating: 4.6,
+    reviewCount: 164,
+    phone: '+1 (213) 555-7721',
+    email: 'support@innovativecare.io',
     address: {
-      street: '220 West Ontario Street',
-      city: 'Chicago',
-      state: 'IL',
-      postalCode: '60654',
+      street: '321 Uplift Rd',
+      city: 'Los Angeles',
+      state: 'CA',
+      postalCode: '90213',
       country: 'USA'
     },
     coordinates: {
-      latitude: 41.8938,
-      longitude: -87.6347
+      latitude: 34.0522,
+      longitude: -118.3437
+    },
+    heroImage: 'assets/images/clinics/riverbend.svg',
+    openingHours: 'Mon–Fri · 7:30–17:30',
+    isVerified: false
+  },
+  {
+    id: 'clinic-innovative-wellness',
+    name: 'Innovative Wellness Center',
+    description:
+      'Hybrid primary care studio merging concierge virtual visits with destination day clinics for travelling clients.',
+    specialties: ['Primary care', 'Virtual-first', 'Concierge programs'],
+    rating: 4.8,
+    reviewCount: 205,
+    phone: '+1 (424) 555-6630',
+    email: 'team@innovativewellness.co',
+    address: {
+      street: '789 Elevate Blvd',
+      city: 'Santa Monica',
+      state: 'CA',
+      postalCode: '90214',
+      country: 'USA'
+    },
+    coordinates: {
+      latitude: 34.0242,
+      longitude: -118.4965
     },
     heroImage: 'assets/images/clinics/lakeside.svg',
-    openingHours: 'Mon–Fri · 8:30–17:30',
-    isVerified: false
+    openingHours: 'Mon–Fri · 8:00–18:00',
+    isVerified: true
   }
 ];
 
 export const MOCK_DOCTORS: Doctor[] = [
   {
-    id: 'dr-lopez',
-    name: 'Dr. Mariah López',
-    title: 'MD, IFMCP',
-    specialty: 'Functional medicine',
-    clinicId: 'clinic-aurora',
-    biography: 'Dr. López leads Aurora Integrative Care with a focus on whole-person medicine, precision diagnostics and sustainable habit design.',
-    experienceYears: 14,
+    id: 'dr-sarah-johnson',
+    name: 'Dr. Sarah Johnson',
+    title: 'MD',
+    specialty: 'General medicine',
+    clinicId: 'clinic-health-advancement',
+    biography:
+      'Primary care physician coordinating integrative chronic support and catastrophic assessment travel teams.',
+    experienceYears: 15,
     rating: 4.9,
-    reviewCount: 142,
-    avatarUrl: 'assets/figma/search/1814_1178.png',
+    reviewCount: 248,
+    avatarUrl: 'assets/search/ellipse-5-6.png',
     highlights: [
-      { label: 'Programs designed', value: '58' },
-      { label: 'Community rating', value: '4.9/5' },
-      { label: 'Virtual consults', value: 'Yes' }
+      { label: 'Catastrophic cases', value: '38 active' },
+      { label: 'Home visit network', value: '6 partner orgs' }
     ],
     availability: [
-      { day: 'Monday', times: ['09:30', '11:00', '15:30'] },
-      { day: 'Wednesday', times: ['08:45', '13:00'] },
-      { day: 'Friday', times: ['10:00', '12:30', '16:30'] }
+      { day: 'Monday', times: ['09:00', '11:30', '16:00'] },
+      { day: 'Wednesday', times: ['08:30', '14:00'] },
+      { day: 'Friday', times: ['09:15', '13:30'] }
     ],
-    languages: ['English', 'Spanish'],
+    languages: ['English'],
     acceptedPlans: ['ppo', 'direct'],
     virtualCare: true,
     feeTier: 'medium',
@@ -111,83 +189,140 @@ export const MOCK_DOCTORS: Doctor[] = [
     careType: 'hybrid'
   },
   {
-    id: 'dr-fujiwara',
-    name: 'Dr. Kenji Fujiwara',
-    title: 'MD',
-    specialty: 'Pediatric primary care',
-    clinicId: 'clinic-riverbend',
-    biography: 'Pediatrician focused on collaborative family partnerships, neurodiversity affirming care and rapid access messaging.',
-    experienceYears: 11,
+    id: 'dr-michael-thompson',
+    name: 'Dr. Michael Thompson',
+    title: 'MD, FACOG',
+    specialty: 'Gynecology',
+    clinicId: 'clinic-connection-point',
+    biography:
+      'Travelling gynecologist supporting high-acuity teams with surgical consults and blended telehealth follow-up.',
+    experienceYears: 18,
     rating: 4.8,
-    reviewCount: 97,
-    avatarUrl: 'assets/figma/search/1814_1186.png',
+    reviewCount: 192,
+    avatarUrl: 'assets/search/ellipse-5-7.png',
     highlights: [
-      { label: 'Patient panel', value: '420 families' },
-      { label: 'After-hours chat', value: 'Under 15 min' }
+      { label: 'Regional programs', value: '12' },
+      { label: 'Surgical follow-up', value: 'Under 24h' }
     ],
     availability: [
-      { day: 'Tuesday', times: ['09:00', '13:30', '16:00'] },
-      { day: 'Thursday', times: ['10:15', '14:00', '18:30'] }
+      { day: 'Tuesday', times: ['10:00', '13:30', '17:30'] },
+      { day: 'Thursday', times: ['09:15', '12:45'] }
     ],
-    languages: ['English', 'Japanese'],
-    acceptedPlans: ['hmo', 'ppo'],
+    languages: ['English'],
+    acceptedPlans: ['ppo', 'hmo'],
     virtualCare: true,
-    feeTier: 'low',
+    feeTier: 'high',
     gender: 'male',
+    careType: 'hybrid'
+  },
+  {
+    id: 'dr-emily-carter',
+    name: 'Dr. Emily Carter',
+    title: 'MD',
+    specialty: 'Dermatology',
+    clinicId: 'clinic-community-wellness',
+    biography:
+      'Dermatologist leading the community outreach initiative with rapid response telederm consults.',
+    experienceYears: 12,
+    rating: 4.7,
+    reviewCount: 168,
+    avatarUrl: 'assets/search/ellipse-5-8.png',
+    highlights: [
+      { label: 'Community events', value: '42/year' },
+      { label: 'Virtual triage', value: 'Under 10 min' }
+    ],
+    availability: [
+      { day: 'Monday', times: ['08:30', '11:00', '15:00'] },
+      { day: 'Wednesday', times: ['09:45', '13:30'] },
+      { day: 'Saturday', times: ['10:00', '12:00'] }
+    ],
+    languages: ['English', 'Spanish'],
+    acceptedPlans: ['ppo'],
+    virtualCare: true,
+    feeTier: 'medium',
+    gender: 'female',
     careType: 'virtual'
   },
   {
-    id: 'dr-okafor',
-    name: 'Dr. Amara Okafor',
-    title: 'DO, FACOG',
-    specialty: 'Obstetrics & gynecology',
-    clinicId: 'clinic-lakeside',
-    biography: 'Board certified obstetrician championing equitable maternal care, postpartum support and remote monitoring.',
-    experienceYears: 16,
-    rating: 4.9,
-    reviewCount: 188,
-    avatarUrl: 'assets/figma/search/1814_1194.png',
+    id: 'dr-david-lee',
+    name: 'Dr. David Lee',
+    title: 'PhD, MLS',
+    specialty: 'Laboratory diagnostics',
+    clinicId: 'clinic-innovative-care',
+    biography:
+      'Diagnostics lead specialising in catastrophic assessment kits, mobile sample collection and rapid reporting.',
+    experienceYears: 11,
+    rating: 4.6,
+    reviewCount: 124,
+    avatarUrl: 'assets/search/ellipse-5-9.png',
     highlights: [
-      { label: 'Deliveries', value: '1,240+' },
-      { label: 'Cesarean rate', value: '12%' }
+      { label: 'Mobile teams', value: '4 active' },
+      { label: 'Turnaround time', value: 'Under 18 hrs' }
     ],
     availability: [
-      { day: 'Monday', times: ['08:00', '13:30'] },
-      { day: 'Wednesday', times: ['10:45', '15:15'] },
-      { day: 'Friday', times: ['09:30', '14:45'] }
+      { day: 'Tuesday', times: ['07:30', '09:00', '13:30'] },
+      { day: 'Thursday', times: ['08:00', '11:30', '16:00'] }
     ],
-    languages: ['English', 'Igbo'],
-    acceptedPlans: ['ppo'],
+    languages: ['English', 'Korean'],
+    acceptedPlans: ['direct'],
     virtualCare: false,
-    feeTier: 'high',
-    gender: 'female',
+    feeTier: 'low',
+    gender: 'male',
     careType: 'inperson'
   },
   {
-    id: 'dr-fernandez',
-    name: 'Dr. Leo Fernández',
-    title: 'PhD, PT',
-    specialty: 'Sports physical therapy',
-    clinicId: 'clinic-aurora',
-    biography: 'Movement specialist using digital twins and progressive rehab for endurance athletes and performing artists.',
-    experienceYears: 9,
-    rating: 4.7,
-    reviewCount: 63,
-    avatarUrl: 'assets/figma/search/1814_1202.png',
+    id: 'dr-sarah-ecohart',
+    name: 'Dr. Sarah Ecohart',
+    title: 'MD',
+    specialty: 'Gynecology',
+    clinicId: 'clinic-progressive-health',
+    biography:
+      'Gynecologist bringing collaborative surgical teams and recovery roadmaps to progressive health systems.',
+    experienceYears: 17,
+    rating: 4.9,
+    reviewCount: 208,
+    avatarUrl: 'assets/search/ellipse-5-11.png',
     highlights: [
-      { label: 'Return-to-play', value: '92%' },
-      { label: 'Avg recovery', value: '4.5 weeks' }
+      { label: 'Surgical collaborations', value: '28' },
+      { label: 'Recovery pathways', value: '92% adherence' }
     ],
     availability: [
-      { day: 'Tuesday', times: ['08:30', '10:30', '15:00'] },
-      { day: 'Thursday', times: ['09:00', '13:30', '17:00'] }
+      { day: 'Monday', times: ['09:00', '13:30'] },
+      { day: 'Thursday', times: ['10:45', '15:00'] }
     ],
-    languages: ['English', 'Spanish'],
-    acceptedPlans: ['direct'],
+    languages: ['English'],
+    acceptedPlans: ['ppo', 'hmo'],
+    virtualCare: true,
+    feeTier: 'high',
+    gender: 'female',
+    careType: 'hybrid'
+  },
+  {
+    id: 'dr-emily-greenfield',
+    name: 'Dr. Emily Greenfield',
+    title: 'MD',
+    specialty: 'General medicine',
+    clinicId: 'clinic-innovative-wellness',
+    biography:
+      'Virtual-first primary care physician coordinating concierge travel programmes for complex cases.',
+    experienceYears: 13,
+    rating: 4.8,
+    reviewCount: 176,
+    avatarUrl: 'assets/search/ellipse-5-10.png',
+    highlights: [
+      { label: 'Travel programmes', value: '18 active' },
+      { label: 'Virtual response', value: 'Under 5 mins' }
+    ],
+    availability: [
+      { day: 'Tuesday', times: ['09:00', '11:45', '16:00'] },
+      { day: 'Friday', times: ['08:30', '12:00'] }
+    ],
+    languages: ['English', 'French'],
+    acceptedPlans: ['ppo', 'direct'],
     virtualCare: true,
     feeTier: 'medium',
-    gender: 'male',
-    careType: 'hybrid'
+    gender: 'female',
+    careType: 'virtual'
   }
 ];
 
@@ -229,37 +364,40 @@ export const MOCK_ASSESSMENTS: Assessment[] = [
 
 export const MOCK_REVIEWS: Review[] = [
   {
-    id: 'rev-aurora-1',
-    doctorId: 'dr-lopez',
-    author: 'Riley Cameron',
-    role: 'Chronic care member',
+    id: 'rev-health-1',
+    doctorId: 'dr-sarah-johnson',
+    author: 'Morgan Ellis',
+    role: 'Catastrophic care coordinator',
     rating: 5,
-    createdAt: '2024-02-02T09:00:00Z',
-    headline: 'Care plans that finally connect the dots',
-    comment: 'DocRoster matched me with Dr. López and I finally have a plan that connects nutrition, meds and stress tracking. Virtual check-ins are so easy.',
-    tags: ['Coaching', 'Virtual care', 'Lab syncing']
+    createdAt: '2024-02-12T09:20:00Z',
+    headline: 'Coordinating complex travel cases with ease',
+    comment:
+      'Dr. Johnson keeps every travelling provider aligned and the handoffs flawless. Families feel supported wherever we deploy.',
+    tags: ['Hybrid care', 'Travel support', 'Case leadership']
   },
   {
-    id: 'rev-aurora-2',
-    doctorId: 'dr-fernandez',
-    author: 'Keisha B.',
-    role: 'Marathoner',
+    id: 'rev-connection-1',
+    doctorId: 'dr-michael-thompson',
+    author: 'Alisha Rowan',
+    role: 'Surgical operations lead',
     rating: 5,
-    createdAt: '2024-01-18T15:30:00Z',
-    headline: 'Back in my training cycle weeks sooner',
-    comment: 'The rehab plan updated after every wearable upload and the messaging team coached me through the sticky parts. Felt like a pro team.',
-    tags: ['Wearables', 'Recovery', 'Community']
+    createdAt: '2024-03-01T14:05:00Z',
+    headline: 'Surgical follow-up that stays personal',
+    comment:
+      'The Connection Point team routes recovery updates within hours and Dr. Thompson is proactive with every consult.',
+    tags: ['Surgery', 'Follow-up', 'Telehealth']
   },
   {
-    id: 'rev-riverbend-1',
-    doctorId: 'dr-fujiwara',
-    author: 'Taylor & Jordan',
-    role: 'Parents of a neurodivergent kid',
+    id: 'rev-community-1',
+    doctorId: 'dr-emily-carter',
+    author: 'Jerome Castillo',
+    role: 'Community outreach director',
     rating: 4,
-    createdAt: '2024-03-05T12:10:00Z',
-    headline: 'Support that spans school and home',
-    comment: 'We have direct chat with our care navigator and Dr. Fujiwara loops in therapists quickly. Only wish weekend clinic had more slots.',
-    tags: ['Care team', 'Messaging', 'Family support']
+    createdAt: '2024-02-24T11:10:00Z',
+    headline: 'Derm outreach that scales',
+    comment:
+      'Pop-up screenings feed directly into telederm consults and families get answers quickly. Looking forward to more weekend slots.',
+    tags: ['Outreach', 'Dermatology', 'Telederm']
   }
 ];
 

@@ -13,7 +13,7 @@ import { MapStateService } from '../../../shared/data-access/map-state.service';
 type SortingOption = 'fee' | 'distance' | 'availability';
 type FeeOption = 'low' | 'medium' | 'high' | null;
 type GenderOption = 'any' | 'male' | 'female';
-type LocationOption = 'belleville' | 'sault-ste-marie' | 'thunder-bay' | null;
+type LocationOption = 'beverly-hills' | 'los-angeles' | 'culver-city' | 'santa-monica' | null;
 type CareOption = 'hybrid' | 'inperson' | 'virtual' | null;
 
 interface FilterState {
@@ -31,9 +31,10 @@ const FEE_ORDER: Record<Exclude<FeeOption, null>, number> = {
 };
 
 const LOCATION_LOOKUP: Record<Exclude<LocationOption, null>, string> = {
-  belleville: 'Belleville',
-  'sault-ste-marie': 'Sault Ste. Marie',
-  'thunder-bay': 'Thunder Bay'
+  'beverly-hills': 'Beverly Hills',
+  'los-angeles': 'Los Angeles',
+  'culver-city': 'Culver City',
+  'santa-monica': 'Santa Monica'
 };
 
 const SORTING_OPTIONS: ReadonlyArray<{ id: SortingOption; label: string }> = [
@@ -48,6 +49,12 @@ const FEE_OPTIONS: ReadonlyArray<{ id: Exclude<FeeOption, null>; label: string }
   { id: 'high', label: 'High' }
 ];
 
+const FEE_DISPLAY: Record<Exclude<FeeOption, null>, string> = {
+  low: '$75',
+  medium: '$150',
+  high: '$200'
+};
+
 const GENDER_OPTIONS: ReadonlyArray<{ id: GenderOption; label: string }> = [
   { id: 'any', label: 'Any' },
   { id: 'male', label: 'Male' },
@@ -55,9 +62,10 @@ const GENDER_OPTIONS: ReadonlyArray<{ id: GenderOption; label: string }> = [
 ];
 
 const LOCATION_OPTIONS: ReadonlyArray<{ id: Exclude<LocationOption, null>; label: string }> = [
-  { id: 'belleville', label: 'Belleville' },
-  { id: 'sault-ste-marie', label: 'Sault Ste. Marie' },
-  { id: 'thunder-bay', label: 'Thunder Bay' }
+  { id: 'beverly-hills', label: 'Beverly Hills' },
+  { id: 'los-angeles', label: 'Los Angeles' },
+  { id: 'culver-city', label: 'Culver City' },
+  { id: 'santa-monica', label: 'Santa Monica' }
 ];
 
 const CARE_OPTIONS: ReadonlyArray<{ id: Exclude<CareOption, null>; label: string }> = [
@@ -286,6 +294,14 @@ export class SearchPageComponent {
   openDoctor(doctorId: string): void {
     this.mapState.setActiveDoctor(doctorId);
     this.router.navigate(['/specialists', doctorId]);
+  }
+
+  formatDoctorFee(tier: FeeOption | undefined): string | null {
+    if (tier === null || tier === undefined) {
+      return null;
+    }
+
+    return FEE_DISPLAY[tier];
   }
 
   trackByDoctor(_index: number, result: SearchResult): string {

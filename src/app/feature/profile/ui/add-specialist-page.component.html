@@ -1,0 +1,171 @@
+<section class="upload-screen">
+  <div class="upload-surface">
+    <button type="button" class="upload-close" (click)="navigateBack()" aria-label="Close">
+      <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
+        <path
+          d="M18 0C8.05894 0 0 8.05894 0 18C0 27.9411 8.05894 36 18 36C27.9411 36 36 27.9411 36 18C36 8.05894 27.9411 0 18 0ZM25.3125 24.1875C25.6205 24.4956 25.7918 24.9136 25.7918 25.35C25.7918 25.7864 25.6205 26.2044 25.3125 26.5125C25.0044 26.8205 24.5864 26.9918 24.15 26.9918C23.7136 26.9918 23.2956 26.8205 22.9875 26.5125L18 21.525L13.0125 26.5125C12.7044 26.8205 12.2864 26.9918 11.85 26.9918C11.4136 26.9918 10.9956 26.8205 10.6875 26.5125C10.3795 26.2044 10.2082 25.7864 10.2082 25.35C10.2082 24.9136 10.3795 24.4956 10.6875 24.1875L15.675 19.2L10.6875 14.2125C10.3795 13.9044 10.2082 13.4864 10.2082 13.05C10.2082 12.6136 10.3795 12.1956 10.6875 11.8875C10.9956 11.5795 11.4136 11.4082 11.85 11.4082C12.2864 11.4082 12.7044 11.5795 13.0125 11.8875L18 16.875L22.9875 11.8875C23.2956 11.5795 23.7136 11.4082 24.15 11.4082C24.5864 11.4082 25.0044 11.5795 25.3125 11.8875C25.6205 12.1956 25.7918 12.6136 25.7918 13.05C25.7918 13.4864 25.6205 13.9044 25.3125 14.2125L20.325 19.2L25.3125 24.1875Z"
+          fill="#0A1748"
+        />
+      </svg>
+    </button>
+
+    <button type="button" class="upload-back" (click)="navigateBack()">
+      <span class="upload-back__icon">
+        <img src="assets/profile-upload/vector-7.svg" alt="" />
+      </span>
+      <span class="upload-back__label">Back</span>
+    </button>
+
+    <header class="upload-header">
+      <h1>Add specialists</h1>
+    </header>
+
+    <section class="upload-work">
+      <div class="upload-file">
+        <label class="upload-file__field">
+          <span class="upload-file__name">{{ rosterFileName() }}</span>
+          <span class="upload-file__icon">
+            <img src="assets/profile-upload/vector.svg" alt="" />
+          </span>
+          <input type="file" accept=".csv" (change)="onSelectRoster($event)" />
+        </label>
+        <button type="button" class="upload-file__submit" [disabled]="isUploadDisabled()" (click)="onUploadRoster()">
+          Upload data
+        </button>
+      </div>
+    </section>
+
+    <div class="upload-separator" role="separator" aria-label="or">
+      <span class="upload-separator__line" aria-hidden="true"></span>
+      <span class="upload-separator__label">OR</span>
+      <span class="upload-separator__line" aria-hidden="true"></span>
+    </div>
+
+    <form class="upload-form" [formGroup]="form" (ngSubmit)="submit()">
+      <section class="upload-section">
+        <h2>BIO</h2>
+        <div class="upload-field">
+          <label class="sr-only" for="fullName">Full name</label>
+          <input id="fullName" formControlName="fullName" type="text" placeholder="Full name" />
+        </div>
+        <div class="upload-textarea">
+          <label class="sr-only" for="description">Short description</label>
+          <textarea
+            id="description"
+            formControlName="description"
+            rows="4"
+            placeholder="Short description"
+          ></textarea>
+        </div>
+        <div class="upload-field upload-field--select">
+          <label class="sr-only" for="gender">Gender</label>
+          <select id="gender" formControlName="gender">
+            <option value="" disabled>Gender</option>
+            <option *ngFor="let option of genderOptions" [value]="option.value">{{ option.label }}</option>
+          </select>
+          <span class="upload-field__chevron">
+            <img src="assets/profile-upload/vector-2.svg" alt="" />
+          </span>
+        </div>
+        <div class="upload-field upload-field--select">
+          <label class="sr-only" for="languages">Languages</label>
+          <select id="languages" formControlName="languages">
+            <option value="" disabled>Languages</option>
+            <option *ngFor="let option of languageOptions" [value]="option.value">{{ option.label }}</option>
+          </select>
+          <span class="upload-field__chevron">
+            <img src="assets/profile-upload/vector-2.svg" alt="" />
+          </span>
+        </div>
+      </section>
+
+      <section class="upload-section">
+        <h2>WORK</h2>
+        <div class="upload-field upload-field--select">
+          <label class="sr-only" for="fieldOfPractice">Field of practice</label>
+          <select id="fieldOfPractice" formControlName="fieldOfPractice">
+            <option value="" disabled>Field of practice</option>
+            <option *ngFor="let option of domainOptions" [value]="option.value">{{ option.label }}</option>
+          </select>
+          <span class="upload-field__chevron">
+            <img src="assets/profile-upload/vector-5.svg" alt="" />
+          </span>
+        </div>
+        <div class="upload-field upload-field--select">
+          <label class="sr-only" for="speciality">Speciality</label>
+          <select id="speciality" formControlName="speciality">
+            <option value="" disabled>Speciality</option>
+            <option *ngFor="let option of specialtyOptions" [value]="option.value">{{ option.label }}</option>
+          </select>
+          <span class="upload-field__chevron">
+            <img src="assets/profile-upload/vector-5.svg" alt="" />
+          </span>
+        </div>
+        <div class="upload-field upload-field--select">
+          <label class="sr-only" for="assessmentType">Assessment type</label>
+          <select id="assessmentType" formControlName="assessmentType">
+            <option value="" disabled>Assessment type</option>
+            <option *ngFor="let option of assessmentOptions" [value]="option.value">{{ option.label }}</option>
+          </select>
+          <span class="upload-field__chevron">
+            <img src="assets/profile-upload/vector-5.svg" alt="" />
+          </span>
+        </div>
+        <div class="upload-grid">
+          <div class="upload-field">
+            <label class="sr-only" for="workingHours">Working hours</label>
+            <input id="workingHours" formControlName="workingHours" type="text" placeholder="Working hours" />
+          </div>
+          <div class="upload-field">
+            <label class="sr-only" for="workingDays">Working days</label>
+            <input id="workingDays" formControlName="workingDays" type="text" placeholder="Working days" />
+          </div>
+        </div>
+        <div class="upload-field">
+          <label class="sr-only" for="averageFees">Average fees</label>
+          <input id="averageFees" formControlName="averageFees" type="text" placeholder="Average fees" />
+        </div>
+        <div class="upload-field">
+          <label class="sr-only" for="clinicHospital">Clinic / hospital</label>
+          <input id="clinicHospital" formControlName="clinicHospital" type="text" placeholder="Clinic / hospital" />
+        </div>
+      </section>
+
+      <section class="upload-section">
+        <h2>CONTACTS</h2>
+        <div class="upload-field" *ngFor="let field of contactFields">
+          <label class="sr-only" [for]="field.id">{{ field.placeholder }}</label>
+          <input
+            [id]="field.id"
+            [type]="field.type"
+            [placeholder]="field.placeholder"
+            [formControlName]="field.id"
+          />
+        </div>
+      </section>
+
+      <section class="upload-section">
+        <h2>OTHER</h2>
+        <label class="upload-field upload-field--file">
+          <span class="upload-file__name">{{ photoFileName() }}</span>
+          <span class="upload-field__icon">
+            <img src="assets/profile-upload/vector-6.svg" alt="" />
+          </span>
+          <input type="file" accept="image/*" (change)="onSelectPhoto($event)" />
+        </label>
+        <div class="upload-field">
+          <label class="sr-only" for="notes">Notes (visible only to you)</label>
+          <input
+            id="notes"
+            formControlName="notes"
+            type="text"
+            placeholder="Notes (visible only to you)"
+          />
+        </div>
+        <button type="submit" class="upload-submit">
+          Add specialist
+        </button>
+      </section>
+    </form>
+  </div>
+</section>

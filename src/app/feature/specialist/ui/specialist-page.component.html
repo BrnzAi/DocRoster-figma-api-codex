@@ -1,51 +1,132 @@
-<section class="specialist-panel" *ngIf="context$ | async as context; else loading">
+<section class="specialist-screen" *ngIf="context$ | async as context; else loading">
   <ng-container *ngIf="context.doctor as doctor; else notFound">
-    <header class="specialist-panel__header">
-      <button type="button" class="specialist-panel__close" routerLink="/search" aria-label="Back to search"></button>
-      <div class="specialist-panel__identity">
-        <img [src]="doctor.avatarUrl" [alt]="doctor.name" />
-        <div>
-          <h1>{{ doctor.name }}</h1>
-          <p>{{ doctor.specialty }}</p>
-        </div>
-      </div>
-    </header>
-
-    <div class="specialist-panel__section">
-      <h2>Biography</h2>
-      <p>{{ doctor.biography }}</p>
-    </div>
-
-    <div class="specialist-panel__section" *ngIf="context.clinic as clinic">
-      <h2>Clinic</h2>
-      <p>
-        {{ clinic.name }}<br />
-        {{ clinic.address.street }}, {{ clinic.address.city }}, {{ clinic.address.state }}
-      </p>
-      <div class="specialist-panel__actions">
-        <a *ngIf="clinic.phone" [href]="formatPhoneHref(clinic.phone)">Call now</a>
-        <a *ngIf="clinic.address" [href]="buildMapsLink(clinic.address)" target="_blank" rel="noopener"
-          >Navigate</a
+    <article class="specialist-surface">
+      <div class="specialist-hero">
+        <img class="specialist-hero__image" [src]="context.heroImage" [alt]="doctor.name" />
+        <button
+          type="button"
+          class="specialist-hero__close"
+          routerLink="/search"
+          aria-label="Back to search"
         >
+          <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
+            <path
+              d="M18 0C8.05894 0 0 8.05894 0 18C0 27.9411 8.05894 36 18 36C27.9411 36 36 27.9411 36 18C36 8.05894 27.9411 0 18 0ZM25.3125 24.1875C25.6205 24.4956 25.7918 24.9136 25.7918 25.35C25.7918 25.7864 25.6205 26.2044 25.3125 26.5125C25.0044 26.8205 24.5864 26.9918 24.15 26.9918C23.7136 26.9918 23.2956 26.8205 22.9875 26.5125L18 21.525L13.0125 26.5125C12.7044 26.8205 12.2864 26.9918 11.85 26.9918C11.4136 26.9918 10.9956 26.8205 10.6875 26.5125C10.3795 26.2044 10.2082 25.7864 10.2082 25.35C10.2082 24.9136 10.3795 24.4956 10.6875 24.1875L15.675 19.2L10.6875 14.2125C10.3795 13.9044 10.2082 13.4864 10.2082 13.05C10.2082 12.6136 10.3795 12.1956 10.6875 11.8875C10.9956 11.5795 11.4136 11.4082 11.85 11.4082C12.2864 11.4082 12.7044 11.5795 13.0125 11.8875L18 16.875L22.9875 11.8875C23.2956 11.5795 23.7136 11.4082 24.15 11.4082C24.5864 11.4082 25.0044 11.5795 25.3125 11.8875C25.6205 12.1956 25.7918 12.6136 25.7918 13.05C25.7918 13.4864 25.6205 13.9044 25.3125 14.2125L20.325 19.2L25.3125 24.1875Z"
+              fill="#0A1748"
+            />
+          </svg>
+        </button>
       </div>
-    </div>
 
-    <div class="specialist-panel__section" *ngIf="doctor.highlights?.length">
-      <h2>Specializations</h2>
-      <ul>
-        <li *ngFor="let highlight of doctor.highlights!">
-          <span>{{ highlight.label }}</span>
-          <strong>{{ highlight.value }}</strong>
-        </li>
-      </ul>
-    </div>
+      <div class="specialist-body">
+        <section class="specialist-summary">
+          <h1 class="specialist-summary__title">{{ doctor.name }}</h1>
+          <p class="specialist-summary__subtitle">{{ doctor.specialty }}</p>
+          <p class="specialist-summary__bio">
+            {{ doctor.biography }}
+          </p>
+          <div class="specialist-summary__actions">
+            <a
+              *ngIf="context.clinic?.phone as phone"
+              class="specialist-action specialist-action--primary"
+              [href]="formatPhoneHref(phone)"
+            >
+              <span class="specialist-action__icon">
+                <img src="assets/specialist/vector.svg" alt="" />
+              </span>
+              <span class="specialist-action__label">Call now</span>
+            </a>
+            <a
+              *ngIf="context.clinic?.address as address"
+              class="specialist-action"
+              [href]="buildMapsLink(address)"
+              target="_blank"
+              rel="noopener"
+            >
+              <span class="specialist-action__icon">
+                <img src="assets/specialist/vector-1.svg" alt="" />
+              </span>
+              <span class="specialist-action__label">Navigate</span>
+            </a>
+          </div>
+        </section>
+
+        <section class="specialist-section" *ngIf="context.specializations.length">
+          <h2 class="specialist-section__heading">SPECIALIZATIONS</h2>
+          <div class="specialist-specializations">
+            <article
+              class="specialist-specialization"
+              *ngFor="let specialization of context.specializations"
+              [class.specialist-specialization--primary]="specialization.tone === 'primary'"
+              [class.specialist-specialization--tint]="specialization.tone === 'tint'"
+            >
+              <div class="specialist-specialization__icon">
+                <img [src]="specialization.icon" alt="" />
+              </div>
+              <div class="specialist-specialization__copy">
+                <p class="specialist-specialization__title">{{ specialization.title }}</p>
+                <p class="specialist-specialization__subtitle">{{ specialization.subtitle }}</p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="specialist-section" *ngIf="context.schedule">
+          <article class="specialist-availability">
+            <div class="specialist-availability__icon">
+              <img src="assets/specialist/vector-5.svg" alt="" />
+              <img src="assets/specialist/vector-6.svg" alt="" />
+            </div>
+            <div class="specialist-availability__copy">
+              <p class="specialist-availability__line" *ngFor="let line of context.schedule.lines">
+                {{ line }}
+              </p>
+              <p class="specialist-availability__location" *ngIf="context.schedule.location">
+                at {{ context.schedule.location }}
+              </p>
+            </div>
+            <a
+              *ngIf="context.schedule.appointmentHref"
+              class="specialist-availability__cta"
+              [href]="context.schedule.appointmentHref"
+            >
+              Make an appointment
+            </a>
+          </article>
+        </section>
+
+        <section class="specialist-section" *ngIf="context.contacts.length">
+          <h2 class="specialist-section__heading">CLINIC CONTACTS</h2>
+          <div class="specialist-contacts">
+            <ng-container *ngFor="let contact of context.contacts">
+              <a
+                *ngIf="contact.href; else contactLabel"
+                class="specialist-contact"
+                [href]="contact.href"
+                [attr.target]="contact.external ? '_blank' : null"
+                [attr.rel]="contact.external ? 'noopener' : null"
+              >
+                <span class="specialist-contact__icon"><img [src]="contact.icon" alt="" /></span>
+                <span class="specialist-contact__label">{{ contact.text }}</span>
+              </a>
+              <ng-template #contactLabel>
+                <span class="specialist-contact specialist-contact--static">
+                  <span class="specialist-contact__icon"><img [src]="contact.icon" alt="" /></span>
+                  <span class="specialist-contact__label">{{ contact.text }}</span>
+                </span>
+              </ng-template>
+            </ng-container>
+          </div>
+        </section>
+      </div>
+    </article>
   </ng-container>
 </section>
 
 <ng-template #loading>
-  <div class="specialist-panel__fallback"><p>Loading profile…</p></div>
+  <div class="specialist-fallback"><p>Loading profile…</p></div>
 </ng-template>
 
 <ng-template #notFound>
-  <div class="specialist-panel__fallback"><p>We could not find this specialist. Try exploring the map.</p></div>
+  <div class="specialist-fallback"><p>We could not find this specialist. Try exploring the map.</p></div>
 </ng-template>

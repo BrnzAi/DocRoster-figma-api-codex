@@ -38,6 +38,13 @@ export const routes: Routes = [
     title: 'DocRoster — Organization assessments'
   },
   {
+    path: 'profile/add',
+    canActivate: [authGuard],
+    loadComponent: () =>
+      import('./feature/profile/ui/add-specialist-page.component').then((m) => m.AddSpecialistPageComponent),
+    title: 'DocRoster — Add specialist'
+  },
+  {
     path: 'profile',
     canActivate: [authGuard],
     loadComponent: () => import('./feature/profile/ui/profile-page.component').then((m) => m.ProfilePageComponent),

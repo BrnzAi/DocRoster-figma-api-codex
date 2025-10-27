@@ -1,7 +1,7 @@
 [
   {
     "id": "1814:1174",
-    "name": "search",
+    "name": "SearchScreen",
     "type": "FRAME",
     "rect": {
       "x": 0,
@@ -27,7 +27,7 @@
   },
   {
     "id": "1814:1175",
-    "name": "Frame 1000002924",
+    "name": "ResultsStack",
     "type": "FRAME",
     "rect": {
       "x": 0,
@@ -41,7 +41,7 @@
   },
   {
     "id": "1814:1176",
-    "name": "Frame 1000002863",
+    "name": "ResultRow",
     "type": "FRAME",
     "rect": {
       "x": 0,
@@ -263,7 +263,7 @@
   },
   {
     "id": "1814:1184",
-    "name": "Frame 1000002864",
+    "name": "ResultRowAlt",
     "type": "FRAME",
     "rect": {
       "x": 0,
